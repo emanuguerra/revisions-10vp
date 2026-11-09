@@ -1,0 +1,62 @@
+# Branches of the 10VP programme.
+# Units live in content/units/<slug>/unit.yaml and point to a subject by its slug.
+# "planned" lists topics that are not built yet: they show as "Bientôt" on the home page.
+# The planned topics are a starting checklist only: adjust them to the official
+# plan d'études (PER) and your canton's teaching materials.
+subjects:
+  - slug: maths
+    title: Mathématiques
+    color: "#2f5bea"
+    order: 1
+    planned:
+      - Nombres et opérations (puissances, racines carrées)
+      - Calcul littéral
+      - Équations du premier degré
+      - Proportionnalité et pourcentages
+      - Fonctions linéaires et affines
+      - Aires et volumes
+      - Statistiques et probabilités
+
+  - slug: francais
+    title: Français
+    color: "#c2352b"
+    order: 2
+    planned:
+      - Conjugaison
+      - Orthographe grammaticale
+      - Analyse de texte
+
+  - slug: allemand
+    title: Allemand
+    color: "#1f8a4c"
+    order: 3
+    planned:
+      - Vocabulaire thématique
+      - Grammaire (cas, verbes)
+
+  - slug: anglais
+    title: Anglais
+    color: "#8a4fd6"
+    order: 4
+    planned:
+      - Present simple vs present continuous
+      - Past simple
+      - Vocabulary — school, hobbies, travel
+
+  - slug: sciences
+    title: Sciences de la nature
+    color: "#b8701c"
+    order: 5
+    planned: []
+
+  - slug: geographie
+    title: Géographie
+    color: "#0f7c8a"
+    order: 6
+    planned: []
+
+  - slug: histoire
+    title: Histoire
+    color: "#6b5a3c"
+    order: 7
+    planned: []

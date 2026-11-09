@@ -1,0 +1,26 @@
+kind: error
+items:
+- key: err-01
+  work: 'Cathètes : 6 cm et 8 cm.<br>c = 6 + 8 = 14 cm'
+  mistake: Les longueurs ont été additionnées au lieu de leurs carrés.
+  fix: c² = 36 + 64 = 100, donc c = 10 cm.
+- key: err-02
+  work: 'Hypoténuse : 13 cm, cathète : 5 cm. On cherche l''autre cathète x.<br>x² = 13² + 5² = 194, x ≈ 13,9 cm'
+  mistake: On a additionné alors qu'il fallait soustraire.
+  fix: x² = 169 − 25 = 144, donc x = 12 cm. Une cathète est toujours plus courte que l'hypoténuse.
+- key: err-03
+  work: Triangle de côtés 10 cm, 6 cm et 8 cm.<br>10² + 6² = 136 et 8² = 64. Pas égal, donc pas rectangle.
+  mistake: Le plus long côté n'a pas été pris comme hypoténuse.
+  fix: 'Plus long côté : 10. 10² = 100 et 6² + 8² = 100 : le triangle est rectangle.'
+- key: err-04
+  work: 'Cathètes : 2 m et 50 cm.<br>c² = 2² + 50² = 2504, c ≈ 50,04 m'
+  mistake: Les longueurs ne sont pas dans la même unité.
+  fix: 50 cm = 0,5 m. c² = 4 + 0,25 = 4,25, donc c ≈ 2,06 m.
+- key: err-05
+  work: 'Cathètes : 5 cm et 5 cm.<br>c² = 25 + 25 = 50, donc c = 50 : 2 = 25 cm'
+  mistake: On a divisé par 2 au lieu de prendre la racine carrée.
+  fix: c = √50 ≈ 7,1 cm.
+- key: err-06
+  work: 'Cathètes : 4 cm et 7 cm.<br>c² = 4² + 7² = 8 + 14 = 22, c ≈ 4,7 cm'
+  mistake: Les nombres ont été multipliés par 2 au lieu d'être élevés au carré.
+  fix: 4² = 16 et 7² = 49, donc c² = 65 et c ≈ 8,1 cm.

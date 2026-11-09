@@ -1,0 +1,736 @@
+kind: vocab
+items:
+- key: nurse
+  category: health
+  en: nurse
+  fr: infirmier / infirmière
+  pic: 🩺
+  definition: A person who looks after sick or injured people in a hospital.
+  example: The nurse checks the patient's temperature.
+- key: healthcare-assistant
+  category: health
+  en: healthcare assistant
+  fr: assistant·e en soins et santé communautaire (ASSC)
+  pic: 🛏️
+  definition: A person who helps nurses and helps patients wash, eat and move.
+  example: The healthcare assistant helps the old lady get dressed.
+- key: gp
+  category: health
+  en: GP
+  alt:
+  - general practitioner
+  - family doctor
+  fr: médecin généraliste / médecin de famille
+  pic: 👩‍⚕️
+  definition: A doctor you visit first when you are ill. GP means general practitioner.
+  example: I have a sore throat, so I'm going to see my GP.
+- key: surgeon
+  category: health
+  en: surgeon
+  fr: chirurgien / chirurgienne
+  pic: 🔪
+  definition: A doctor who operates on people's bodies.
+  example: The surgeon operated on my knee.
+- key: paramedic
+  category: health
+  en: paramedic
+  fr: ambulancier / ambulancière
+  pic: 🚑
+  definition: A person who gives emergency medical help and drives an ambulance.
+  example: The paramedic arrived quickly after the accident.
+- key: pharmacist
+  category: health
+  en: pharmacist
+  fr: pharmacien / pharmacienne
+  pic: 💊
+  definition: A person who prepares and sells medicine in a pharmacy.
+  example: The pharmacist explained how to take the tablets.
+- key: physiotherapist
+  category: health
+  en: physiotherapist
+  alt:
+  - physio
+  fr: physiothérapeute
+  pic: 🦵
+  definition: A person who helps you move again with exercises and massage after an injury.
+  example: After my ski accident, I saw a physiotherapist every week.
+- key: midwife
+  category: health
+  en: midwife
+  fr: sage-femme
+  pic: 👶
+  definition: A person who helps women when they have a baby.
+  example: The midwife helped my mother when I was born.
+- key: dentist
+  category: health
+  en: dentist
+  fr: dentiste / médecin-dentiste
+  pic: 🦷
+  definition: A doctor who looks after people's teeth.
+  example: The dentist found a hole in my tooth.
+- key: dental-assistant
+  category: health
+  en: dental assistant
+  fr: assistant·e dentaire
+  pic: 🪥
+  definition: A person who helps the dentist and prepares the instruments.
+  example: The dental assistant gave me a glass of water.
+- key: optician
+  category: health
+  en: optician
+  fr: opticien / opticienne
+  pic: 👓
+  definition: A person who tests your eyes and sells glasses and contact lenses.
+  example: The optician helped me choose new glasses.
+- key: psychologist
+  category: health
+  en: psychologist
+  fr: psychologue
+  pic: 🧠
+  definition: A person who studies the mind and helps people with their feelings and problems.
+  example: The school psychologist talks with students who feel stressed.
+- key: primary-school-teacher
+  category: edu
+  en: primary school teacher
+  fr: enseignant·e primaire
+  pic: 🧑‍🏫
+  definition: A teacher who teaches young children (in Switzerland, from 1H to 8H).
+  example: My little brother's primary school teacher is very patient.
+- key: secondary-school-teacher
+  category: edu
+  en: secondary school teacher
+  fr: enseignant·e secondaire
+  pic: 📚
+  definition: A teacher who teaches one or more subjects to teenagers.
+  example: Our secondary school teacher teaches English and German.
+- key: childcare-worker
+  category: edu
+  en: childcare worker
+  fr: éducateur / éducatrice de l'enfance, assistant·e socio-éducatif·ve (ASE)
+  pic: 🧸
+  definition: A person who looks after small children in a nursery or day-care centre.
+  example: The childcare worker reads a story to the children.
+- key: social-worker
+  category: edu
+  en: social worker
+  fr: assistant·e social·e / travailleur·euse social·e
+  pic: 🤝
+  definition: A person who helps families and people with difficult problems.
+  example: The social worker helped the family find a flat.
+- key: librarian
+  category: edu
+  en: librarian
+  fr: bibliothécaire / agent·e en information documentaire
+  pic: 📖
+  definition: A person who works in a library and helps people find books.
+  example: The librarian recommended a great novel.
+- key: headteacher
+  category: edu
+  en: headteacher
+  alt:
+  - head teacher
+  - principal
+  fr: directeur / directrice d'école
+  pic: 🏫
+  definition: The person in charge of a school.
+  example: The headteacher gave a speech at the end of the year.
+- key: bricklayer
+  category: build
+  en: bricklayer
+  alt:
+  - builder
+  fr: maçon / maçonne
+  pic: 🧱
+  definition: A person who builds walls and houses with bricks, stones and concrete.
+  example: The bricklayer is building a wall for the new garage.
+- key: architect
+  category: build
+  en: architect
+  fr: architecte
+  pic: 📐
+  definition: A person who designs buildings and decides how they will look.
+  example: The architect designed a modern school in Fribourg.
+- key: draughtsperson
+  category: build
+  en: draughtsperson
+  alt:
+  - draughtsman
+  - draughtswoman
+  - draftsman
+  - draftsperson
+  fr: dessinateur / dessinatrice (en bâtiment)
+  pic: ✏️
+  definition: A person who draws detailed technical plans, often on a computer.
+  example: The draughtsperson drew the plans of every floor.
+- key: civil-engineer
+  category: build
+  en: civil engineer
+  fr: ingénieur·e civil·e
+  pic: 🌉
+  definition: An engineer who plans roads, bridges, tunnels and big buildings.
+  example: A civil engineer checked that the bridge is safe.
+- key: site-manager
+  category: build
+  en: site manager
+  fr: chef / cheffe de chantier
+  pic: 👷
+  definition: The person in charge of the workers on a building site.
+  example: The site manager gives instructions to the workers every morning.
+- key: electrician
+  category: build
+  en: electrician
+  fr: électricien·ne / installateur·trice-électricien·ne
+  pic: 💡
+  definition: A person who installs and repairs electrical wires, sockets and lights.
+  example: The electrician installed new lights in the kitchen.
+- key: plumber
+  category: build
+  en: plumber
+  fr: installateur / installatrice sanitaire
+  pic: 🚿
+  definition: A person who installs and repairs water pipes, toilets and showers.
+  example: The plumber fixed the leak under the sink.
+- key: heating-engineer
+  category: build
+  en: heating engineer
+  fr: installateur / installatrice en chauffage
+  pic: 🔥
+  definition: A person who installs and repairs heating systems and heat pumps.
+  example: The heating engineer installed a heat pump in our house.
+- key: carpenter
+  category: build
+  en: carpenter
+  fr: charpentier / charpentière
+  pic: 🪵
+  definition: A person who builds wooden structures, like roofs and chalets.
+  example: The carpenter built the wooden roof of the chalet.
+- key: cabinetmaker
+  category: build
+  en: cabinetmaker
+  alt:
+  - cabinet maker
+  - joiner
+  fr: menuisier / menuisière, ébéniste
+  pic: 🪚
+  definition: A person who makes furniture, doors and windows from wood.
+  example: The cabinetmaker made a beautiful oak table.
+- key: tiler
+  category: build
+  en: tiler
+  fr: carreleur / carreleuse
+  pic: 🔲
+  definition: A person who puts tiles on floors and walls.
+  example: The tiler is working in the new bathroom.
+- key: roofer
+  category: build
+  en: roofer
+  fr: couvreur / couvreuse
+  pic: 🏠
+  definition: A person who builds and repairs roofs.
+  example: The roofer replaced the broken tiles after the storm.
+- key: painter-and-decorator
+  category: build
+  en: painter and decorator
+  alt:
+  - painter
+  - decorator
+  fr: peintre (en bâtiment) / plâtrier-peintre
+  pic: 🖌️
+  definition: A person who paints walls and puts up wallpaper in buildings.
+  example: The painter and decorator painted my bedroom blue.
+- key: crane-operator
+  category: build
+  en: crane operator
+  fr: grutier / grutière
+  pic: 🏗️
+  definition: A person who drives a crane to lift heavy things on a building site.
+  example: The crane operator lifts the concrete blocks.
+- key: surveyor
+  category: build
+  en: surveyor
+  fr: géomètre
+  pic: 📏
+  definition: A person who measures land to make maps and plans.
+  example: The surveyor measured the land before the building work.
+- key: chef
+  category: food
+  en: chef
+  fr: chef / cheffe de cuisine
+  pic: 👨‍🍳
+  definition: The person in charge of the kitchen in a restaurant.
+  example: The chef creates a new menu every season.
+- key: cook
+  category: food
+  en: cook
+  fr: cuisinier / cuisinière
+  pic: 🍳
+  definition: A person who prepares and cooks food.
+  example: The cook in our school canteen makes great pasta.
+- key: baker
+  category: food
+  en: baker
+  fr: boulanger·ère (-pâtissier·ère-confiseur·euse)
+  pic: 🥖
+  definition: A person who makes bread.
+  example: The baker starts work at four in the morning.
+- key: pastry-chef
+  category: food
+  en: pastry chef
+  alt:
+  - confectioner
+  fr: pâtissier / pâtissière, confiseur / confiseuse
+  pic: 🍰
+  definition: A person who makes cakes, desserts and chocolates.
+  example: The pastry chef made a chocolate cake for the wedding.
+- key: butcher
+  category: food
+  en: butcher
+  fr: boucher / bouchère
+  pic: 🥩
+  definition: A person who prepares and sells meat.
+  example: We buy sausages for the barbecue at the butcher's shop.
+- key: cheesemaker
+  category: food
+  en: cheesemaker
+  alt:
+  - cheese maker
+  fr: fromager / fromagère (technologue du lait)
+  pic: 🧀
+  definition: A person who makes cheese from milk.
+  example: The cheesemaker makes Gruyère in the village dairy.
+- key: waiter
+  category: food
+  en: waiter
+  alt:
+  - waitress
+  - server
+  fr: serveur / serveuse, sommelier / sommelière (CH)
+  pic: 🍽️
+  definition: A person who brings food and drinks to customers in a restaurant. A woman is often called a waitress.
+  example: The waiter brought us the menu.
+- key: hotel-receptionist
+  category: food
+  en: hotel receptionist
+  fr: réceptionniste (d'hôtel)
+  pic: 🛎️
+  definition: A person who welcomes guests and gives them their room keys in a hotel.
+  example: The hotel receptionist gave us a map of Montreux.
+- key: shop-assistant
+  category: office
+  en: shop assistant
+  alt:
+  - sales assistant
+  fr: gestionnaire du commerce de détail / vendeur·euse
+  pic: 🛍️
+  definition: A person who helps customers and sells things in a shop.
+  example: The shop assistant helped me find a jacket in my size.
+- key: cashier
+  category: office
+  en: cashier
+  fr: caissier / caissière
+  pic: 🧾
+  definition: A person who takes the money when you pay in a shop.
+  example: The cashier gave me my change and the receipt.
+- key: office-clerk
+  category: office
+  en: office clerk
+  alt:
+  - office worker
+  - clerk
+  fr: employé·e de commerce
+  pic: 🗂️
+  definition: 'A person who does office work: emails, documents, phone calls.'
+  example: My sister is training to be an office clerk at a bank.
+- key: receptionist
+  category: office
+  en: receptionist
+  fr: réceptionniste
+  pic: ☎️
+  definition: A person who welcomes visitors and answers the phone in a company.
+  example: The receptionist asked me to wait in the hall.
+- key: accountant
+  category: office
+  en: accountant
+  fr: comptable / expert·e-comptable
+  pic: 🧮
+  definition: A person who keeps and checks the financial records of a company.
+  example: The accountant prepares the company's tax return.
+- key: bank-clerk
+  category: office
+  en: bank clerk
+  alt:
+  - bank employee
+  fr: employé·e de banque
+  pic: 🏦
+  definition: A person who works in a bank and helps customers with their money.
+  example: The bank clerk helped me open my first bank account.
+- key: lawyer
+  category: office
+  en: lawyer
+  fr: avocat / avocate
+  pic: ⚖️
+  definition: A person who knows the law and defends people in court.
+  example: The lawyer defended her client in court.
+- key: judge
+  category: office
+  en: judge
+  fr: juge
+  pic: 🧑‍⚖️
+  definition: The person who makes decisions in a court of law.
+  example: The judge listened to both sides before deciding.
+- key: estate-agent
+  category: office
+  en: estate agent
+  alt:
+  - real estate agent
+  fr: agent·e immobilier·ère / courtier·ère en immobilier
+  pic: 🔑
+  definition: A person who helps people buy, sell or rent flats and houses.
+  example: The estate agent showed us three flats in Neuchâtel.
+- key: software-developer
+  category: tech
+  en: software developer
+  alt:
+  - programmer
+  - software engineer
+  fr: développeur·euse / informaticien·ne en développement d'applications
+  pic: 💻
+  definition: A person who writes computer programs and apps.
+  example: The software developer is creating a new mobile game.
+- key: it-technician
+  category: tech
+  en: IT technician
+  alt:
+  - it support
+  fr: informaticien·ne (exploitation et infrastructure)
+  pic: 🖥️
+  definition: A person who installs and repairs computers and networks.
+  example: The IT technician fixed the school's Wi-Fi.
+- key: web-designer
+  category: tech
+  en: web designer
+  fr: web designer / médiamaticien·ne
+  pic: 🌐
+  definition: A person who designs and creates websites.
+  example: The web designer made a website for the bakery.
+- key: graphic-designer
+  category: tech
+  en: graphic designer
+  fr: graphiste / interactive media designer
+  pic: 🖍️
+  definition: A person who creates images, logos and posters.
+  example: The graphic designer created the logo for our football club.
+- key: laboratory-technician
+  category: tech
+  en: laboratory technician
+  alt:
+  - lab technician
+  fr: laborantin / laborantine
+  pic: 🧪
+  definition: A person who does tests and experiments in a laboratory.
+  example: The laboratory technician analyses the water samples.
+- key: scientist
+  category: tech
+  en: scientist
+  alt:
+  - researcher
+  fr: scientifique / chercheur·euse
+  pic: 🔬
+  definition: A person who does research to discover new things.
+  example: The scientist works on a new vaccine at the university.
+- key: polymechanic
+  category: tech
+  en: polymechanic
+  fr: polymécanicien / polymécanicienne
+  pic: ⚙️
+  definition: A person who makes and assembles precise metal parts for machines (a typical Swiss apprenticeship).
+  example: The polymechanic makes metal parts for machines.
+- key: watchmaker
+  category: tech
+  en: watchmaker
+  fr: horloger / horlogère
+  pic: ⌚
+  definition: A person who makes and repairs watches.
+  example: The watchmaker works in a factory in the Vallée de Joux.
+- key: automation-engineer
+  category: tech
+  en: automation engineer
+  alt:
+  - automation technician
+  fr: automaticien / automaticienne
+  pic: 🤖
+  definition: A person who builds and programs automatic machines and robots.
+  example: The automation engineer programmed the robot on the production line.
+- key: pilot
+  category: transport
+  en: pilot
+  fr: pilote (de ligne)
+  pic: ✈️
+  definition: A person who flies a plane.
+  example: The pilot landed the plane safely in Geneva.
+- key: flight-attendant
+  category: transport
+  en: flight attendant
+  alt:
+  - cabin crew
+  fr: steward / hôtesse de l'air
+  pic: 🧳
+  definition: A person who looks after passengers on a plane.
+  example: The flight attendant served drinks during the flight.
+- key: air-traffic-controller
+  category: transport
+  en: air traffic controller
+  fr: contrôleur / contrôleuse aérien·ne
+  pic: 📡
+  definition: A person who tells pilots when and where they can take off and land.
+  example: The air traffic controller works in the tower at the airport.
+- key: train-driver
+  category: transport
+  en: train driver
+  fr: mécanicien·ne de locomotive
+  pic: 🚆
+  definition: A person who drives a train.
+  example: The train driver announced a short delay.
+- key: bus-driver
+  category: transport
+  en: bus driver
+  fr: conducteur / conductrice de bus
+  pic: 🚌
+  definition: A person who drives a bus.
+  example: The bus driver waited for me at the stop.
+- key: lorry-driver
+  category: transport
+  en: lorry driver
+  alt:
+  - truck driver
+  fr: chauffeur / chauffeuse poids lourds
+  pic: 🚚
+  definition: 'A person who drives a big lorry to carry goods. In American English: truck driver.'
+  example: The lorry driver delivers fruit to supermarkets.
+- key: delivery-driver
+  category: transport
+  en: delivery driver
+  fr: livreur / livreuse
+  pic: 📦
+  definition: A person who brings parcels or food to people's homes.
+  example: The delivery driver brought my parcel this morning.
+- key: postal-worker
+  category: transport
+  en: postal worker
+  alt:
+  - postman
+  - postwoman
+  - mail carrier
+  fr: facteur / factrice
+  pic: 📬
+  definition: A person who delivers letters and parcels. Also called a postman or postwoman.
+  example: The postal worker puts the letters in our mailbox.
+- key: logistics-operator
+  category: transport
+  en: logistics operator
+  alt:
+  - warehouse worker
+  fr: logisticien / logisticienne
+  pic: 🏭
+  definition: A person who receives, stores and sends goods in a warehouse.
+  example: The logistics operator prepares the orders in the warehouse.
+- key: car-mechanic
+  category: transport
+  en: car mechanic
+  alt:
+  - mechanic
+  - automotive technician
+  fr: mécanicien·ne / mécatronicien·ne d'automobiles
+  pic: 🔧
+  definition: A person who repairs cars and engines.
+  example: The car mechanic changed the tyres on our car.
+- key: farmer
+  category: nature
+  en: farmer
+  fr: agriculteur / agricultrice, paysan·ne
+  pic: 🚜
+  definition: A person who grows crops or keeps animals like cows.
+  example: The farmer takes his cows up to the mountain in summer.
+- key: winegrower
+  category: nature
+  en: winegrower
+  alt:
+  - winemaker
+  - wine grower
+  fr: vigneron / vigneronne, viticulteur / viticultrice
+  pic: 🍇
+  definition: A person who grows grapes and makes wine.
+  example: The winegrower picks the grapes in Lavaux in September.
+- key: landscape-gardener
+  category: nature
+  en: landscape gardener
+  alt:
+  - gardener
+  fr: horticulteur·trice-paysagiste / paysagiste
+  pic: 🌳
+  definition: A person who designs and looks after gardens and parks.
+  example: The landscape gardener planted trees in the park.
+- key: florist
+  category: nature
+  en: florist
+  fr: fleuriste
+  pic: 💐
+  definition: A person who sells flowers and makes bouquets.
+  example: The florist made a bouquet for my grandmother.
+- key: forester
+  category: nature
+  en: forester
+  alt:
+  - forest worker
+  fr: forestier-bûcheron / forestière-bûcheronne
+  pic: 🌲
+  definition: A person who looks after forests and cuts down trees.
+  example: The forester cuts down old trees in the forest.
+- key: vet
+  category: nature
+  en: vet
+  alt:
+  - veterinarian
+  - veterinary surgeon
+  fr: vétérinaire
+  pic: 🐶
+  definition: A doctor for animals.
+  example: We took our cat to the vet because she was ill.
+- key: zookeeper
+  category: nature
+  en: zookeeper
+  alt:
+  - animal keeper
+  fr: gardien / gardienne d'animaux
+  pic: 🦒
+  definition: A person who feeds and looks after animals in a zoo.
+  example: The zookeeper feeds the penguins at ten o'clock.
+- key: firefighter
+  category: safety
+  en: firefighter
+  fr: pompier / pompière (sapeur-pompier)
+  pic: 🚒
+  definition: A person who puts out fires and rescues people.
+  example: The firefighter rescued a cat from the tree.
+- key: police-officer
+  category: safety
+  en: police officer
+  alt:
+  - policeman
+  - policewoman
+  fr: policier / policière, gendarme
+  pic: 👮
+  definition: A person whose job is to protect people and make them respect the law.
+  example: A police officer helped us find the station.
+- key: security-guard
+  category: safety
+  en: security guard
+  fr: agent·e de sécurité
+  pic: 🛡️
+  definition: A person who protects a building, shop or event.
+  example: The security guard checks bags at the concert entrance.
+- key: border-guard
+  category: safety
+  en: border guard
+  alt:
+  - customs officer
+  fr: garde-frontière / douanier·ère (spécialiste en douane)
+  pic: 🛂
+  definition: A person who checks people and goods at the border of a country.
+  example: The border guard checked our passports.
+- key: soldier
+  category: safety
+  en: soldier
+  fr: soldat·e / militaire
+  pic: 🎖️
+  definition: A person who is in the army.
+  example: My cousin is a soldier doing his military service.
+- key: mountain-guide
+  category: safety
+  en: mountain guide
+  fr: guide de montagne
+  pic: 🏔️
+  definition: A person who leads climbers and hikers safely in the mountains.
+  example: The mountain guide took us to the top of the Matterhorn.
+- key: journalist
+  category: arts
+  en: journalist
+  alt:
+  - reporter
+  fr: journaliste
+  pic: 📰
+  definition: A person who writes or reports news for newspapers, radio, TV or websites.
+  example: The journalist interviewed the football player.
+- key: photographer
+  category: arts
+  en: photographer
+  fr: photographe
+  pic: 📷
+  definition: A person who takes photos as a job.
+  example: The photographer took pictures at the wedding.
+- key: actor
+  category: arts
+  en: actor
+  alt:
+  - actress
+  fr: acteur / actrice, comédien·ne
+  pic: 🎭
+  definition: A person who plays a role in films or in the theatre. A woman can also be called an actress.
+  example: The actor learned all his lines in two weeks.
+- key: musician
+  category: arts
+  en: musician
+  fr: musicien / musicienne
+  pic: 🎸
+  definition: A person who plays music or sings as a job.
+  example: The musician plays the guitar in a band.
+- key: hairdresser
+  category: arts
+  en: hairdresser
+  fr: coiffeur / coiffeuse
+  pic: 💇
+  definition: A person who cuts, colours and styles people's hair.
+  example: I go to the hairdresser every two months.
+- key: barber
+  category: arts
+  en: barber
+  fr: barbier / coiffeur pour hommes
+  pic: 💈
+  definition: A person who cuts men's hair and shaves beards.
+  example: My dad goes to the barber to trim his beard.
+- key: beautician
+  category: arts
+  en: beautician
+  alt:
+  - beauty therapist
+  fr: esthéticien / esthéticienne
+  pic: 💅
+  definition: A person who gives beauty treatments for the skin and nails.
+  example: The beautician gave my mum a facial treatment.
+- key: fashion-designer
+  category: arts
+  en: fashion designer
+  alt:
+  - tailor
+  - dressmaker
+  fr: créateur·trice de vêtements / couturier·ère, tailleur
+  pic: 🧵
+  definition: A person who designs and makes clothes.
+  example: The fashion designer showed her new collection in Paris.
+- key: ski-instructor
+  category: arts
+  en: ski instructor
+  fr: moniteur / monitrice de ski, professeur·e de ski
+  pic: ⛷️
+  definition: A person who teaches people how to ski.
+  example: The ski instructor taught us to turn in Verbier.
+- key: sports-coach
+  category: arts
+  en: sports coach
+  alt:
+  - coach
+  - trainer
+  fr: entraîneur / entraîneuse, coach
+  pic: 🏅
+  definition: A person who trains a sports team or athletes.
+  example: Our sports coach makes us run before every match.

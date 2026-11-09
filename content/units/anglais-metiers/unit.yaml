@@ -1,0 +1,74 @@
+slug: anglais-metiers
+subject: anglais
+title: Jobs vocabulary
+subtitle: Learn the English names of jobs, sorted by topic, then test yourself with the quiz.
+subtitle_fr: Apprends les noms des métiers en anglais, classés par domaine, puis fais le quiz.
+order: 1
+ui_lang: en
+
+# Topics used by the vocab cards filter and the quiz filter (item field "category")
+categories:
+  health: Health
+  edu: School & social
+  build: Building
+  food: Food & hotels
+  office: Shops, office & law
+  tech: Tech, science & industry
+  transport: Transport & logistics
+  nature: Nature & animals
+  safety: Safety & public service
+  arts: Arts, media, beauty & sport
+
+lessons:
+  - slug: learn
+    title: "Learn · Apprendre"
+    blocks:
+      - type: widget
+        widget: sound-check
+      - type: widget
+        widget: vocab-cards
+        props:
+          kind: vocab
+
+exercises_title: Quiz
+exercises:
+  - key: def
+    title: "Read the definition · Lis la définition"
+    generator: vocab.definition
+  - key: fr
+    title: "Translate into English · Traduis en anglais"
+    generator: vocab.translate
+  - key: pic
+    title: "Look at the picture · Regarde l'image"
+    generator: vocab.picture
+  - key: gap
+    title: "Complete the sentence · Complète la phrase"
+    generator: vocab.gap
+  - key: spell
+    title: "Spell the word · Écris le mot"
+    generator: vocab.spell
+
+mission:
+  mode: mix              # questions cycle through these exercise types, then are shuffled
+  types: [def, fr, pic, gap, spell]
+  counts: [10, 20, 30]
+  filter: category       # the student can restrict the quiz to one topic
+  review_mistakes: true  # "Practise my mistakes" after the quiz
+  score_display: fraction  # result shown as "8 / 10" instead of points
+  title: Ready for the quiz?
+  description: "Mixed questions: definitions, French → English, pictures, sentences and spelling. · Questions variées : définitions, traduction, images, phrases et orthographe."
+  badges:
+    - Keep going! Go back to the cards and try again.
+    - Good job! Keep practising.
+    - Excellent work!
+    - Perfect! Parfait !
+
+training: false
+
+# Only a correct first answer counts, like in a classic vocabulary test
+scoring:
+  first: 1
+  retry: 0
+  hint_cost: 0
+  streak_bonus: 0
+  streak_from: 3

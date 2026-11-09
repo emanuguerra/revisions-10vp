@@ -1,0 +1,70 @@
+slug: maths-pythagore
+subject: maths
+title: Théorème de Pythagore
+subtitle: "Révision 10e VP : le théorème, sa réciproque, puis des exercices pour t'entraîner et gagner des étoiles."
+order: 5
+ui_lang: fr
+
+levels:
+  - label: Facile
+    info: Nombres entiers et triplets connus. Sans calculatrice.
+  - label: Moyen
+    info: Nombres décimaux et arrondis au dixième. Calculatrice autorisée.
+  - label: Expert
+    info: Problèmes en plusieurs étapes, triangles aigus et obtus. Calculatrice autorisée.
+
+lessons:
+  - slug: theorie
+    title: "1. Réviser"
+    blocks:
+      - type: html
+        file: theorie.html
+
+exercises_title: "2. Exercices"
+exercises:
+  - key: hyp
+    title: Repérer l'hypoténuse
+    generator: pythagore.hyp
+  - key: calcHyp
+    title: Calculer l'hypoténuse
+    generator: pythagore.calc_hyp
+  - key: calcLeg
+    title: Calculer une cathète
+    generator: pythagore.calc_leg
+  - key: recip
+    title: "Réciproque : rectangle ou pas ?"
+    generator: pythagore.reciprocal
+  - key: triplet
+    title: Triplets pythagoriciens
+    generator: pythagore.triplet
+  - key: vf
+    title: Vrai ou faux ?
+    generator: common.true_false
+    params: { kind: vf }
+  - key: erreur
+    title: Trouve l'erreur
+    generator: common.find_mistake
+    params: { kind: error }
+  - key: problem
+    title: Problèmes de la vie réelle
+    generator: pythagore.problem
+
+mission:
+  mode: sequence
+  sequence: [hyp, calcHyp, recip, vf, calcLeg, triplet, problem, erreur, recip, problem]
+  title: "🎯 Mission : 10 questions"
+  description: "Un peu de tout. +10 points au premier essai, +5 si tu corriges ta réponse (3 essais au maximum). +5 de bonus dès 3 réponses justes de suite du premier coup 🔥. Un indice coûte 3 points."
+  badges:
+    - Encore un effort ! Relis la théorie et réessaie.
+    - Apprenti·e de Pythagore
+    - Géomètre confirmé·e
+    - Maître·sse de l'hypoténuse
+
+training: true
+
+scoring:
+  first: 10
+  retry: 5
+  hint_cost: 3
+  streak_bonus: 5
+  streak_from: 3

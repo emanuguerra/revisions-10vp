@@ -1,0 +1,45 @@
+/* App shell additions on top of styles.css (ported from the original page). */
+body { padding-top: max(24px, env(safe-area-inset-top, 0px)); }
+#root { display: block; }
+
+.subjects .brand { color: var(--ink); text-decoration: none; }
+a.subj { text-decoration: none; }
+a.subj.active { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+a { color: var(--accent); }
+
+/* Home */
+.subjects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; align-items: start; }
+.subject { background: var(--paper); border: 2px solid var(--line); border-radius: 16px; padding: 18px; display: grid; gap: 10px; min-width: 0; }
+.subject h2 { font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+.subject .dot { width: 14px; height: 14px; border-radius: 50%; background: var(--subject); flex: none; }
+.unit-list, .planned { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.unit-link {
+  display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 12px 14px; border-radius: 12px; background: var(--bg); border: 2px solid var(--line);
+  color: var(--ink); text-decoration: none; font-weight: 700;
+}
+.unit-link:hover { border-color: var(--subject); }
+.pill { font-size: .8rem; font-weight: 700; color: var(--muted); background: var(--paper); border-radius: 999px; padding: 2px 10px; font-variant-numeric: tabular-nums; }
+.planned li { color: var(--muted); font-size: .92rem; display: flex; justify-content: space-between; gap: 8px; }
+.soon { font-size: .72rem; text-transform: uppercase; letter-spacing: .07em; font-weight: 700; border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; white-space: nowrap; align-self: center; }
+
+/* Profile gate */
+.gate { padding-top: 12px; }
+.field { font: inherit; padding: 10px 14px; border-radius: 10px; border: 2px solid var(--line); background: var(--bg); color: var(--ink); width: 100%; }
+.box label { font-weight: 700; }
+
+/* Progress */
+.when td.num { font-variant-numeric: tabular-nums; }
+.token { font-size: .95rem; background: var(--bg); padding: 8px 12px; border-radius: 8px; word-break: break-all; user-select: all; }
+
+/* Markdown blocks */
+.md h1, .md h2, .md h3 { margin-top: 4px; }
+.md p, .md ul, .md ol { margin: 0; }
+.md code { background: var(--bg); padding: 1px 6px; border-radius: 6px; }
+
+/* Nested page wrappers take the full width of the shell */
+.wrap .wrap { width: 100%; }
+
+/* `.small` is also the uppercase label style of the theory pages: keep buttons readable */
+.btn.small { text-transform: none; letter-spacing: normal; font-size: .88rem; font-weight: 700; color: var(--accent-ink); }
+.btn.ghost.small { color: var(--ink); }

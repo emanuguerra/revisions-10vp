@@ -1,0 +1,114 @@
+<div class="duo">
+  <article class="box">
+    <h2>Le vocabulaire</h2>
+    <p>Un <strong>triangle rectangle</strong> a un angle droit (90°).</p>
+    <ul>
+      <li><strong>Les cathètes</strong> sont les deux côtés qui forment l'angle droit.</li>
+      <li><strong>L'hypoténuse</strong> est le côté <em>en face</em> de l'angle droit. C'est toujours le plus long côté.</li>
+    </ul>
+    <div style="max-width:320px;width:100%;justify-self:center"><div data-widget="triangle-figure" data-props='{"a": 4, "b": 3, "names": "ABC", "flip": true, "pad": 70, "size": 320, "lab": {"a": "cathète", "b": "cathète", "c": "hypoténuse"}}'></div></div>
+    <p class="muted">Ici, ABC est rectangle en C : l'hypoténuse est [AB].</p>
+  </article>
+  <article class="box key">
+    <h2>Le théorème</h2>
+    <p><strong>Si</strong> un triangle est rectangle, <strong>alors</strong> le carré de l'hypoténuse est égal à la somme des carrés des cathètes.</p>
+    <p class="formula">a² + b² = c²</p>
+    <p class="muted">a et b : les cathètes · c : l'hypoténuse</p>
+    <div class="formulas">
+      <div><span class="small">Calculer l'hypoténuse</span><span class="f">c = √(a² + b²)</span><span class="muted">on additionne</span></div>
+      <div><span class="small">Calculer une cathète</span><span class="f">a = √(c² − b²)</span><span class="muted">on soustrait</span></div>
+    </div>
+  </article>
+</div>
+
+<article class="box">
+  <h2>Explore : les trois carrés</h2>
+  <p>Construis un carré sur chaque côté du triangle. Bouge les curseurs : l'aire du carré vert (sur l'hypoténuse) est toujours égale à la somme des aires du jaune et du bleu.</p>
+  <div data-widget="pythagore-explorer"></div>
+</article>
+
+<div class="duo">
+  <article class="box">
+    <h2>Exemple 1 : calculer l'hypoténuse</h2>
+    <div class="ex-row">
+      <div style="display:grid;gap:8px;min-width:0">
+        <p>ABC est rectangle en C. BC = 5 cm et AC = 7 cm. Calcule AB.</p>
+        <div class="calc">AB² = BC² + AC²<br>AB² = 5² + 7² = 25 + 49 = 74<br>AB = √74 ≈ <strong>8,6 cm</strong></div>
+      </div>
+      <div data-widget="triangle-figure" data-props='{"a": 5, "b": 7, "names": "ABC", "flip": true, "size": 170, "lab": {"a": "5 cm", "b": "7 cm", "c": "?"}}'></div>
+    </div>
+  </article>
+  <article class="box">
+    <h2>Exemple 2 : calculer une cathète</h2>
+    <div class="ex-row">
+      <div style="display:grid;gap:8px;min-width:0">
+        <p>ABC est rectangle en C. AB = 13 cm et BC = 5 cm. Calcule AC.</p>
+        <div class="calc">AC² = AB² − BC²<br>AC² = 13² − 5² = 169 − 25 = 144<br>AC = √144 = <strong>12 cm</strong></div>
+      </div>
+      <div data-widget="triangle-figure" data-props='{"a": 5, "b": 12, "names": "ABC", "flip": true, "size": 170, "lab": {"a": "5 cm", "b": "?", "c": "13 cm"}}'></div>
+    </div>
+  </article>
+</div>
+
+<article class="box key">
+  <h2>La réciproque</h2>
+  <p>Elle sert à <strong>prouver</strong> qu'un triangle est rectangle (ou pas) quand on connaît ses trois côtés.</p>
+  <p class="formula sm"><strong>Si</strong> le carré du plus long côté est égal à la somme des carrés des deux autres, <strong>alors</strong> le triangle est rectangle.</p>
+  <p>L'angle droit se trouve <strong>en face du plus long côté</strong>.</p>
+  <div class="duo">
+    <div style="display:grid;gap:8px;min-width:0">
+      <h3>La méthode en 4 étapes</h3>
+      <ol>
+        <li>Repère le plus long côté.</li>
+        <li>Calcule son carré.</li>
+        <li>Calcule la somme des carrés des deux autres côtés.</li>
+        <li>Compare et conclus.</li>
+      </ol>
+    </div>
+    <div style="display:grid;gap:8px;min-width:0">
+      <h3>Exemple : DE = 9 cm, EF = 15 cm, DF = 12 cm</h3>
+      <div class="calc">Plus long côté : [EF]<br>EF² = 15² = 225<br>DE² + DF² = 81 + 144 = 225<br>Égalité, donc DEF est <strong>rectangle en D</strong>.</div>
+    </div>
+  </div>
+  <p class="muted"><strong>Pour rédiger :</strong> « Dans le triangle DEF, le plus long côté est [EF]. EF² = 225 et DE² + DF² = 225. Comme EF² = DE² + DF², d'après la réciproque du théorème de Pythagore, le triangle DEF est rectangle en D. »</p>
+  <p><strong>Et si ce n'est pas égal ?</strong> Le triangle n'est pas rectangle. Si c² &lt; a² + b², ses trois angles sont aigus (<em>acutangle</em>). Si c² &gt; a² + b², il a un angle obtus (<em>obtusangle</em>).</p>
+</article>
+
+<article class="box">
+  <h2>Théorème ou réciproque ?</h2>
+  <div class="tablewrap">
+    <table class="when">
+      <thead><tr><th>Je connais…</th><th>Je cherche…</th><th>J'utilise…</th></tr></thead>
+      <tbody>
+        <tr><td>2 côtés d'un triangle <strong>rectangle</strong></td><td>le 3e côté</td><td><strong>le théorème</strong></td></tr>
+        <tr><td>les 3 côtés d'un triangle</td><td>s'il est rectangle</td><td><strong>la réciproque</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+</article>
+
+<div class="duo">
+  <article class="box">
+    <h2>Testeur de triangle</h2>
+    <p>Entre trois longueurs : la page applique la réciproque pour toi.</p>
+    <div data-widget="triangle-tester"></div>
+  </article>
+  <article class="box">
+    <h2>Les triplets pythagoriciens</h2>
+    <p>Trois nombres entiers qui vérifient a² + b² = c². À connaître par cœur, ils font gagner du temps :</p>
+    <div class="triplets"><span>3 ; 4 ; 5</span><span>5 ; 12 ; 13</span><span>8 ; 15 ; 17</span><span>7 ; 24 ; 25</span></div>
+    <p>Leurs multiples marchent aussi : 6 ; 8 ; 10 ou 9 ; 12 ; 15.</p>
+    <p class="muted"><strong>Le savais-tu ?</strong> On raconte que les arpenteurs de l'Égypte ancienne utilisaient une corde à 13 nœuds (12 intervalles égaux). En formant un triangle de 3, 4 et 5 intervalles, ils obtenaient un angle droit parfait : c'est la réciproque en action.</p>
+  </article>
+</div>
+
+<article class="box warn">
+  <h2>Les pièges à éviter</h2>
+  <ul>
+    <li>On additionne les <strong>carrés</strong>, jamais les longueurs : 3 + 4 ≠ 5, mais 9 + 16 = 25.</li>
+    <li>Pour une cathète, on <strong>soustrait</strong>. Le résultat doit être plus petit que l'hypoténuse.</li>
+    <li>Dans la réciproque, c est toujours le <strong>plus long</strong> côté.</li>
+    <li>Toutes les longueurs dans la <strong>même unité</strong> (convertis 50 cm en 0,5 m).</li>
+    <li>√(a² + b²) n'est pas égal à a + b. Arrondis seulement à la fin.</li>
+  </ul>
+</article>

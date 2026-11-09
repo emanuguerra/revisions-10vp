@@ -1,0 +1,35 @@
+# docker compose up            -> SQLite, data kept in the "data" volume
+# docker compose --profile postgres up   -> also starts Postgres; set DATABASE_URL below to use it
+services:
+  backend:
+    build: { context: ., dockerfile: backend/Dockerfile }
+    ports: ["8010:8010"]
+    environment:
+      CORS_ORIGINS: http://localhost:5180
+      # DATABASE_URL: postgresql+psycopg://revisions:revisions@db:5432/revisions
+    volumes:
+      - data:/data
+      - ./content:/app/content   # edit content, then: docker compose exec backend python -m app.seed
+
+  frontend:
+    build: ./frontend
+    ports: ["5180:5180"]
+    environment:
+      VITE_API_TARGET: http://backend:8010
+    volumes:
+      - ./frontend/src:/app/src
+    depends_on: [backend]
+
+  db:
+    image: postgres:16-alpine
+    profiles: [postgres]
+    environment:
+      POSTGRES_USER: revisions
+      POSTGRES_PASSWORD: revisions
+      POSTGRES_DB: revisions
+    volumes:
+      - pg:/var/lib/postgresql/data
+
+volumes:
+  data:
+  pg:

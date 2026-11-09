@@ -1,0 +1,7 @@
+**/__pycache__
+**/.pytest_cache
+backend/.venv
+backend/data
+node_modules
+dist
+*.tsbuildinfo

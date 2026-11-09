@@ -1,0 +1,58 @@
+kind: vf
+items:
+- key: vf-01
+  statement: L'hypoténuse est toujours le plus long côté d'un triangle rectangle.
+  'true': true
+  why: Elle est en face du plus grand angle (90°), donc c'est le plus long côté.
+- key: vf-02
+  statement: Si les cathètes mesurent 3 cm et 4 cm, l'hypoténuse mesure 7 cm.
+  'true': false
+  why: 'On additionne les carrés, pas les longueurs : 3² + 4² = 25, donc l''hypoténuse mesure 5 cm.'
+- key: vf-03
+  statement: Le théorème de Pythagore s'applique à tous les triangles.
+  'true': false
+  why: Il s'applique seulement aux triangles rectangles.
+- key: vf-04
+  statement: Un triangle de côtés 6 cm, 8 cm et 10 cm est rectangle.
+  'true': true
+  why: 10² = 100 et 6² + 8² = 36 + 64 = 100. D'après la réciproque, il est rectangle.
+- key: vf-05
+  statement: Dans un triangle rectangle en A, l'hypoténuse est [BC].
+  'true': true
+  why: L'hypoténuse est le côté opposé au sommet de l'angle droit, ici A.
+- key: vf-06
+  statement: Pour calculer une cathète, on additionne les carrés des deux autres côtés.
+  'true': false
+  why: 'Pour une cathète, on soustrait : a² = c² − b².'
+- key: vf-07
+  statement: Un triangle de côtés 5 cm, 6 cm et 7 cm est rectangle.
+  'true': false
+  why: 7² = 49 mais 5² + 6² = 61. Pas d'égalité, donc pas rectangle.
+- key: vf-08
+  statement: Les cathètes sont les deux côtés qui forment l'angle droit.
+  'true': true
+  why: 'Exact : l''angle droit est entre les deux cathètes.'
+- key: vf-09
+  statement: √(9 + 16) = √9 + √16
+  'true': false
+  why: √(9 + 16) = √25 = 5, alors que √9 + √16 = 3 + 4 = 7.
+- key: vf-10
+  statement: Si c² > a² + b² (c étant le plus long côté), le triangle a un angle obtus.
+  'true': true
+  why: 'Le plus long côté est trop long pour un angle droit : l''angle en face est obtus.'
+- key: vf-11
+  statement: Une cathète peut être plus longue que l'hypoténuse.
+  'true': false
+  why: 'Impossible : c² = a² + b² est plus grand que a², donc c est plus grand que a.'
+- key: vf-12
+  statement: La réciproque sert à calculer la longueur d'un côté.
+  'true': false
+  why: Le théorème sert à calculer une longueur. La réciproque sert à prouver qu'un triangle est rectangle.
+- key: vf-13
+  statement: (5 ; 12 ; 13) est un triplet pythagoricien.
+  'true': true
+  why: 5² + 12² = 25 + 144 = 169 = 13².
+- key: vf-14
+  statement: Dans un triangle rectangle isocèle de cathètes 1 m, l'hypoténuse mesure 2 m.
+  'true': false
+  why: c² = 1 + 1 = 2, donc c = √2 ≈ 1,41 m.
