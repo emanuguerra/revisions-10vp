@@ -1,0 +1,115 @@
+<div class="duo">
+  <article class="box">
+    <h2>Le vocabulaire</h2>
+    <p>Une <strong>expression littérale</strong> contient des lettres qui remplacent des nombres : 3x² − 5x + 2.</p>
+    <ul>
+      <li>Les <strong>termes</strong> sont les morceaux séparés par + ou − : 3x², −5x et 2.</li>
+      <li>Le <strong>coefficient</strong> est le nombre devant les lettres : dans −5x, c'est −5. Dans x, c'est 1.</li>
+      <li>Des <strong>termes semblables</strong> ont exactement les mêmes lettres avec les mêmes exposants : 4x et −7x, ou 2x² et x². Mais pas 2x et 2x².</li>
+    </ul>
+    <p class="muted">Conventions : on n'écrit pas le signe · devant une lettre (3 · x = 3x) et on n'écrit pas le coefficient 1 (1x = x).</p>
+  </article>
+  <article class="box key">
+    <h2>Les trois gestes</h2>
+    <div class="formulas">
+      <div><span class="small">Réduire</span><span class="f">5x + 2x = 7x</span><span class="muted">regrouper les termes semblables</span></div>
+      <div><span class="small">Développer</span><span class="f">3(x + 4) = 3x + 12</span><span class="muted">un produit devient une somme</span></div>
+      <div><span class="small">Factoriser</span><span class="f">3x + 12 = 3(x + 4)</span><span class="muted">une somme devient un produit</span></div>
+    </div>
+    <p>Développer et factoriser sont deux chemins inverses : on peut toujours <strong>vérifier</strong> une factorisation en la développant.</p>
+  </article>
+</div>
+
+<div class="duo">
+  <article class="box">
+    <h2>Calculer la valeur d'une expression</h2>
+    <p>On remplace chaque lettre par sa valeur, <strong>entre parenthèses</strong> si elle est négative, puis on respecte les priorités : puissances, puis multiplications, puis additions et soustractions.</p>
+    <p>Calcule 2x² − 3x + 1 pour x = −4 :</p>
+    <div class="calc">2 · (−4)² − 3 · (−4) + 1<br>= 2 · 16 + 12 + 1<br>= 32 + 12 + 1 = <strong>45</strong></div>
+  </article>
+  <article class="box">
+    <h2>Réduire</h2>
+    <p><strong>Une somme</strong> : on additionne les coefficients des termes semblables.</p>
+    <div class="calc">5x + 3 − 2x + 7<br>= (5x − 2x) + (3 + 7)<br>= <strong>3x + 10</strong></div>
+    <p><strong>Un produit</strong> : on multiplie les nombres entre eux et les lettres entre elles.</p>
+    <div class="calc">3x · 4x = 3 · 4 · x · x = <strong>12x²</strong><br>2x · (−5y) = <strong>−10xy</strong></div>
+  </article>
+</div>
+
+<article class="box key">
+  <h2>Développer : la distributivité</h2>
+  <div class="duo">
+    <div style="display:grid;gap:8px;min-width:0">
+      <h3>Distributivité simple</h3>
+      <p class="formula sm">k(a + b) = ka + kb</p>
+      <div class="calc">4(2x − 3) = 4 · 2x + 4 · (−3) = <strong>8x − 12</strong><br>x(x + 5) = x · x + x · 5 = <strong>x² + 5x</strong></div>
+      <p><strong>Signe − devant une parenthèse</strong> : il change le signe de chaque terme.</p>
+      <div class="calc">−(x − 6) = <strong>−x + 6</strong><br>−2(3x − 1) = (−2) · 3x + (−2) · (−1) = <strong>−6x + 2</strong></div>
+    </div>
+    <div style="display:grid;gap:8px;min-width:0">
+      <h3>Double distributivité</h3>
+      <p class="formula sm">(a + b)(c + d) = ac + ad + bc + bd</p>
+      <p>Chaque terme de la 1re parenthèse multiplie chaque terme de la 2e : 4 produits.</p>
+      <div class="calc">(x + 2)(x − 5)<br>= x · x + x · (−5) + 2 · x + 2 · (−5)<br>= x² − 5x + 2x − 10<br>= <strong>x² − 3x − 10</strong></div>
+    </div>
+  </div>
+</article>
+
+<article class="box">
+  <h2>Explore : l'aire d'un rectangle</h2>
+  <p>Un rectangle de côtés (a + b) et (c + d) se découpe en 4 rectangles. Son aire est la somme des 4 aires : c'est la double distributivité. Bouge les curseurs.</p>
+  <div data-widget="distributivity-explorer"></div>
+</article>
+
+<div class="duo">
+  <article class="box key">
+    <h2>Les identités remarquables</h2>
+    <p class="muted">Niveau Expert. Ce sont des doubles distributivités à connaître par cœur.</p>
+    <div class="formulas">
+      <div><span class="f">(a + b)² = a² + 2ab + b²</span></div>
+      <div><span class="f">(a − b)² = a² − 2ab + b²</span></div>
+      <div><span class="f">(a − b)(a + b) = a² − b²</span></div>
+    </div>
+    <div class="calc">(x + 3)² = x² + 2 · x · 3 + 3² = <strong>x² + 6x + 9</strong><br>(2x − 1)(2x + 1) = (2x)² − 1² = <strong>4x² − 1</strong></div>
+  </article>
+  <article class="box">
+    <h2>Factoriser : la mise en évidence</h2>
+    <p>On cherche le <strong>plus grand facteur commun</strong> à tous les termes (un nombre, une lettre, ou les deux) et on le met devant la parenthèse.</p>
+    <div class="calc">12x + 18 = 6 · 2x + 6 · 3 = <strong>6(2x + 3)</strong><br>6x² + 9x = 3x · 2x + 3x · 3 = <strong>3x(2x + 3)</strong></div>
+    <p class="muted"><strong>Complètement</strong> : 2(6x + 9) est égal, mais 6x + 9 peut encore être factorisé. Ce n'est pas fini.</p>
+    <p class="muted">Avec les identités : x² − 16 = <strong>(x − 4)(x + 4)</strong> et x² + 10x + 25 = <strong>(x + 5)²</strong>.</p>
+  </article>
+</div>
+
+<article class="box">
+  <h2>Traduire une phrase en expression</h2>
+  <div class="tablewrap">
+    <table class="when">
+      <thead><tr><th>Phrase</th><th>Expression</th></tr></thead>
+      <tbody>
+        <tr><td>le double de x</td><td>2x</td></tr>
+        <tr><td>le triple de x</td><td>3x</td></tr>
+        <tr><td>le carré de x</td><td>x²</td></tr>
+        <tr><td>x augmenté de 5</td><td>x + 5</td></tr>
+        <tr><td>x diminué de 5</td><td>x − 5</td></tr>
+        <tr><td>le double de x, augmenté de 5</td><td>2x + 5</td></tr>
+        <tr><td>le double de <strong>la somme</strong> de x et de 5</td><td>2(x + 5)</td></tr>
+        <tr><td>le carré de <strong>la somme</strong> de x et de 5</td><td>(x + 5)²</td></tr>
+        <tr><td>le périmètre d'un carré de côté x</td><td>4x</td></tr>
+      </tbody>
+    </table>
+  </div>
+</article>
+
+<article class="box warn">
+  <h2>Les pièges à éviter</h2>
+  <ul>
+    <li>On n'additionne que des termes <strong>semblables</strong> : 3x + 2 reste 3x + 2 (jamais 5x).</li>
+    <li>x + x = 2x, mais x · x = x². Et 2x · 3x = 6x², pas 6x.</li>
+    <li>Le facteur devant la parenthèse multiplie <strong>tous</strong> les termes : 5(x + 4) = 5x + 20, pas 5x + 4.</li>
+    <li>Un signe − devant une parenthèse change <strong>tous</strong> les signes : −(2x + 5) = −2x − 5.</li>
+    <li>(x + 3)² n'est pas égal à x² + 9 : il manque le double produit 6x.</li>
+    <li>Pour x = −3 : x² = 9 mais −x² = −9. Mets toujours la valeur entre parenthèses.</li>
+  </ul>
+  <p class="muted"><strong>Dans les exercices</strong>, tape <strong>x^2</strong> pour écrire x². Les espaces et l'ordre des termes n'ont pas d'importance : 6x + 15 et 15 + 6x sont acceptés.</p>
+</article>

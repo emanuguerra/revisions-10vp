@@ -6,11 +6,12 @@ import { QuestionView } from "./QuestionView";
 
 const DEFAULT_SCORING: Scoring = { first: 10, retry: 5, hint_cost: 3, streak_bonus: 5, streak_from: 3 };
 
-type Play =
-  | { mode: "mission"; mission: MissionState; question: Question }
-  | { mode: "training"; exercise: string; question: Question; score: number; good: number; done: number; streak: number };
+// A session (mission or training) and its questions so far; `view` is the question on screen.
+// The last question is the current one; the earlier ones are finished and can be shown again.
+interface Play { mission: MissionState; questions: Question[]; view: number }
 
-/** Exercise tab of a unit: setup (level, count, topic), mission or free training, result. */
+/** Exercise tab of a unit: setup (level, count, topic), mission or free training, result.
+ *  Both are saved on the server: the student can pause and resume them later. */
 export function ExercisePlayer({ unit, onBackToLesson }: { unit: Unit; onBackToLesson: () => void }) {
   const t = strings(unit.ui_lang);
   const cfg = unit.config;
@@ -21,82 +22,128 @@ export function ExercisePlayer({ unit, onBackToLesson }: { unit: Unit; onBackToL
   const [count, setCount] = useState(mcfg.counts?.[0]);
   const [category, setCategory] = useState<string | null>(null);
   const [best, setBest] = useState<Record<string, number>>({});
+  const [paused, setPaused] = useState<MissionState[]>([]);
   const [play, setPlay] = useState<Play | null>(null);
   const [result, setResult] = useState<MissionNext | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const loadBest = () => api.progress(unit.slug).then(p => setBest(p[0]?.best ?? {})).catch(() => undefined);
-  useEffect(() => { loadBest(); }, [unit.slug]); // eslint-disable-line react-hooks/exhaustive-deps
+  const loadPaused = () => api.activeSessions(unit.slug).then(setPaused).catch(() => undefined);
+  useEffect(() => { loadBest(); loadPaused(); }, [unit.slug]); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function guard(fn: () => Promise<void>) {
     setError(null);
     try { await fn(); } catch (e) { setError(e instanceof ApiError ? e.message : "Erreur réseau, réessaie."); }
   }
 
+  const begin = (mission: MissionState, questions: Question[]) => {
+    setResult(null);
+    setPlay({ mission, questions, view: questions.length - 1 });
+  };
+
   const startMission = (item_keys?: string[]) => guard(async () => {
     const r = await api.startMission({ unit: unit.slug, level, count, category, item_keys });
-    setResult(null);
-    setPlay({ mode: "mission", mission: r.mission, question: r.question });
+    begin(r.mission, [r.question]);
   });
 
   const startTraining = (exercise: string) => guard(async () => {
-    const q = await api.trainingQuestion(unit.slug, exercise, level);
-    setResult(null);
-    setPlay({ mode: "training", exercise, question: q, score: 0, good: 0, done: 0, streak: 0 });
+    const r = await api.startTraining(unit.slug, exercise, level);
+    begin(r.mission, [r.question]);
+  });
+
+  const resume = (m: MissionState) => guard(async () => {
+    const r = await api.mission(m.id);
+    begin(r.mission, r.questions);
+  });
+
+  const discard = (m: MissionState) => guard(async () => {
+    await api.abandonMission(m.id);
+    await loadPaused();
   });
 
   function onResult(r: AnswerResult) {
-    setPlay(p => {
-      if (!p) return p;
-      if (p.mode === "mission") return r.mission ? { ...p, mission: r.mission } : p;
-      if (!r.final) return r.status === "retry" ? { ...p, streak: 0 } : p;
-      const firstTry = r.status === "correct" && r.tries === 0;
-      return { ...p, score: p.score + r.points, done: p.done + 1, good: p.good + (r.status === "correct" ? 1 : 0),
-        streak: firstTry ? p.streak + 1 : 0 };
-    });
+    if (r.mission) setPlay(p => (p ? { ...p, mission: r.mission! } : p));
   }
 
   const next = () => guard(async () => {
     if (!play) return;
-    if (play.mode === "training") {
-      const q = await api.trainingQuestion(unit.slug, play.exercise, level);
-      setPlay({ ...play, question: q });
-      return;
-    }
     const r = await api.nextInMission(play.mission.id);
-    if (r.question) setPlay({ ...play, mission: r.mission, question: r.question });
-    else { setPlay(null); setResult(r); loadBest(); }
+    if (r.question) {
+      const questions = [...play.questions, r.question];
+      setPlay({ mission: r.mission, questions, view: questions.length - 1 });
+    } else { setPlay(null); setResult(r); loadBest(); loadPaused(); }
   });
 
+  // show a finished question again; it is reloaded to get the correction and the answers given
+  const goTo = (i: number) => guard(async () => {
+    if (!play) return;
+    const last = play.questions.length - 1;
+    if (i < 0 || i > last) return;
+    if (i === last) { setPlay({ ...play, view: i }); return; }
+    const q = await api.question(play.questions[i].id);
+    setPlay(p => p && { ...p, questions: p.questions.map((x, j) => (j === i ? q : x)), view: i });
+  });
+
+  function pause() {
+    setPlay(null);
+    setResult(null);
+    loadPaused();
+  }
+
   function quit() {
-    if (play?.mode === "mission") api.abandonMission(play.mission.id).catch(() => undefined);
+    if (play) api.abandonMission(play.mission.id).catch(() => undefined).finally(loadPaused);
     setPlay(null);
     setResult(null);
   }
 
   // ------------------------------------------------------------- playing
   if (play) {
-    const mission = play.mode === "mission" ? play.mission : null;
-    const score = mission ? mission.score : play.mode === "training" ? play.score : 0;
-    const streak = mission ? mission.streak : play.mode === "training" ? play.streak : 0;
+    const { mission, questions, view } = play;
+    const training = mission.mode === "training";
+    const last = questions.length - 1;
+    const reviewing = view < last;
     const header = (
       <>
         <div className="qhead">
-          <span>
-            {mission ? `${t.question} ${mission.index + 1} / ${mission.total}`
-              : play.mode === "training" ? t.trainingStats(play.good, play.done) : ""}
-            {levels.length > 0 && ` · ${levels[level].label}`}
+          <span className="qnav">
+            <button className="arrow" onClick={() => goTo(view - 1)} disabled={view === 0}
+              aria-label={t.previous} title={t.previous}>◀</button>
+            <span>
+              {training ? `${t.question} ${view + 1}` : `${t.question} ${view + 1} / ${mission.total}`}
+              {levels.length > 0 && ` · ${levels[mission.level].label}`}
+            </span>
+            <button className="arrow" onClick={() => goTo(view + 1)} disabled={view === last}
+              aria-label={t.following} title={t.following}>▶</button>
           </span>
-          <span>{t.score} : <strong>{score}</strong>{streak >= 2 && scoring.streak_bonus > 0 && <> · 🔥 {streak}</>}</span>
+          <span>
+            {training && <>{t.trainingStats(mission.good, mission.answered)} · </>}
+            {t.score} : <strong>{mission.score}</strong>
+            {mission.streak >= 2 && scoring.streak_bonus > 0 && <> · 🔥 {mission.streak}</>}
+          </span>
         </div>
-        {mission && <div className="bar"><span style={{ width: `${(mission.index / mission.total) * 100}%` }} /></div>}
+        {!training && <div className="bar"><span style={{ width: `${(mission.answered / mission.total) * 100}%` }} /></div>}
       </>
     );
+    const current = questions[last];
     return (
       <section className="panel">
-        <QuestionView key={play.question.id} question={play.question} t={t} scoring={scoring} header={header}
-          isLast={!!mission && mission.index + 1 >= mission.total}
-          onResult={onResult} onNext={next} onQuit={quit} quitLabel={mission ? t.quitMission : t.quitTraining} />
+        {reviewing && (
+          <>
+            {header}
+            <p className="feedback reviewing" style={{ margin: 0 }}>{t.reviewing(view + 1)}</p>
+            <QuestionView key={`r-${questions[view].id}`} question={questions[view]} t={t} scoring={scoring}
+              header={null} isLast={false} review onResult={() => undefined} onNext={() => undefined}
+              onQuit={() => undefined} quitLabel="" />
+            <div className="row"><button className="btn" onClick={() => goTo(last)}>{t.backToCurrent}</button></div>
+          </>
+        )}
+        {/* the current question stays mounted while reviewing, so nothing typed is lost */}
+        <div style={{ display: reviewing ? "none" : "contents" }}>
+          <QuestionView key={current.id} question={current} t={t} scoring={scoring} header={header}
+            isLast={!training && last + 1 >= mission.total}
+            onResult={onResult} onNext={next} onQuit={quit} onPause={pause}
+            quitLabel={training ? t.quitTraining : t.quitMission} />
+        </div>
         {error && <p className="feedback no">{error}</p>}
       </section>
     );
@@ -152,6 +199,22 @@ export function ExercisePlayer({ unit, onBackToLesson }: { unit: Unit; onBackToL
   const cats = cfg.categories ?? {};
   return (
     <section className="panel">
+      {paused.map(m => (
+        <div key={m.id} className="mission paused">
+          <div>
+            <h3>{m.mode === "training" ? t.pausedTraining(m.exercise ?? "") : t.pausedMission}</h3>
+            <p className="muted">
+              {levels.length > 0 && `${levels[m.level]?.label} · `}
+              {m.mode === "training" ? t.pausedTrainingInfo(m.good, m.answered) : t.pausedInfo(m.index + 1, m.total, m.score)}
+            </p>
+            {m.mode === "mission" && <p className="muted small-note">{t.pausedReplace}</p>}
+          </div>
+          <div className="row">
+            <button className="btn ghost" onClick={() => discard(m)}>{t.discard}</button>
+            <button className="btn" onClick={() => resume(m)}>{t.resume}</button>
+          </div>
+        </div>
+      ))}
       {levels.length > 0 && (
         <>
           <h2>{t.chooseLevel}</h2>

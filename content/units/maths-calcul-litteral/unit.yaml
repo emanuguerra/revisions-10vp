@@ -1,0 +1,70 @@
+slug: maths-calcul-litteral
+subject: maths
+title: Calcul littéral
+subtitle: "Révision 10e VP : réduire, développer, factoriser et calculer la valeur d'une expression, puis des exercices pour gagner des étoiles."
+order: 2
+ui_lang: fr
+
+levels:
+  - label: Facile
+    info: Une seule lettre, nombres positifs, distributivité simple.
+  - label: Moyen
+    info: Nombres négatifs, x², signe − devant une parenthèse, double distributivité.
+  - label: Expert
+    info: Deux lettres, plusieurs parenthèses, identités remarquables.
+
+lessons:
+  - slug: theorie
+    title: "1. Réviser"
+    blocks:
+      - type: html
+        file: theorie.html
+
+exercises_title: "2. Exercices"
+exercises:
+  - key: valeur
+    title: Valeur d'une expression
+    generator: litteral.evaluate
+  - key: traduire
+    title: Traduire en expression
+    generator: litteral.translate
+  - key: reduire
+    title: Réduire
+    generator: litteral.reduce
+  - key: developper
+    title: Développer
+    generator: litteral.distribute
+  - key: double
+    title: Double distributivité
+    generator: litteral.double_distribute
+  - key: factoriser
+    title: Factoriser
+    generator: litteral.factor
+  - key: vf
+    title: Vrai ou faux ?
+    generator: common.true_false
+    params: { kind: vf }
+  - key: erreur
+    title: Trouve l'erreur
+    generator: common.find_mistake
+    params: { kind: error }
+
+mission:
+  mode: sequence
+  sequence: [valeur, reduire, traduire, developper, vf, double, factoriser, erreur, reduire, developper]
+  title: "🎯 Mission : 10 questions"
+  description: "Un peu de tout. +10 points au premier essai, +5 si tu corriges ta réponse (3 essais au maximum). +5 de bonus dès 3 réponses justes de suite du premier coup 🔥. Un indice coûte 3 points. Une réponse juste mais pas réduite ne compte pas comme un essai."
+  badges:
+    - Encore un effort ! Relis la théorie et réessaie.
+    - Apprenti·e du calcul littéral
+    - As de la distributivité
+    - Maître·sse des expressions
+
+training: true
+
+scoring:
+  first: 10
+  retry: 5
+  hint_cost: 3
+  streak_bonus: 5
+  streak_from: 3

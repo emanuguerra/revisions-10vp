@@ -36,6 +36,7 @@ API documentation (Swagger) is at http://localhost:8010/docs.
 content/
   subjects.yaml                    branches (maths, français, anglais...) + planned topics ("Bientôt")
   units/
+    maths-calcul-litteral/         same layout as maths-pythagore (generators: generators/litteral.py)
     maths-pythagore/
       unit.yaml                    title, levels, lessons, exercise types, mission, scoring
       theorie.html                 a lesson block (HTML with widget placeholders)
@@ -90,7 +91,7 @@ uv run python -m app.seed           # update the database (student history is ke
 3. Reference it in a `unit.yaml`: `- {key: lin, title: Équations, generator: equations.linear}`.
 4. Run `uv run pytest`. The generator tests run every exercise of every unit 200 times per level automatically.
 
-Answer kinds: `number` (with `tol` and `unit`), `choice` (index in `choices`), `side` (click on a side of a right-triangle figure), `text` (list of accepted spellings).
+Answer kinds: `number` (with `tol` and `unit`), `choice` (index in `choices`), `side` (click on a side of a right-triangle figure), `text` (list of accepted spellings; with `check="expr"` the answer is an algebraic expression compared by `app/algebra.py`: any equivalent expression in the requested `form` is accepted, e.g. `15 + 6x` for `6x + 15`).
 The server checks answers, so the right answer is never sent to the browser before the end.
 
 **New interactive widget**: add a component in `frontend/src/components/widgets/` and register it in `widgets/index.tsx`.

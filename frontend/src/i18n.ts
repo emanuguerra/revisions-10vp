@@ -41,6 +41,19 @@ const fr = {
   youAnswered: "ta réponse",
   typeNumber: "Écris un nombre, par exemple 8,6.",
   loading: "Chargement…",
+  pause: "⏸ Pause, je reprendrai plus tard",
+  pausedMission: "⏸ Mission en pause",
+  pausedTraining: (ex: string) => `⏸ Entraînement en pause : ${ex}`,
+  pausedInfo: (n: number, total: number, score: number) => `Question ${n} / ${total} · ${score} points`,
+  pausedTrainingInfo: (good: number, done: number) => `${good} / ${done} justes`,
+  pausedReplace: "Si tu lances une nouvelle mission, celle-ci sera remplacée.",
+  resume: "Reprendre",
+  discard: "Abandonner",
+  previous: "Question précédente",
+  following: "Question suivante",
+  reviewing: (n: number) => `Tu revois la question ${n}. Elle est terminée : tu peux relire la correction.`,
+  backToCurrent: "Retour à la question en cours →",
+  yourAnswers: "Tes réponses",
 };
 
 const en: typeof fr = {
@@ -76,6 +89,19 @@ const en: typeof fr = {
   practiseMistakes: "Practise my mistakes",
   youAnswered: "you answered",
   loading: "Loading…",
+  pause: "⏸ Pause, I'll finish later",
+  pausedMission: "⏸ Quiz on pause",
+  pausedTraining: (ex: string) => `⏸ Practice on pause: ${ex}`,
+  pausedInfo: (n: number, total: number) => `Question ${n} / ${total}`,
+  pausedTrainingInfo: (good: number, done: number) => `${good} / ${done} correct`,
+  pausedReplace: "Starting a new quiz replaces this one.",
+  resume: "Resume",
+  discard: "Discard",
+  previous: "Previous question",
+  following: "Next question",
+  reviewing: (n: number) => `You are looking at question ${n} again. It is finished.`,
+  backToCurrent: "Back to the current question →",
+  yourAnswers: "Your answers",
 };
 
 export type Strings = typeof fr;

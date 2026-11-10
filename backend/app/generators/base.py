@@ -8,6 +8,8 @@ Answer kinds:
     choice  answer: index in `choices`
     side    answer: "a" | "b" | "c" (side of the right-triangle figure the student clicks)
     text    answer: list of accepted spellings
+            with check="expr": answer[0] is an expression compared by algebra.check_answer,
+            `form` says what is expected ("reduced" or "value")
 """
 from __future__ import annotations
 
@@ -75,6 +77,8 @@ class Generated:
     summary: Optional[str] = None     # short recap line, e.g. "🩺 nurse = infirmier"
     speak: Optional[str] = None       # word the browser pronounces after the answer
     answer_display: Optional[str] = None
+    check: Optional[str] = None       # "expr": compare algebraic expressions, not spellings
+    form: Optional[str] = None
 
     def payload(self) -> dict[str, Any]:
         return {
@@ -98,6 +102,8 @@ class Generated:
             "summary": self.summary,
             "speak": self.speak,
             "answer_display": self.answer_display,
+            "check": self.check,
+            "form": self.form,
         }
 
 

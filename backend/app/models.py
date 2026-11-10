@@ -120,6 +120,8 @@ class Mission(Base):
     profile_id: Mapped[int] = mapped_column(ForeignKey("profiles.id"), index=True)
     unit_id: Mapped[int] = mapped_column(ForeignKey("units.id"))
     level: Mapped[int] = mapped_column(Integer, default=0)
+    # "mission": fixed series with a result · "training": one exercise type, open-ended
+    mode: Mapped[str] = mapped_column(String(16), default="mission", server_default="mission")
     # exercise keys, one per question
     sequence: Mapped[list[str]] = mapped_column(JSON, default=list)
     # {"category": ..., "items": [forced item keys], "used": [item keys already asked]}
@@ -129,7 +131,8 @@ class Mission(Base):
     streak: Mapped[int] = mapped_column(Integer, default=0)
     good: Mapped[int] = mapped_column(Integer, default=0)
     good_first: Mapped[int] = mapped_column(Integer, default=0)
-    status: Mapped[str] = mapped_column(String(16), default="active")  # active | done | abandoned
+    # active (also when paused: the student can resume it later) | done | abandoned
+    status: Mapped[str] = mapped_column(String(16), default="active")
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
     finished_at: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True), nullable=True)
 
@@ -153,6 +156,7 @@ class Question(Base):
     tries: Mapped[int] = mapped_column(Integer, default=0)
     eliminated: Mapped[list[Any]] = mapped_column(JSON, default=list)
     first_answer: Mapped[Optional[str]] = mapped_column(String(200), nullable=True)
+    answers: Mapped[list[Any]] = mapped_column(JSON, default=list, server_default="[]")  # every checked answer
     hint_used: Mapped[bool] = mapped_column(Boolean, default=False)
     status: Mapped[str] = mapped_column(String(16), default="open")  # open | correct | wrong
     points: Mapped[int] = mapped_column(Integer, default=0)

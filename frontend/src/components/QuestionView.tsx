@@ -15,28 +15,36 @@ interface Props {
   onNext: () => void;
   onQuit: () => void;
   quitLabel: string;
+  onPause?: () => void;
+  review?: boolean;                      // a finished question shown again: read only, no buttons
 }
 
 const pick = <T,>(a: T[]) => a[Math.floor(Math.random() * a.length)];
 
+/** The student's answers as text: choice indexes become the option labels. */
+function answerLabels(q: Question): string[] {
+  return q.answers.map(a => (q.kind === "choice" && q.choices ? q.choices[Number(a)] ?? a : a));
+}
+
 /**
  * One question. The server decides whether an answer is right, how many attempts remain
  * and the points. A wrong answer can be corrected until the last attempt.
+ * A finished question (resumed session, or `review`) opens with its correction.
  */
-export function QuestionView({ question: q, t, scoring, header, isLast, onResult, onNext, onQuit, quitLabel }: Props) {
-  const [value, setValue] = useState("");
+export function QuestionView({ question: q, t, scoring, header, isLast, onResult, onNext, onQuit, quitLabel, onPause, review }: Props) {
+  const [value, setValue] = useState(q.result && q.kind !== "choice" ? q.answers[q.answers.length - 1] ?? "" : "");
   const [eliminated, setEliminated] = useState<(number | string)[]>(q.eliminated);
   const [tries, setTries] = useState(q.tries);
   const [message, setMessage] = useState<{ kind: "retry" | "invalid"; text: string } | null>(null);
-  const [final, setFinal] = useState<AnswerResult | null>(null);
+  const [final, setFinal] = useState<AnswerResult | null>(q.result);
   const [hint, setHint] = useState<string | null>(q.hint);
   const [busy, setBusy] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
   const praise = useRef(pick(t.correct));
 
-  useEffect(() => { inputRef.current?.focus(); }, [q.id]);
-  useEffect(() => { if (final) nextRef.current?.focus(); }, [final]);
+  useEffect(() => { if (!review) inputRef.current?.focus(); }, [q.id, review]);
+  useEffect(() => { if (final && !review) nextRef.current?.focus(); }, [final, review]);
 
   function handle(r: AnswerResult) {
     onResult(r);
@@ -136,7 +144,7 @@ export function QuestionView({ question: q, t, scoring, header, isLast, onResult
         <div>
           <div className={`feedback ${final.status === "correct" ? "ok" : "no"}`}>
             {final.status === "correct"
-              ? <>{tries > 0 ? t.corrected : praise.current}
+              ? <>{tries > 0 ? t.corrected : review ? t.correct[0] : praise.current}
                   {final.points > 0 && <> +{final.points} {t.points}</>}
                   {final.mission && final.mission.streak >= scoring.streak_from && scoring.streak_bonus > 0 &&
                     <> · {t.series} {final.mission.streak} 🔥</>}</>
@@ -149,13 +157,23 @@ export function QuestionView({ question: q, t, scoring, header, isLast, onResult
               </>
             ) : final.explain && <div className="calc" dangerouslySetInnerHTML={{ __html: final.explain }} />}
           </div>
-          <div className="row" style={{ marginTop: 12 }}>
-            <button ref={nextRef} className="btn" onClick={onNext}>{isLast ? t.seeResult : t.next}</button>
-          </div>
+          {review && q.answers.length > 0 && (
+            <p className="muted" style={{ margin: "8px 0 0" }}>{t.yourAnswers} : {answerLabels(q).join(" → ")}</p>
+          )}
+          {!review && (
+            <div className="row" style={{ marginTop: 12 }}>
+              <button ref={nextRef} className="btn" onClick={onNext}>{isLast ? t.seeResult : t.next}</button>
+            </div>
+          )}
         </div>
       )}
 
-      <div className="row"><button className="btn ghost small" onClick={onQuit}>{quitLabel}</button></div>
+      {!review && (
+        <div className="row">
+          {onPause && <button className="btn ghost small" onClick={onPause}>{t.pause}</button>}
+          <button className="btn ghost small" onClick={onQuit}>{quitLabel}</button>
+        </div>
+      )}
     </>
   );
 }

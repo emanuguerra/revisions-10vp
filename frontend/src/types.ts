@@ -60,11 +60,14 @@ export interface Question {
   category: string; prompt: string; choices: string[] | null; unit: string; figure: Figure | null;
   has_hint: boolean; hint: string | null; max_tries: number; tries: number;
   eliminated: (number | string)[]; status: "open" | "correct" | "wrong"; position: number | null;
+  answers: string[];               // the student's checked answers, in order
+  result: AnswerResult | null;     // correction, once the question is finished
 }
 
 export interface MissionState {
   id: number; unit: string; level: number; index: number; total: number; score: number;
   streak: number; good: number; good_first: number; status: string;
+  mode: "mission" | "training"; exercise: string | null; answered: number;
 }
 
 export interface AnswerResult {
@@ -75,6 +78,8 @@ export interface AnswerResult {
 }
 
 export interface Mistake { item_key: string | null; summary: string | null; given: string | null; category: string }
+
+export interface MissionFull { mission: MissionState; questions: Question[] }
 
 export interface MissionNext {
   mission: MissionState; question: Question | null; best?: number | null; previous_best?: number | null; mistakes: Mistake[];

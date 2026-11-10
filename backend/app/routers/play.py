@@ -1,14 +1,14 @@
 """Missions (a series of questions) and free training (one question at a time)."""
 from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy import select
-from sqlalchemy.orm import Session
+from sqlalchemy import func, select
+from sqlalchemy.orm import Session, object_session
 
 from .. import engine
 from ..db import get_db
 from ..deps import current_profile
 from ..models import Mission, Profile, Question
-from ..schemas import (AnswerIn, AnswerOut, MissionIn, MissionNextOut, MissionStartOut, MissionState,
-                       MistakeOut, QuestionOut, TrainingIn)
+from ..schemas import (AnswerIn, AnswerOut, MissionFullOut, MissionIn, MissionNextOut, MissionStartOut,
+                       MissionState, MistakeOut, QuestionOut, TrainingIn)
 from .catalog import get_unit
 from .profiles import best_scores
 
@@ -16,18 +16,29 @@ router = APIRouter(prefix="/api", tags=["play"])
 
 
 def q_out(q: Question) -> QuestionOut:
+    """The question as the student sees it; once finished, also its correction (`result`)."""
     p = q.payload
+    result = None
+    if q.status != "open":
+        result = final_out(object_session(q), q, q.status, with_mission=False)
     return QuestionOut(
         id=q.id, exercise=q.exercise_type.key, level=q.level, kind=p["kind"], category=p["category"],
         prompt=p["prompt"], choices=p.get("choices"), unit=p.get("unit", ""), figure=p.get("figure"),
         has_hint=p["has_hint"], hint=q.solution.get("hint") if q.hint_used else None,
         max_tries=p["max_tries"], tries=q.tries, eliminated=q.eliminated, status=q.status, position=q.position,
+        answers=q.answers or [], result=result,
     )
 
 
 def m_out(m: Mission) -> MissionState:
+    db = object_session(m)
+    answered = db.scalar(select(func.count(Question.id)).where(Question.mission_id == m.id, Question.status != "open"))
+    exercise = None
+    if m.mode == "training":
+        exercise = next((e.title for e in m.unit.exercise_types if e.key == m.sequence[0]), m.sequence[0])
     return MissionState(id=m.id, unit=m.unit.slug, level=m.level, index=m.index, total=len(m.sequence),
-                        score=m.score, streak=m.streak, good=m.good, good_first=m.good_first, status=m.status)
+                        score=m.score, streak=m.streak, good=m.good, good_first=m.good_first, status=m.status,
+                        mode=m.mode, exercise=exercise, answered=answered or 0)
 
 
 def own_question(db: Session, qid: str, profile: Profile) -> Question:
@@ -48,10 +59,10 @@ def fail(e: engine.EngineError):
     raise HTTPException(400, str(e)) from e
 
 
-def final_out(db: Session, q: Question, status: str, message: str = "") -> AnswerOut:
+def final_out(db: Session, q: Question, status: str, message: str = "", with_mission: bool = True) -> AnswerOut:
     sol = q.solution
     final = q.status != "open"
-    mission = db.get(Mission, q.mission_id) if q.mission_id else None
+    mission = db.get(Mission, q.mission_id) if q.mission_id and with_mission else None
     out = AnswerOut(status=status, message=message, final=final, tries=q.tries,
                     max_tries=q.payload["max_tries"], eliminated=q.eliminated, points=q.points,
                     mission=m_out(mission) if mission else None)
@@ -113,6 +124,30 @@ def reveal(qid: str, profile: Profile = Depends(current_profile), db: Session = 
     return final_out(db, q, "wrong")
 
 
+@router.post("/training", response_model=MissionStartOut)
+def start_training(body: TrainingIn, profile: Profile = Depends(current_profile), db: Session = Depends(get_db)):
+    """Free training on one exercise type, saved like a mission so it can be paused and resumed."""
+    unit = get_unit(db, body.unit)
+    try:
+        m, q = engine.start_training(db, profile, unit, body.exercise, body.level)
+    except engine.EngineError as e:
+        fail(e)
+    db.commit()
+    return MissionStartOut(mission=m_out(m), question=q_out(q))
+
+
+@router.get("/missions/active", response_model=list[MissionState])
+def active_missions(unit: str, profile: Profile = Depends(current_profile), db: Session = Depends(get_db)):
+    """Sessions left in the middle (paused) for this unit: at most one mission and one training."""
+    return [m_out(m) for m in engine.active_sessions(db, profile, get_unit(db, unit))]
+
+
+@router.get("/missions/{mid}", response_model=MissionFullOut)
+def get_mission(mid: int, profile: Profile = Depends(current_profile), db: Session = Depends(get_db)):
+    m = own_mission(db, mid, profile)
+    return MissionFullOut(mission=m_out(m), questions=[q_out(q) for q in engine.mission_questions(db, m)])
+
+
 @router.post("/missions", response_model=MissionStartOut)
 def start_mission(body: MissionIn, profile: Profile = Depends(current_profile), db: Session = Depends(get_db)):
     unit = get_unit(db, body.unit)
@@ -141,7 +176,7 @@ def next_question(mid: int, profile: Profile = Depends(current_profile), db: Ses
     db.commit()
     if q:
         return MissionNextOut(mission=m_out(m), question=q_out(q))
-    qs = db.scalars(select(Question).where(Question.mission_id == m.id).order_by(Question.position)).all()
+    qs = engine.mission_questions(db, m)
     mistakes = [MistakeOut(item_key=x.item_key, summary=x.solution.get("summary"), given=x.first_answer,
                            category=x.payload["category"])
                 for x in qs if not (x.status == "correct" and x.tries == 0)]

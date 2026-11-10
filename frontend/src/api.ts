@@ -1,5 +1,5 @@
 import type {
-  AnswerResult, Item, MissionNext, MissionState, Profile, Question, Subject, Unit, UnitProgress,
+  AnswerResult, Item, MissionFull, MissionNext, MissionState, Profile, Question, Subject, Unit, UnitProgress,
 } from "./types";
 
 const TOKEN_KEY = "r10-token";
@@ -51,6 +51,12 @@ export const api = {
     post<{ mission: MissionState; question: Question }>("/missions", body),
   nextInMission: (id: number) => post<MissionNext>(`/missions/${id}/next`),
   abandonMission: (id: number) => post<MissionState>(`/missions/${id}/abandon`),
+  // sessions left in the middle, and a whole session with its questions (resume, go back)
+  activeSessions: (unit: string) => call<MissionState[]>(`/missions/active?unit=${unit}`),
+  mission: (id: number) => call<MissionFull>(`/missions/${id}`),
+  startTraining: (unit: string, exercise: string, level: number) =>
+    post<{ mission: MissionState; question: Question }>("/training", { unit, exercise, level }),
+  question: (id: string) => call<Question>(`/questions/${id}`),
 
   trainingQuestion: (unit: string, exercise: string, level: number) => post<Question>("/questions", { unit, exercise, level }),
   answer: (id: string, value: string | number) => post<AnswerResult>(`/questions/${id}/answer`, { value }),

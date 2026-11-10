@@ -9,7 +9,7 @@ def solution(db, qid):
 def test_catalogue(client):
     subjects = client.get("/api/subjects").json()
     slugs = {u["slug"] for s in subjects for u in s["units"]}
-    assert {"maths-pythagore", "anglais-metiers"} <= slugs
+    assert {"maths-pythagore", "maths-calcul-litteral", "anglais-metiers"} <= slugs
     unit = client.get("/api/units/maths-pythagore").json()
     assert len(unit["exercises"]) == 8 and len(unit["config"]["levels"]) == 3
     assert "data-widget" in unit["lessons"][0]["blocks"][0]["content"]
@@ -27,7 +27,7 @@ def test_math_mission_with_retry(client, student, db):
     mission = r.json()["mission"]
     assert mission["total"] == 10
     q = r.json()["question"]
-    assert q["kind"] == "side" and "answer" not in str(q)
+    assert q["kind"] == "side" and q["result"] is None and "explain" not in str(q)
 
     # wrong side, then the hypotenuse: corrected answer = 5 points
     a = client.post(f"/api/questions/{q['id']}/answer", json={"value": "a"}, headers=student).json()
@@ -117,3 +117,76 @@ def test_english_quiz_and_review(client, student, db):
 def test_topic_with_few_words_shortens_the_quiz(client, student):
     r = client.post("/api/missions", json={"unit": "anglais-metiers", "count": 10, "category": "edu"}, headers=student).json()
     assert r["mission"]["total"] == 6
+
+
+def test_expression_answers(client, student, db):
+    q = client.post("/api/questions", json={"unit": "maths-calcul-litteral", "exercise": "developper", "level": 0},
+                    headers=student).json()
+    assert q["kind"] == "text" and q["result"] is None and "explain" not in str(q)
+    expected = solution(db, q["id"])["answer"][0]
+
+    def send(v):
+        return client.post(f"/api/questions/{q['id']}/answer", json={"value": v}, headers=student).json()
+
+    # not an expression, or the question itself (equal but not developed): no attempt used
+    assert send("x +* 2")["status"] == "invalid"
+    a = send(q["prompt"].split("<strong>")[1].split("</strong>")[0])
+    assert a["status"] == "invalid" and "parenthèses" in a["message"] and a["tries"] == 0
+    a = send("x")
+    assert a["status"] == "retry" and a["tries"] == 1
+    # any order and spacing is accepted
+    terms = expected.replace(" − ", " + −").split(" + ")
+    a = send(" + ".join(reversed(terms)).replace("−", "-"))
+    assert a["status"] == "correct" and a["points"] == 5
+
+
+def test_expression_value_must_be_computed(client, student, db):
+    q = client.post("/api/questions", json={"unit": "maths-calcul-litteral", "exercise": "valeur", "level": 1},
+                    headers=student).json()
+    result = int(solution(db, q["id"])["answer"][0])
+    a = client.post(f"/api/questions/{q['id']}/answer", json={"value": f"{result - 1} + 1"}, headers=student).json()
+    assert a["status"] == "invalid" and a["tries"] == 0
+    a = client.post(f"/api/questions/{q['id']}/answer", json={"value": str(result).replace("-", "−")}, headers=student).json()
+    assert a["status"] == "correct" and a["points"] == 10
+
+
+def test_pause_resume_and_review(client, student, db):
+    r = client.post("/api/missions", json={"unit": "maths-pythagore", "level": 0}, headers=student).json()
+    mid, q = r["mission"]["id"], r["question"]
+    client.post(f"/api/questions/{q['id']}/answer", json={"value": "a"}, headers=student)
+    client.post(f"/api/questions/{q['id']}/answer", json={"value": "c"}, headers=student)
+    q2 = client.post(f"/api/missions/{mid}/next", headers=student).json()["question"]
+
+    # pause = just leave; the mission is listed as active and can be reloaded with its history
+    active = client.get("/api/missions/active?unit=maths-pythagore", headers=student).json()
+    assert [m["id"] for m in active] == [mid] and active[0]["answered"] == 1 and active[0]["mode"] == "mission"
+    full = client.get(f"/api/missions/{mid}", headers=student).json()
+    first, current = full["questions"]
+    assert first["answers"] == ["a", "c"] and first["result"]["status"] == "correct" and first["result"]["explain"]
+    assert current["id"] == q2["id"] and current["result"] is None and "explain" not in str(current)
+
+    # another student cannot read it
+    other = {"X-Profile-Token": client.post("/api/profiles", json={"nickname": "B"}).json()["token"]}
+    assert client.get(f"/api/missions/{mid}", headers=other).status_code == 404
+
+    # a new mission replaces the paused one
+    client.post("/api/missions", json={"unit": "maths-pythagore", "level": 0}, headers=student)
+    active = client.get("/api/missions/active?unit=maths-pythagore", headers=student).json()
+    assert len(active) == 1 and active[0]["id"] != mid
+
+
+def test_training_session(client, student, db):
+    r = client.post("/api/training", json={"unit": "maths-pythagore", "exercise": "vf", "level": 0},
+                    headers=student).json()
+    mid, q = r["mission"]["id"], r["question"]
+    assert r["mission"]["mode"] == "training" and r["mission"]["exercise"] == "Vrai ou faux ?"
+    for _ in range(4):
+        client.post(f"/api/questions/{q['id']}/answer", json={"value": solution(db, q["id"])["answer"]}, headers=student)
+        n = client.post(f"/api/missions/{mid}/next", headers=student).json()
+        q = n["question"]
+        assert q and n["mission"]["status"] == "active"
+    m = client.get(f"/api/missions/{mid}", headers=student).json()["mission"]
+    assert m["answered"] == 4 and m["good"] == 4 and m["score"] == 4 * 10 + 2 * 5
+    # training never counts as a record
+    prog = client.get("/api/profiles/me/progress?unit=maths-pythagore", headers=student).json()[0]
+    assert prog["best"] == {} and prog["missions_done"] == 0

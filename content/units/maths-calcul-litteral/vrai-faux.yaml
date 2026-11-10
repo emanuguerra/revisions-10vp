@@ -1,0 +1,66 @@
+kind: vf
+items:
+- key: vf-01
+  statement: 3x + 2 = 5x
+  'true': false
+  why: 3x et 2 ne sont pas des termes semblables (l'un a la lettre x, l'autre non). On ne peut pas les additionner.
+- key: vf-02
+  statement: x · x = x²
+  'true': true
+  why: Multiplier x par lui-même, c'est l'élever au carré.
+- key: vf-03
+  statement: x + x = x²
+  'true': false
+  why: x + x = 2x (deux fois x). C'est x · x qui vaut x².
+- key: vf-04
+  statement: 5x − x = 5
+  'true': false
+  why: 5x − 1x = 4x. Le x tout seul a un coefficient 1.
+- key: vf-05
+  statement: 4(x + 3) = 4x + 12
+  'true': true
+  why: 'On multiplie 4 par chaque terme : 4 · x + 4 · 3 = 4x + 12.'
+- key: vf-06
+  statement: 4(x + 3) = 4x + 3
+  'true': false
+  why: 'Le 4 multiplie chaque terme de la parenthèse : 4(x + 3) = 4x + 12.'
+- key: vf-07
+  statement: −(x − 5) = −x + 5
+  'true': true
+  why: Un signe − devant une parenthèse change le signe de chaque terme.
+- key: vf-08
+  statement: (x + 3)² = x² + 9
+  'true': false
+  why: '(x + 3)² = (x + 3)(x + 3) = x² + 6x + 9. N''oublie pas le double produit 2 · x · 3 = 6x.'
+- key: vf-09
+  statement: Dans 7x², le coefficient est 7.
+  'true': true
+  why: Le coefficient est le nombre qui multiplie la partie littérale (ici x²).
+- key: vf-10
+  statement: 2x² et 2x sont des termes semblables.
+  'true': false
+  why: Des termes semblables ont exactement la même partie littérale. x² et x sont différents.
+- key: vf-11
+  statement: Pour x = −3, l'expression x² vaut 9.
+  'true': true
+  why: (−3)² = (−3) · (−3) = 9. Un carré n'est jamais négatif.
+- key: vf-12
+  statement: Pour x = −3, l'expression −x² vaut 9.
+  'true': false
+  why: −x² = −(x²) = −9. Le carré se calcule avant le signe −.
+- key: vf-13
+  statement: Factoriser 6x + 9 donne 3(2x + 3).
+  'true': true
+  why: "3 est le plus grand facteur commun de 6x et 9. Vérification : 3 · 2x + 3 · 3 = 6x + 9."
+- key: vf-14
+  statement: (x − 2)(x + 2) = x² − 4
+  'true': true
+  why: 'C''est l''identité (a − b)(a + b) = a² − b² : x² − 2x + 2x − 4 = x² − 4.'
+- key: vf-15
+  statement: 2 · 3x = 6x
+  'true': true
+  why: On multiplie les nombres entre eux, la lettre reste.
+- key: vf-16
+  statement: 2x · 3x = 6x
+  'true': false
+  why: 'On multiplie les nombres ET les lettres : 2x · 3x = 6x².'

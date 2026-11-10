@@ -94,6 +94,26 @@ class MissionState(ORM):
     good: int
     good_first: int
     status: str
+    mode: str = "mission"         # mission | training
+    exercise: Optional[str] = None  # training: exercise title
+    answered: int = 0             # finished questions
+
+
+class AnswerOut(BaseModel):
+    status: str                    # correct | retry | wrong | invalid
+    message: str
+    final: bool
+    tries: int
+    max_tries: int
+    eliminated: list[Any]
+    points: int = 0
+    # filled when final
+    explain: Optional[str] = None
+    correct_answer: Any = None     # index (choice), side key, or display string
+    answer_display: Optional[str] = None
+    summary: Optional[str] = None
+    speak: Optional[str] = None
+    mission: Optional[MissionState] = None
 
 
 class QuestionOut(BaseModel):
@@ -113,27 +133,12 @@ class QuestionOut(BaseModel):
     eliminated: list[Any]
     status: str
     position: Optional[int]
+    answers: list[Any] = []                 # the student's checked answers, in order
+    result: Optional["AnswerOut"] = None    # filled once the question is finished (review, resume)
 
 
 class AnswerIn(BaseModel):
     value: Union[int, float, str]
-
-
-class AnswerOut(BaseModel):
-    status: str                    # correct | retry | wrong | invalid
-    message: str
-    final: bool
-    tries: int
-    max_tries: int
-    eliminated: list[Any]
-    points: int = 0
-    # filled when final
-    explain: Optional[str] = None
-    correct_answer: Any = None     # index (choice), side key, or display string
-    answer_display: Optional[str] = None
-    summary: Optional[str] = None
-    speak: Optional[str] = None
-    mission: Optional[MissionState] = None
 
 
 class TrainingIn(BaseModel):
@@ -161,6 +166,12 @@ class MistakeOut(BaseModel):
 class MissionStartOut(BaseModel):
     mission: MissionState
     question: QuestionOut
+
+
+class MissionFullOut(BaseModel):
+    """A session with all its questions so far (resume, go back to a finished question)."""
+    mission: MissionState
+    questions: list[QuestionOut]
 
 
 class MissionNextOut(BaseModel):

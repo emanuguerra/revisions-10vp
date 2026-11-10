@@ -1,0 +1,38 @@
+kind: error
+items:
+- key: err-01
+  work: 'Réduire 4x + 3 + 2x<br>= 9x'
+  mistake: Des termes qui ne sont pas semblables ont été additionnés.
+  fix: 4x + 2x = 6x et le 3 reste seul. 4x + 3 + 2x = 6x + 3.
+- key: err-02
+  work: 'Développer 5(x + 4)<br>= 5x + 4'
+  mistake: Le facteur n'a multiplié que le premier terme de la parenthèse.
+  fix: 5(x + 4) = 5 · x + 5 · 4 = 5x + 20.
+- key: err-03
+  work: 'Développer −3(x − 2)<br>= −3x − 6'
+  mistake: Le signe du deuxième produit est faux.
+  fix: (−3) · (−2) = +6, donc −3(x − 2) = −3x + 6.
+- key: err-04
+  work: 'Réduire 8x − (2x + 5)<br>= 8x − 2x + 5 = 6x + 5'
+  mistake: Le signe − devant la parenthèse n'a changé que le premier terme.
+  fix: −(2x + 5) = −2x − 5, donc 8x − 2x − 5 = 6x − 5.
+- key: err-05
+  work: 'Développer (x + 5)²<br>= x² + 25'
+  mistake: Le double produit a été oublié.
+  fix: (x + 5)² = (x + 5)(x + 5) = x² + 10x + 25.
+- key: err-06
+  work: 'Calculer 2x² pour x = 3<br>= (2 · 3)² = 6² = 36'
+  mistake: Le carré a été appliqué au coefficient aussi.
+  fix: Seul x est au carré. 2x² = 2 · 3² = 2 · 9 = 18.
+- key: err-07
+  work: 'Réduire 3x · 4x<br>= 12x'
+  mistake: Les lettres n'ont pas été multipliées entre elles.
+  fix: x · x = x², donc 3x · 4x = 12x².
+- key: err-08
+  work: 'Développer (x + 2)(x + 3)<br>= x² + 6'
+  mistake: Seuls les premiers termes et les derniers termes ont été multipliés.
+  fix: Chaque terme multiplie chaque terme. x² + 3x + 2x + 6 = x² + 5x + 6.
+- key: err-09
+  work: 'Factoriser 12x + 18<br>= 2(6x + 9)'
+  mistake: Ce n'est pas le plus grand facteur commun, la factorisation n'est pas complète.
+  fix: Le plus grand facteur commun de 12 et 18 est 6. 12x + 18 = 6(2x + 3).

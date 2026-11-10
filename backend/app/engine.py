@@ -1,7 +1,8 @@
 """Question lifecycle: generate, check an answer (with retries), hint, reveal, score missions.
 
 All the rules live here so the front end never sees the answer before the end:
-- number / text: up to `max_tries` attempts
+- number / text: up to `max_tries` attempts (expressions: an equivalent answer in the wrong
+  form, e.g. not reduced, gets a message but costs no attempt)
 - choice / side: each wrong option is eliminated; when only the right one is left
   (e.g. vrai/faux), the correction is shown instead of giving the answer away
 - points come from the unit's `scoring` config (first try, after correction, hint cost, streak bonus)
@@ -16,6 +17,7 @@ from typing import Any, Optional
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
+from .algebra import check_answer
 from .formatting import fr, norm_text, parse_num
 from .generators import GENERATORS, GenContext
 from .models import ExerciseType, Item, Mission, Profile, Question, Unit, now
@@ -92,7 +94,13 @@ def _check(q: Question, value: Any) -> Outcome:
         raw = str(value).strip()
         if not raw:
             return Outcome("invalid", "Type an answer. · Écris une réponse.")
-        if norm_text(raw) in {norm_text(a) for a in sol["answer"]}:
+        if sol.get("check") == "expr":
+            res = check_answer(raw, sol["answer"][0], sol.get("form") or "reduced")
+            if res.status in ("invalid", "form"):  # an equivalent answer in the wrong form costs no attempt
+                return Outcome("invalid", res.message)
+            if res.status == "correct":
+                return Outcome("correct")
+        elif norm_text(raw) in {norm_text(a) for a in sol["answer"]}:
             return Outcome("correct")
         q.tries += 1
         q.first_answer = q.first_answer or raw[:200]
@@ -155,6 +163,8 @@ def answer(db: Session, q: Question, value: Any) -> Outcome:
     if q.status != "open":
         raise EngineError("question already finished")
     out = _check(q, value)
+    if out.status != "invalid":
+        q.answers = [*q.answers, str(value)[:200]]
     if out.status == "retry" and q.mission_id:
         mission = db.get(Mission, q.mission_id)
         mission.streak = 0
@@ -213,8 +223,35 @@ def mission_question(db: Session, profile: Profile, mission: Mission) -> Questio
     return q
 
 
+def _close_paused(db: Session, profile: Profile, unit: Unit, mode: str) -> None:
+    """One paused session per unit and mode: starting a new one abandons the old one."""
+    for m in db.scalars(select(Mission).where(Mission.profile_id == profile.id, Mission.unit_id == unit.id,
+                                              Mission.mode == mode, Mission.status == "active")):
+        m.status = "abandoned"
+
+
+def active_sessions(db: Session, profile: Profile, unit: Unit) -> list[Mission]:
+    return list(db.scalars(select(Mission).where(
+        Mission.profile_id == profile.id, Mission.unit_id == unit.id, Mission.status == "active",
+    ).order_by(Mission.created_at.desc())))
+
+
+def mission_questions(db: Session, m: Mission) -> list[Question]:
+    return list(db.scalars(select(Question).where(Question.mission_id == m.id).order_by(Question.position)))
+
+
+def start_training(db: Session, profile: Profile, unit: Unit, exercise: str, level: int) -> tuple[Mission, Question]:
+    ex = exercise_by_key(unit, exercise)
+    _close_paused(db, profile, unit, "training")
+    m = Mission(profile_id=profile.id, unit_id=unit.id, level=level, mode="training", sequence=[ex.key], state={})
+    db.add(m)
+    db.flush()
+    return m, mission_question(db, profile, m)
+
+
 def start_mission(db: Session, profile: Profile, unit: Unit, level: int, count: Optional[int],
                   category: Optional[str], item_keys: Optional[list[str]]) -> tuple[Mission, Question]:
+    _close_paused(db, profile, unit, "mission")
     rng = random.Random()
     if item_keys:
         seq = build_sequence(unit, len(item_keys), rng, offset=2)
@@ -239,7 +276,9 @@ def next_in_mission(db: Session, profile: Profile, m: Mission) -> Optional[Quest
     current = db.scalar(select(Question).where(Question.mission_id == m.id, Question.position == m.index))
     if current and current.status == "open":
         raise EngineError("answer the current question first")
-    if m.index + 1 >= len(m.sequence):
+    if m.mode == "training":  # open-ended: one more question of the same exercise
+        m.sequence = [*m.sequence, m.sequence[0]]
+    elif m.index + 1 >= len(m.sequence):
         m.status = "done"
         m.finished_at = now()
         return None

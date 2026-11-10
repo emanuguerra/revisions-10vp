@@ -2,6 +2,7 @@
 // or `<div data-widget="<name>" data-props='{...}'></div>` inside an html/markdown block.
 import type { ComponentType } from "react";
 import type { Unit } from "../../types";
+import { DistributivityExplorer } from "./DistributivityExplorer";
 import { PythagoreExplorer } from "./PythagoreExplorer";
 import { SoundCheck } from "./SoundCheck";
 import { TriangleFigure } from "./TriangleFigure";
@@ -15,6 +16,7 @@ const WIDGETS: Record<string, ComponentType<any>> = {
   "triangle-tester": TriangleTester,
   "sound-check": SoundCheck,
   "vocab-cards": VocabCards,
+  "distributivity-explorer": DistributivityExplorer,
 };
 
 export function Widget({ name, props, unit }: { name: string; props?: Record<string, unknown>; unit: Unit }) {

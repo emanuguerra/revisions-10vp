@@ -43,3 +43,13 @@ a { color: var(--accent); }
 /* `.small` is also the uppercase label style of the theory pages: keep buttons readable */
 .btn.small { text-transform: none; letter-spacing: normal; font-size: .88rem; font-weight: 700; color: var(--accent-ink); }
 .btn.ghost.small { color: var(--ink); }
+
+/* exercise navigation: arrows to go back to a finished question, paused sessions */
+.qnav { display: inline-flex; align-items: center; gap: 8px; }
+.arrow { border: 1.5px solid var(--line); background: var(--paper); color: var(--ink); border-radius: 99px; width: 32px; height: 32px; font-size: .8rem; cursor: pointer; display: inline-grid; place-items: center; padding: 0; }
+.arrow:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.arrow:disabled { opacity: .35; cursor: default; }
+.feedback.reviewing { background: var(--bg); color: var(--muted); font-weight: 500; }
+.mission.paused { border: 2px dashed var(--accent); background: var(--paper); }
+.mission.paused > .row { flex: 0 0 auto; }
+.small-note { font-size: .85rem; }
