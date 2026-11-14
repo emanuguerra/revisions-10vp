@@ -13,6 +13,11 @@ levels:
   - label: Expert
     info: Problèmes en plusieurs étapes, triangles aigus et obtus. Calculatrice autorisée.
 
+# Suggested during focus breaks: `search` opens a YouTube search; `url` (a YouTube link) plays in the page
+break_videos:
+  - { title: "Le théorème de Pythagore expliqué", search: "théorème de Pythagore explication" }
+  - { title: "La preuve de Pythagore avec de l'eau", search: "Pythagorean theorem water demo" }
+
 lessons:
   - slug: theorie
     title: "1. Réviser"

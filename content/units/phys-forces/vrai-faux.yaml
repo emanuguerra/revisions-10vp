@@ -1,0 +1,66 @@
+kind: vf
+items:
+- key: vf-kg
+  statement: Le poids d'un objet s'exprime en kilogrammes.
+  'true': false
+  why: Le poids est une force, il s'exprime en newtons (N). La masse s'exprime en kilogrammes.
+- key: vf-lune
+  statement: Sur la Lune, la masse d'un astronaute est plus petite que sur Terre.
+  'true': false
+  why: La masse ne change pas. C'est son poids qui est environ 6 fois plus petit.
+- key: vf-1kg
+  statement: Sur Terre, un objet de 1 kg pèse environ 9,81 N.
+  'true': true
+  why: P = m · g = 1 × 9,81 = 9,81 N.
+- key: vf-immobile
+  statement: Un objet immobile ne subit aucune force.
+  'true': false
+  why: Il peut subir plusieurs forces qui se compensent, comme un livre sur une table.
+- key: vf-hooke
+  statement: Si on double la force sur un ressort, son allongement double.
+  'true': true
+  why: C'est la loi de Hooke, F = k · Δl, tant que le ressort n'est pas déformé définitivement.
+- key: vf-fil
+  statement: Un fil peut pousser un objet.
+  'true': false
+  why: Un fil ne peut que tirer, dans sa propre direction.
+- key: vf-reciproque
+  statement: Quand je pousse un mur, le mur me pousse aussi, avec la même intensité.
+  'true': true
+  why: C'est la 3e loi de Newton, le principe des actions réciproques.
+- key: vf-reciproque-annule
+  statement: L'action et la réaction s'annulent, car elles s'appliquent sur le même objet.
+  'true': false
+  why: Elles s'appliquent sur deux objets différents (moi et le mur), donc elles ne s'annulent pas.
+- key: vf-resultante-somme
+  statement: La résultante de deux forces de 30 N et 40 N vaut toujours 70 N.
+  'true': false
+  why: Seulement si elles ont même direction et même sens. Perpendiculaires, la résultante vaut 50 N (Pythagore) ; opposées, 10 N.
+- key: vf-perp
+  statement: Deux forces perpendiculaires de 30 N et 40 N ont une résultante de 50 N.
+  'true': true
+  why: √(30² + 40²) = √2500 = 50 N.
+- key: vf-inertie
+  statement: Dans l'espace, une sonde lancée sans moteur continue en ligne droite à vitesse constante, s'il n'y a pas de force.
+  'true': true
+  why: C'est le principe d'inertie (1re loi de Newton).
+- key: vf-frottement
+  statement: La force de frottement agit toujours dans le sens du mouvement.
+  'true': false
+  why: Elle s'oppose au mouvement.
+- key: vf-dynamometre
+  statement: Un dynamomètre mesure des forces grâce à un ressort.
+  'true': true
+  why: L'allongement du ressort est proportionnel à la force (loi de Hooke).
+- key: vf-poids-vertical
+  statement: Le poids est une force verticale dirigée vers le bas.
+  'true': true
+  why: Il est dirigé vers le centre de la Terre.
+- key: vf-raideur
+  statement: Un ressort de raideur 500 N/m est plus mou qu'un ressort de 50 N/m.
+  'true': false
+  why: Plus k est grand, plus le ressort est dur.
+- key: vf-echelle
+  statement: Avec l'échelle 1 cm ↔ 20 N, une flèche de 4 cm représente une force de 80 N.
+  'true': true
+  why: 4 × 20 N = 80 N.

@@ -1,0 +1,88 @@
+slug: phys-forces
+subject: maths
+title: "Physique : forces et équilibres"
+subtitle: "MEP 10e VP (Vaud) : représenter une force, poids et masse, ressorts, lois de Newton, additionner des forces et trouver l'équilibre, avec des schémas à l'échelle et la trigonométrie."
+order: 6
+ui_lang: fr
+
+break_videos:
+  - { title: "Les forces expliquées simplement", search: "les forces physique collège explication" }
+  - { title: "Masse et poids : quelle différence ?", search: "différence masse poids explication" }
+  - { title: "Les lois de Newton", search: "lois de Newton expliquées simplement" }
+
+levels:
+  - label: Facile
+    info: "Forces horizontales ou verticales, poids sur Terre, ressorts : calculer F."
+  - label: Moyen
+    info: "Forces perpendiculaires (Pythagore), échelles variées, ressorts : trouver k ou Δl."
+  - label: Expert
+    info: "Autres planètes, flèches en biais, angle de la résultante (trigonométrie)."
+
+categories:
+  vecteur: Représenter une force
+  types: Les types de forces
+  poids: Poids et masse
+  ressort: Ressorts
+  newton: Lois de Newton
+  equilibre: Équilibre et résultante
+
+lessons:
+  - slug: forces
+    title: "1. Les forces"
+    blocks:
+      - type: html
+        file: lecon-1-forces.html
+  - slug: equilibre
+    title: "2. Additionner et équilibrer"
+    blocks:
+      - type: html
+        file: lecon-2-equilibre.html
+
+exercises_title: "3. Exercices"
+exercises:
+  - key: cours
+    title: Questions de cours
+    generator: common.mcq
+    params: { kind: qcm }
+  - key: lire
+    title: Lire une force à l'échelle
+    generator: forces.read
+  - key: poids
+    title: Calculer un poids ou une masse
+    generator: forces.weight
+  - key: astres
+    title: Masse ou poids sur d'autres astres
+    generator: forces.moon
+  - key: ressort
+    title: Loi de Hooke (ressorts)
+    generator: forces.spring
+  - key: resultante
+    title: Résultante de deux forces
+    generator: forces.resultant
+  - key: equilibre
+    title: Trouver la force d'équilibre
+    generator: forces.balance
+  - key: vf
+    title: Vrai ou faux ?
+    generator: common.true_false
+    params: { kind: vf }
+
+mission:
+  mode: sequence
+  sequence: [cours, lire, poids, vf, ressort, resultante, cours, astres, equilibre, lire, vf, equilibre]
+  title: "🎯 Mission : 12 questions"
+  description: "Un peu de tout. +10 points au premier essai, +5 si tu corriges ta réponse (3 essais au maximum). +5 de bonus dès 3 réponses justes de suite du premier coup 🔥. Un indice coûte 3 points."
+  badges:
+    - Encore un effort ! Relis la théorie et réessaie.
+    - Apprenti·e physicien·ne
+    - As des forces
+    - Digne de Newton
+
+training: true
+
+scoring:
+  first: 10
+  retry: 5
+  hint_cost: 3
+  streak_bonus: 5
+  streak_from: 3

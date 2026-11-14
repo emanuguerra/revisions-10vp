@@ -40,4 +40,6 @@ def parse_num(s: object) -> float:
 
 
 def norm_text(s: str) -> str:
-    return re.sub(r"[-\s]+", " ", s.strip().lower())
+    """Case, spaces, hyphens and final punctuation do not count; ß = ss (Swiss spelling)."""
+    s = re.sub(r"[-\s]+", " ", s.strip().lower()).replace("ß", "ss")
+    return s.rstrip(" .!?")

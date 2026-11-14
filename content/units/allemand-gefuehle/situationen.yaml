@@ -1,0 +1,104 @@
+# A short situation in German with the words of the chapter; "___" is the missing word.
+# `wrong` lists 3 wrong choices that clearly do not fit.
+kind: situation
+items:
+- key: sit-hamster
+  de: Lenas Hamster ist krank. Sie ist ___.
+  fr: Le hamster de Lena est malade. Elle est triste.
+  answer: traurig
+  wrong: [froh, cool, lustig]
+- key: sit-bus
+  de: Tim wartet schon eine Stunde auf den Bus. Er ist ___.
+  fr: Tim attend le bus depuis une heure. Il est fâché.
+  answer: sauer
+  wrong: [glücklich, süss, romantisch]
+- key: sit-finale
+  de: Wir haben das Finale verloren. Ich bin ___.
+  fr: Nous avons perdu la finale. Je suis déçu·e.
+  answer: enttäuscht
+  wrong: [froh, ordentlich, süss]
+- key: sit-musik
+  de: Mein Bruder hört jeden Abend laut Musik. Das ist so ___!
+  fr: Mon frère écoute de la musique fort tous les soirs. C'est tellement énervant !
+  answer: nervig
+  wrong: [ruhig, leise, romantisch]
+- key: sit-nacht
+  de: Paul hat die ganze Nacht nicht geschlafen. Er ist ___.
+  fr: Paul n'a pas dormi de la nuit. Il est fatigué.
+  answer: müde
+  wrong: [lustig, ordentlich, toll]
+- key: sit-film
+  de: Der Film dauert drei Stunden und es passiert nichts. Er ist ___.
+  fr: Le film dure trois heures et il ne se passe rien. Il est ennuyeux.
+  answer: langweilig
+  wrong: [interessant, lustig, süss]
+- key: sit-katze
+  de: Das kleine Kätzchen schläft auf dem Sofa. Es ist so ___!
+  fr: Le petit chaton dort sur le canapé. Il est trop mignon !
+  answer: süss
+  wrong: [streng, blöd, wütend]
+- key: sit-lehrer
+  de: Herr Keller gibt viele Hausaufgaben und lacht nie. Er ist ___.
+  fr: M. Keller donne beaucoup de devoirs et ne rit jamais. Il est sévère.
+  answer: streng
+  wrong: [süss, lustig, froh]
+- key: sit-zimmer
+  de: In meinem Zimmer liegt alles am richtigen Platz. Es ist ___.
+  fr: Dans ma chambre, tout est à sa place. Elle est en ordre.
+  answer: ordentlich
+  wrong: [unordentlich, laut, traurig]
+- key: sit-kerzen
+  de: Ein Abendessen mit Kerzen am See. Wie ___!
+  fr: Un souper aux chandelles au bord du lac. Comme c'est romantique !
+  answer: romantisch
+  wrong: [langweilig, nervig, unordentlich]
+- key: sit-note
+  de: Lea hat eine 6 in Deutsch. Sie ist sehr ___.
+  fr: Lea a un 6 en allemand. Elle est très heureuse.
+  answer: glücklich
+  wrong: [traurig, sauer, enttäuscht]
+- key: sit-dunkel
+  de: Im Dunkeln hört der kleine Luca ein komisches Geräusch. Er ist ___.
+  fr: Dans le noir, le petit Luca entend un bruit bizarre. Il a peur.
+  answer: ängstlich
+  wrong: [lustig, cool, ordentlich]
+- key: sit-baby
+  de: Das Baby schläft. Bitte sprich ___!
+  fr: Le bébé dort. Parle doucement, s'il te plaît !
+  answer: leise
+  wrong: [laut, viel, streng]
+- key: sit-zeit
+  de: Ich habe Training, Klavier und Hausaufgaben. Ich habe heute nur ___ Zeit.
+  fr: J'ai l'entraînement, le piano et les devoirs. Aujourd'hui, j'ai seulement peu de temps.
+  answer: wenig
+  wrong: [leise, streng, süss]
+- key: sit-buch
+  de: Du hast mein Buch schon wieder ___!
+  fr: Tu as encore oublié mon livre !
+  answer: vergessen
+  wrong: [gelacht, geweint, geredet]
+- key: sit-test
+  de: Max schreibt im Test die Antworten von Lea ___.
+  fr: Pendant le test, Max copie les réponses de Lea.
+  answer: ab
+  wrong: [an, auf, weg]
+- key: sit-streit
+  de: Ihr streitet schon wieder! Hört mit dem Streit ___!
+  fr: Vous vous disputez encore ! Arrêtez de vous disputer !
+  answer: auf
+  wrong: [ab, an, weg]
+- key: sit-sollen
+  de: Meine Mutter sagt, ich ___ mein Zimmer aufräumen.
+  fr: Ma mère dit que je dois ranger ma chambre.
+  answer: soll
+  wrong: [bin, habe, sind]
+- key: sit-bekommen
+  de: Sie hat eine schlechte Note ___.
+  fr: Elle a eu une mauvaise note.
+  answer: bekommen
+  wrong: [gelacht, geweint, besucht]
+- key: sit-oma
+  de: Oma ist im Spital. Wir ___ sie am Sonntag.
+  fr: Grand-maman est à l'hôpital. Nous lui rendons visite dimanche.
+  answer: besuchen
+  wrong: [vergessen, widersprechen, nerven]

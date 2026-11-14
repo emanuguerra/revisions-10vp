@@ -1,0 +1,90 @@
+kind: vf
+items:
+- key: vf-neige
+  statement: "« Il a beaucoup neigé cet hiver, donc le réchauffement climatique n'existe pas. » Ce raisonnement est correct."
+  'true': false
+  why: Un hiver neigeux, c'est de la météo. Le réchauffement se mesure sur des moyennes de 30 ans et à l'échelle de la planète.
+- key: vf-30ans
+  statement: Le climat se calcule sur une période d'au moins 30 ans.
+  'true': true
+  why: C'est la durée utilisée par les météorologues pour définir les « normales » climatiques.
+- key: vf-effet-serre-mauvais
+  statement: L'effet de serre est un phénomène entièrement causé par les humains.
+  'true': false
+  why: L'effet de serre est naturel et indispensable à la vie. Les humains le renforcent.
+- key: vf-ozone
+  statement: Le trou dans la couche d'ozone est la cause principale du réchauffement climatique.
+  'true': false
+  why: Ce sont deux problèmes différents. La couche d'ozone protège des UV ; le réchauffement vient des gaz à effet de serre.
+- key: vf-co2-hausse
+  statement: La quantité de CO₂ dans l'atmosphère a augmenté d'environ 50 % depuis le début de l'ère industrielle.
+  'true': true
+  why: De 280 ppm vers 1850 à plus de 420 ppm aujourd'hui.
+- key: vf-methane
+  statement: Le méthane réchauffe davantage que la même quantité de CO₂.
+  'true': true
+  why: Environ 28 fois plus sur 100 ans, mais il reste moins longtemps dans l'atmosphère.
+- key: vf-banquise-mer
+  statement: La fonte de la banquise fait monter le niveau des mers de plusieurs mètres.
+  'true': false
+  why: 'La banquise flotte déjà : en fondant, elle ne fait presque pas monter la mer. Ce sont les glaciers et les inlandsis qui comptent.'
+- key: vf-inlandsis
+  statement: Il existe aujourd'hui deux inlandsis, au Groenland et en Antarctique.
+  'true': true
+  why: Pendant les glaciations, il y en avait aussi en Amérique du Nord et en Europe du Nord.
+- key: vf-pergelisol-suisse
+  statement: Il y a du pergélisol en Suisse.
+  'true': true
+  why: En haute montagne, environ 5 % du territoire suisse a un sol gelé en permanence.
+- key: vf-albedo-neige
+  statement: La neige fraîche a un albédo élevé, elle réfléchit la plus grande partie du rayonnement solaire.
+  'true': true
+  why: 'Son albédo est d''environ 0,8 à 0,9 : elle renvoie 80 à 90 % de l''énergie.'
+- key: vf-albedo-ocean
+  statement: Un océan sombre réfléchit plus d'énergie solaire que la banquise.
+  'true': false
+  why: 'L''océan a un albédo d''environ 0,06 : il absorbe presque tout. La banquise réfléchit beaucoup plus.'
+- key: vf-retroaction
+  statement: La fonte de la glace accélère le réchauffement, car le sol ou l'eau découverts absorbent plus de chaleur.
+  'true': true
+  why: 'C''est une rétroaction positive : plus de chaleur → plus de fonte → albédo plus faible → encore plus de chaleur.'
+- key: vf-amplitude-equateur
+  statement: L'amplitude thermique annuelle est très forte près de l'équateur.
+  'true': false
+  why: 'Elle est très faible (1 ou 2 °C) : il fait chaud toute l''année.'
+- key: vf-continental
+  statement: Plus on s'éloigne de l'océan, plus l'amplitude thermique augmente.
+  'true': true
+  why: C'est la continentalité. Moscou a une amplitude bien plus grande que Brest.
+- key: vf-suisse-rapide
+  statement: La Suisse se réchauffe plus vite que la moyenne mondiale.
+  'true': true
+  why: Environ deux fois plus vite, comme beaucoup de régions de montagne et de l'intérieur des continents.
+- key: vf-adaptation-attenuation
+  statement: Utiliser les transports publics est une mesure d'adaptation.
+  'true': false
+  why: 'Cela réduit les émissions : c''est une mesure d''atténuation.'
+- key: vf-vulnerabilite
+  statement: Une même sécheresse a les mêmes conséquences dans un pays riche et dans un pays pauvre.
+  'true': false
+  why: 'La vulnérabilité dépend des moyens : irrigation, réserves de nourriture, assurances, aide de l''État.'
+- key: vf-routes
+  statement: La fonte de la banquise arctique rend certaines routes maritimes entre l'Europe et l'Asie plus courtes et utilisables en été.
+  'true': true
+  why: Le passage du Nord-Ouest et la route maritime du Nord évitent le détour par le canal de Suez.
+- key: vf-desert
+  statement: La désertification est uniquement causée par le changement climatique.
+  'true': false
+  why: Le surpâturage, la déforestation et la mauvaise irrigation y contribuent aussi beaucoup.
+- key: vf-volcan
+  statement: Une grande éruption volcanique peut refroidir le climat pendant un ou deux ans.
+  'true': true
+  why: Les aérosols de soufre renvoient une partie du rayonnement solaire vers l'espace.
+- key: vf-hemisphere
+  statement: À Sydney, en Australie, les mois les plus chauds sont décembre, janvier et février.
+  'true': true
+  why: Dans l'hémisphère sud, les saisons sont inversées par rapport à la Suisse.
+- key: vf-modele
+  statement: Un modèle climatique peut prévoir exactement le temps qu'il fera dans 50 ans le 1er août à Berne.
+  'true': false
+  why: Un modèle calcule l'évolution probable du climat moyen selon des scénarios d'émissions, pas la météo d'un jour précis.

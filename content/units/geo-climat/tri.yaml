@@ -1,0 +1,213 @@
+# Sort a statement into the right group. The choices keep their order.
+kind: tri
+items:
+# Météo ou climat ? (objectif 1)
+- key: t-orage
+  category: meteo
+  question: "« Un orage a éclaté hier soir sur Lausanne. »<br>Météo ou climat ?"
+  choices: [Météo, Climat]
+  answer: Météo
+  why: Un événement à un endroit et à un moment précis, c'est la météo.
+- key: t-geneve-ete
+  category: meteo
+  question: "« À Genève, juillet est en moyenne le mois le plus chaud de l'année. »<br>Météo ou climat ?"
+  choices: [Météo, Climat]
+  answer: Climat
+  why: Une moyenne calculée sur de nombreuses années, c'est le climat.
+- key: t-demain
+  category: meteo
+  question: "« Demain, il neigera au-dessus de 800 m. »<br>Météo ou climat ?"
+  choices: [Météo, Climat]
+  answer: Météo
+  why: Une prévision pour demain, c'est la météo.
+- key: t-sahara
+  category: meteo
+  question: "« Au Sahara, il pleut moins de 100 mm par an. »<br>Météo ou climat ?"
+  choices: [Météo, Climat]
+  answer: Climat
+  why: Une caractéristique moyenne d'une région, c'est le climat.
+- key: t-brouillard
+  category: meteo
+  question: "« Ce matin, le brouillard couvre tout le Plateau. »<br>Météo ou climat ?"
+  choices: [Météo, Climat]
+  answer: Météo
+  why: Le brouillard de ce matin est un phénomène météo.
+- key: t-mediterranee
+  category: meteo
+  question: "« Autour de la Méditerranée, les étés sont chauds et secs. »<br>Météo ou climat ?"
+  choices: [Météo, Climat]
+  answer: Climat
+  why: Une description valable année après année, c'est le climat.
+# Cause naturelle ou humaine ? (objectif 2)
+- key: t-orbite
+  category: causes
+  question: "Les variations de l'orbite de la Terre.<br>Cause naturelle ou humaine ?"
+  choices: [Naturelle, Humaine]
+  answer: Naturelle
+  why: Ces cycles astronomiques expliquent l'alternance des glaciations.
+- key: t-deforestation
+  category: causes
+  question: "La déforestation en Amazonie.<br>Cause naturelle ou humaine ?"
+  choices: [Naturelle, Humaine]
+  answer: Humaine
+  why: Couper et brûler les forêts libère du CO₂ et supprime un puits de carbone.
+- key: t-volcan
+  category: causes
+  question: "Une grande éruption volcanique.<br>Cause naturelle ou humaine ?"
+  choices: [Naturelle, Humaine]
+  answer: Naturelle
+  why: Les volcans peuvent refroidir la Terre pendant un ou deux ans.
+- key: t-voiture
+  category: causes
+  question: "Les gaz d'échappement des voitures.<br>Cause naturelle ou humaine ?"
+  choices: [Naturelle, Humaine]
+  answer: Humaine
+  why: L'essence et le diesel sont des énergies fossiles qui émettent du CO₂.
+- key: t-soleil
+  category: causes
+  question: "Les variations de l'activité du Soleil.<br>Cause naturelle ou humaine ?"
+  choices: [Naturelle, Humaine]
+  answer: Naturelle
+  why: Elles existent, mais elles sont trop faibles pour expliquer le réchauffement actuel.
+- key: t-elevage
+  category: causes
+  question: "L'élevage intensif de bovins.<br>Cause naturelle ou humaine ?"
+  choices: [Naturelle, Humaine]
+  answer: Humaine
+  why: La digestion des vaches produit du méthane, un puissant gaz à effet de serre.
+# Stocke ou déstocke du carbone ? (objectif 7)
+- key: t-planter
+  category: carbone
+  question: "Planter une forêt.<br>Cela stocke ou déstocke du carbone ?"
+  choices: [Stocke, Déstocke]
+  answer: Stocke
+  why: En poussant, les arbres absorbent du CO₂ par la photosynthèse.
+- key: t-charbon
+  category: carbone
+  question: "Brûler du charbon dans une centrale électrique.<br>Cela stocke ou déstocke du carbone ?"
+  choices: [Stocke, Déstocke]
+  answer: Déstocke
+  why: Le carbone stocké sous terre depuis des millions d'années repart dans l'atmosphère.
+- key: t-tourbiere
+  category: carbone
+  question: "Assécher une tourbière pour la cultiver.<br>Cela stocke ou déstocke du carbone ?"
+  choices: [Stocke, Déstocke]
+  answer: Déstocke
+  why: Les tourbières contiennent beaucoup de carbone qui se libère quand elles sèchent.
+- key: t-ocean
+  category: carbone
+  question: "L'océan qui absorbe du CO₂.<br>Cela stocke ou déstocke du carbone ?"
+  choices: [Stocke, Déstocke]
+  answer: Stocke
+  why: L'océan est un grand puits de carbone.
+- key: t-incendie
+  category: carbone
+  question: "Un grand incendie de forêt.<br>Cela stocke ou déstocke du carbone ?"
+  choices: [Stocke, Déstocke]
+  answer: Déstocke
+  why: Le bois qui brûle libère son carbone sous forme de CO₂.
+- key: t-pergelisol
+  category: carbone
+  question: "Le dégel du pergélisol.<br>Cela stocke ou déstocke du carbone ?"
+  choices: [Stocke, Déstocke]
+  answer: Déstocke
+  why: La matière organique gelée se décompose et libère du CO₂ et du méthane.
+# Adaptation ou atténuation ? (objectif 11)
+- key: t-digue
+  category: adaptation
+  question: "Construire une digue contre la montée de la mer.<br>Adaptation ou atténuation ?"
+  choices: [Adaptation, Atténuation]
+  answer: Adaptation
+  why: 'On se protège des effets du réchauffement : c''est de l''adaptation.'
+- key: t-train
+  category: adaptation
+  question: "Prendre le train plutôt que l'avion.<br>Adaptation ou atténuation ?"
+  choices: [Adaptation, Atténuation]
+  answer: Atténuation
+  why: 'On réduit les émissions de CO₂ : c''est de l''atténuation, on agit sur la cause.'
+- key: t-cultures
+  category: adaptation
+  question: "Cultiver des variétés qui résistent à la sécheresse.<br>Adaptation ou atténuation ?"
+  choices: [Adaptation, Atténuation]
+  answer: Adaptation
+  why: Les agriculteurs s'ajustent à un climat plus sec.
+- key: t-solaire
+  category: adaptation
+  question: "Remplacer une chaudière à mazout par des panneaux solaires.<br>Adaptation ou atténuation ?"
+  choices: [Adaptation, Atténuation]
+  answer: Atténuation
+  why: On émet moins de gaz à effet de serre.
+- key: t-alerte
+  category: adaptation
+  question: "Créer un plan d'alerte canicule pour les personnes âgées.<br>Adaptation ou atténuation ?"
+  choices: [Adaptation, Atténuation]
+  answer: Adaptation
+  why: On protège la population contre les effets des vagues de chaleur.
+- key: t-filets
+  category: adaptation
+  question: "Poser des filets contre les chutes de pierres en montagne.<br>Adaptation ou atténuation ?"
+  choices: [Adaptation, Atténuation]
+  answer: Adaptation
+  why: 'Le dégel du pergélisol augmente les chutes de pierres : on s''en protège.'
+- key: t-isoler
+  category: adaptation
+  question: "Isoler les bâtiments pour moins chauffer.<br>Adaptation ou atténuation ?"
+  choices: [Adaptation, Atténuation]
+  answer: Atténuation
+  why: Moins de chauffage, c'est moins de CO₂. (Une bonne isolation protège aussi de la chaleur en été.)
+# Banquise, inlandsis ou pergélisol ? (objectif 12)
+- key: t-groenland
+  category: glace
+  question: "Calotte de glace de près de 3 km d'épaisseur qui recouvre le Groenland.<br>Banquise, inlandsis ou pergélisol ?"
+  choices: [Banquise, Inlandsis, Pergélisol]
+  answer: Inlandsis
+  why: Un inlandsis recouvre un continent. Sa fonte fait monter le niveau des mers.
+- key: t-mer-gelee
+  category: glace
+  question: "Couche de glace de quelques mètres formée par l'eau de mer gelée.<br>Banquise, inlandsis ou pergélisol ?"
+  choices: [Banquise, Inlandsis, Pergélisol]
+  answer: Banquise
+  why: La banquise flotte sur l'océan Arctique et autour de l'Antarctique.
+- key: t-sol-gele
+  category: glace
+  question: "Sol gelé toute l'année en Sibérie et dans les Alpes.<br>Banquise, inlandsis ou pergélisol ?"
+  choices: [Banquise, Inlandsis, Pergélisol]
+  answer: Pergélisol
+  why: En dégelant, il rend le terrain instable et libère des gaz à effet de serre.
+- key: t-ours
+  category: glace
+  question: "L'ours polaire en a besoin pour chasser le phoque.<br>Banquise, inlandsis ou pergélisol ?"
+  choices: [Banquise, Inlandsis, Pergélisol]
+  answer: Banquise
+  why: Quand la banquise recule, l'ours polaire a plus de peine à se nourrir.
+- key: t-antarctique
+  category: glace
+  question: "Sa fonte complète ferait monter les mers de plus de 50 m (Antarctique).<br>Banquise, inlandsis ou pergélisol ?"
+  choices: [Banquise, Inlandsis, Pergélisol]
+  answer: Inlandsis
+  why: L'inlandsis de l'Antarctique contient la plus grande réserve d'eau douce de la planète.
+- key: t-maisons
+  category: glace
+  question: "En dégelant, il fait pencher les maisons et casser les routes en Alaska.<br>Banquise, inlandsis ou pergélisol ?"
+  choices: [Banquise, Inlandsis, Pergélisol]
+  answer: Pergélisol
+  why: Les bâtiments étaient construits sur un sol dur parce que gelé.
+# Gaz à effet de serre : quelle source ? (objectif 6)
+- key: t-co2
+  category: serre
+  question: "Combustion des énergies fossiles, déforestation, cimenteries.<br>Quel gaz ?"
+  choices: ["CO₂", "CH₄ (méthane)", "N₂O (protoxyde d'azote)"]
+  answer: "CO₂"
+  why: Le CO₂ est le principal gaz à effet de serre émis par les humains ; il reste des siècles dans l'atmosphère.
+- key: t-ch4
+  category: serre
+  question: "Rizières, élevage de ruminants, décharges.<br>Quel gaz ?"
+  choices: ["CO₂", "CH₄ (méthane)", "N₂O (protoxyde d'azote)"]
+  answer: "CH₄ (méthane)"
+  why: Le méthane est produit par la décomposition sans oxygène et la digestion des ruminants.
+- key: t-n2o
+  category: serre
+  question: "Engrais azotés répandus sur les champs.<br>Quel gaz ?"
+  choices: ["CO₂", "CH₄ (méthane)", "N₂O (protoxyde d'azote)"]
+  answer: "N₂O (protoxyde d'azote)"
+  why: Le N₂O vient surtout de l'agriculture intensive.

@@ -1,0 +1,232 @@
+# Questions de compréhension, acte par acte.
+kind: qcm
+items:
+# --- L'auteur et la pièce ------------------------------------------------
+- key: q-auteur
+  category: auteur
+  question: Qui a écrit <em>La Visite de la vieille dame</em> ?
+  answer: Friedrich Dürrenmatt, un écrivain suisse.
+  wrong:
+    - Molière, un auteur français du XVIIe siècle.
+    - Bertolt Brecht, un auteur allemand.
+    - Charles-Ferdinand Ramuz, un écrivain vaudois.
+  why: Dürrenmatt (1921–1990) est né dans le canton de Berne et a vécu à Neuchâtel. Il écrivait en allemand.
+- key: q-date
+  category: auteur
+  question: En quelle année la pièce a-t-elle été créée ?
+  answer: En 1956.
+  wrong:
+    - En 1856.
+    - En 1914.
+    - En 1999.
+  why: 'Elle a été créée à Zurich en 1956 (titre original : <em>Der Besuch der alten Dame</em>).'
+- key: q-genre
+  category: auteur
+  question: Comment Dürrenmatt appelle-t-il sa pièce ?
+  answer: Une « comédie tragique ».
+  wrong:
+    - Une tragédie classique en cinq actes.
+    - Un roman policier.
+    - Une comédie musicale.
+  why: Elle mêle le comique (grotesque, satire) et le tragique (la mort d'Ill). Elle compte trois actes.
+- key: q-lieu
+  category: auteur
+  question: Où se passe l'histoire ?
+  answer: À Güllen, une petite ville imaginaire ruinée.
+  wrong:
+    - À Paris, dans un grand hôtel.
+    - À Zurich, dans une banque.
+    - Sur l'île de Capri.
+  why: 'En suisse allemand, « Gülle » veut dire purin : le nom de la ville est déjà ironique.'
+# --- Acte I ----------------------------------------------------------------
+- key: q-ruine
+  category: acte1
+  question: Dans quelle situation se trouve Güllen au début de la pièce ?
+  answer: La ville est ruinée, les usines sont fermées et les trains express ne s'y arrêtent plus.
+  wrong:
+    - La ville est très riche grâce au tourisme.
+    - La ville vient d'être détruite par une guerre.
+    - La ville est en fête pour un mariage royal.
+  why: Les habitants sont au chômage et espèrent que la milliardaire va les sauver.
+- key: q-pourquoi-ill
+  category: acte1
+  question: Pourquoi les habitants comptent-ils sur Alfred Ill pour accueillir Claire ?
+  answer: Il a été son amoureux dans sa jeunesse.
+  wrong:
+    - C'est son frère.
+    - C'est le maire de la ville.
+    - Il est le seul à parler sa langue.
+  why: Ill est très apprécié ; on pense même qu'il deviendra le prochain maire.
+- key: q-arrivee
+  category: acte1
+  question: Comment Claire arrive-t-elle à Güllen ?
+  answer: Elle fait arrêter l'express en tirant le signal d'alarme.
+  wrong:
+    - En hélicoptère, sur la place du village.
+    - À pied, seule et sans bagages.
+    - En bateau, sur le lac.
+  why: 'Elle montre tout de suite sa puissance : l''argent lui permet de faire ce qu''elle veut.'
+- key: q-suite
+  category: acte1
+  question: Qu'est-ce qui fait partie des bagages surprenants de Claire ?
+  answer: Un cercueil et une panthère noire.
+  wrong:
+    - Un piano et un perroquet.
+    - Une voiture de course et un tigre.
+    - Une statue d'Ill en or.
+  why: Le cercueil annonce déjà la mort d'Ill.
+- key: q-offre
+  category: acte1
+  question: Que propose Claire aux habitants pendant le banquet ?
+  answer: Un milliard, en échange de la mort d'Alfred Ill.
+  wrong:
+    - Un milliard pour construire une nouvelle gare.
+    - De s'installer pour toujours à Güllen.
+    - D'épouser le maire.
+  why: Cinq cents millions pour la ville et cinq cents millions partagés entre les familles.
+- key: q-proces
+  category: acte1
+  question: Qu'a fait Ill il y a 45 ans ?
+  answer: Il a nié être le père de l'enfant de Klara, avec l'aide de deux faux témoins.
+  wrong:
+    - Il a volé l'argent de la famille de Klara.
+    - Il a sauvé Klara d'un incendie.
+    - Il a quitté Güllen pour devenir riche.
+  why: Klara a perdu le procès, a dû quitter la ville et son enfant est mort très petit.
+- key: q-majordome
+  category: acte1
+  question: Qui est en réalité le majordome de Claire ?
+  answer: L'ancien juge de Güllen, qui avait jugé le procès.
+  wrong:
+    - Le fils d'Alfred Ill.
+    - Un ancien maire de Güllen.
+    - Le premier mari de Claire.
+  why: 'Claire l''a engagé à son service : elle a « acheté » celui qui représentait la justice.'
+- key: q-temoins
+  category: acte1
+  question: Que sont devenus les deux faux témoins du procès ?
+  answer: Ce sont les deux hommes aveugles de la suite de Claire.
+  wrong:
+    - Ils sont devenus maires de Güllen.
+    - Ils sont partis en Amérique, riches.
+    - Ils ont toujours vécu à Güllen sans rien savoir.
+  why: 'Claire les a retrouvés et cruellement punis : elle se venge de tous ceux qui l''ont trahie.'
+- key: q-reponse-maire
+  category: acte1
+  question: Comment le maire répond-il à l'offre de Claire à la fin de l'acte I ?
+  answer: Il la refuse au nom de l'humanité, sous les applaudissements.
+  wrong:
+    - Il l'accepte immédiatement.
+    - Il demande deux milliards.
+    - Il fait arrêter Claire.
+  why: Claire répond simplement qu'elle attendra. Toute la pièce montre comment ce refus va céder.
+# --- Acte II ---------------------------------------------------------------
+- key: q-credit
+  category: acte2
+  question: Que font les clients dans la boutique d'Ill à l'acte II ?
+  answer: Ils achètent des produits plus chers qu'avant, à crédit.
+  wrong:
+    - Ils boycottent la boutique.
+    - Ils paient leurs vieilles dettes.
+    - Ils offrent des cadeaux à Ill.
+  why: 'Ils dépensent l''argent qu''ils n''ont pas encore : ils comptent déjà sur le milliard.'
+- key: q-chaussures
+  category: acte2
+  question: Quel détail inquiète Ill chez les habitants ?
+  answer: Ils portent tous des chaussures jaunes neuves.
+  wrong:
+    - Ils portent tous un chapeau noir.
+    - Ils ont tous un fusil.
+    - Ils ne parlent plus allemand.
+  why: Ces chaussures achetées à crédit montrent que tout le monde compte sur sa mort.
+- key: q-aide
+  category: acte2
+  question: Auprès de qui Ill cherche-t-il de l'aide, sans succès ?
+  answer: Le policier, le maire et le pasteur.
+  wrong:
+    - Ses enfants, le médecin et Claire.
+    - La presse, le juge et l'armée.
+    - Personne, il ne demande rien.
+  why: 'Chacun le rassure, mais chacun a déjà acheté quelque chose de neuf : une dent en or, une cravate, une cloche.'
+- key: q-pasteur
+  category: acte2
+  question: Que conseille finalement le pasteur à Ill ?
+  answer: De fuir.
+  wrong:
+    - De se battre contre Claire.
+    - De demander pardon à la ville.
+    - De se cacher dans l'église.
+  why: Le pasteur sait que la ville ne résistera pas à la tentation.
+- key: q-panthere
+  category: acte2
+  question: Que se passe-t-il avec la panthère noire de Claire ?
+  answer: Elle s'échappe, les hommes la chassent avec des fusils et l'abattent devant le magasin d'Ill.
+  wrong:
+    - Elle attaque le maire.
+    - Claire l'offre à la ville.
+    - Elle s'enfuit dans la forêt et on ne la revoit jamais.
+  why: 'Claire surnommait Ill autrefois « ma panthère noire » : la chasse annonce celle d''Ill.'
+- key: q-gare
+  category: acte2
+  question: Pourquoi Ill ne prend-il pas le train à la fin de l'acte II ?
+  answer: Les habitants l'entourent à la gare, et il n'ose plus monter.
+  wrong:
+    - Le train ne vient pas.
+    - Il n'a pas d'argent pour le billet.
+    - Claire le fait arrêter par la police.
+  why: Personne ne le retient vraiment, mais leur présence le paralyse. Il se sent perdu.
+# --- Acte III --------------------------------------------------------------
+- key: q-usines
+  category: acte3
+  question: Que révèle Claire au médecin et à l'instituteur à l'acte III ?
+  answer: Elle a racheté les usines de Güllen et les a fait fermer pour ruiner la ville.
+  wrong:
+    - Elle n'a plus d'argent.
+    - Elle va adopter les enfants de Güllen.
+    - Elle a décidé de pardonner à Ill.
+  why: La ruine de Güllen faisait partie de son plan depuis longtemps.
+- key: q-famille
+  category: acte3
+  question: Que fait la famille d'Ill à l'acte III ?
+  answer: Elle achète une voiture et un manteau de fourrure, comme si elle comptait sur l'argent.
+  wrong:
+    - Elle s'enfuit avec Ill.
+    - Elle défend Ill devant toute la ville.
+    - Elle renonce à tout achat.
+  why: Même sa famille l'abandonne en silence.
+- key: q-ill-change
+  category: acte3
+  question: Comment Ill change-t-il à l'acte III ?
+  answer: Il cesse d'avoir peur et accepte sa culpabilité.
+  wrong:
+    - Il devient riche et arrogant.
+    - Il décide de tuer Claire.
+    - Il quitte Güllen pour toujours.
+  why: 'Il reconnaît sa faute envers Klara et refuse de fuir ou de se suicider : il laisse la ville prendre ses responsabilités.'
+- key: q-vote
+  category: acte3
+  question: Au nom de quoi l'assemblée communale vote-t-elle ?
+  answer: Au nom de la justice, en prétendant que ce n'est pas pour l'argent.
+  wrong:
+    - Au nom de la liberté de la presse.
+    - Au nom de l'amitié pour Ill.
+    - Au nom de la religion uniquement.
+  why: 'C''est toute l''hypocrisie de la ville : on habille un meurtre pour de l''argent avec de grands mots.'
+- key: q-mort
+  category: acte3
+  question: Comment la mort d'Ill est-elle présentée aux journalistes ?
+  answer: Comme une crise cardiaque, une mort « de joie ».
+  wrong:
+    - Comme un accident de train.
+    - Comme un suicide.
+    - On cache qu'il est mort.
+  why: La ville ment pour garder une bonne image.
+- key: q-fin
+  category: acte3
+  question: Que fait Claire à la fin de la pièce ?
+  answer: Elle donne le chèque au maire et emporte le corps d'Ill dans le cercueil.
+  wrong:
+    - Elle reprend son argent.
+    - Elle s'installe à Güllen.
+    - Elle avoue le meurtre à la police.
+  why: Elle veut l'enterrer dans un mausolée sur l'île de Capri.

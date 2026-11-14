@@ -5,3 +5,6 @@ backend/data
 frontend/node_modules
 frontend/dist
 frontend/*.tsbuildinfo
+**/node_modules
+.git
+fly.toml

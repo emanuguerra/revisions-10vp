@@ -6,8 +6,9 @@ from sqlalchemy.orm import Session
 
 from ..db import get_db
 from ..deps import current_profile
-from ..models import ExerciseType, Mission, Profile, Question, Unit
-from ..schemas import ProfileIn, ProfileOut, UnitProgress
+from ..models import ExerciseType, FocusSession, Mission, Profile, Question, Unit
+from ..rewards import rewards
+from ..schemas import FocusIn, ProfileIn, ProfileOut, RewardsOut, UnitProgress
 
 router = APIRouter(prefix="/api/profiles", tags=["profiles"])
 
@@ -54,3 +55,16 @@ def progress(unit: Optional[str] = None, profile: Profile = Depends(current_prof
             last_activity=max((q.answered_at for q in qs if q.answered_at), default=None),
         ))
     return out
+
+
+@router.get("/me/rewards", response_model=RewardsOut)
+def my_rewards(profile: Profile = Depends(current_profile), db: Session = Depends(get_db)):
+    return rewards(db, profile)
+
+
+@router.post("/me/focus", response_model=RewardsOut)
+def focus_done(body: FocusIn, profile: Profile = Depends(current_profile), db: Session = Depends(get_db)):
+    """A focus session was completed: it counts for the XP and the badges."""
+    db.add(FocusSession(profile_id=profile.id, minutes=body.minutes))
+    db.commit()
+    return rewards(db, profile)

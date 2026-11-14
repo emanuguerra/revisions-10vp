@@ -45,7 +45,25 @@ content/
     anglais-metiers/
       unit.yaml
       vocab.yaml                   items: {kind: vocab, items: [...]}
+    allemand-gefuehle/             German, Geni@l klick chapter 3 "Wie geht's denn so?" (generators/wort.py)
+      unit.yaml                    speech_lang: de-DE gives a German voice to cards, Memory and answers
+      woerter.yaml                 the book's word list: {kind: wort} de, art, pl, forms, opposite,
+                                   known (grey box) / plus (blue box), fr, pic, group, example(+_fr)
+      situationen.yaml             {kind: situation}: a short story, the missing word, 3 wrong words
+      dialoge.yaml                 {kind: dialog}: what someone says, the right reply, 3 wrong replies
+      wie-gehts.html               lesson
+    allemand-kleidung/             chapter 4 "Kaufen, verkaufen, leihen", same layout, lektion.html
+    phys-forces/                   physique MEP: forces (generators/forces.py, figure "forces" on squared paper)
+    fr-vieille-dame/               français: La Visite de la vieille dame (common.mcq, common.order for the chronology)
+    geo-climat/                    géographie, climate change (generators/climat.py + common.mcq)
+      stations.yaml                {kind: station}: monthly temperatures and precipitation for the diagrams
+      qcm.yaml, tri.yaml, documents.yaml   multiple choice ({question, answer, wrong, why}), sorting into
+                                   fixed choices ({question, choices, answer, why}), documents ({doc, ...})
 ```
+
+German words follow the book's word lists (categories = the parts of the list). `group` marks
+near-synonyms (froh / glücklich) so one is never a wrong choice for the other; `opposite` feeds
+the "Le contraire" exercise. Typed answers accept the word with or without its article, `ae/oe/ue` for `ä/ö/ü`, and `ss` for `ß`.
 
 A **unit** is a chapter. It has:
 
@@ -66,7 +84,7 @@ uv run python -m app.seed           # update the database (student history is ke
 
 ## Add a chapter
 
-**Only static content** (vocabulary, true/false, find the mistake): create `content/units/<slug>/unit.yaml` and its item files. Reuse existing generators (`common.true_false`, `common.find_mistake`, `vocab.*`). No code needed.
+**Only static content** (vocabulary, true/false, find the mistake): create `content/units/<slug>/unit.yaml` and its item files. Reuse existing generators (`common.true_false`, `common.find_mistake`, `vocab.*` for English, `wort.*` for German). No code needed.
 
 **New kind of exercise** (for example solving linear equations):
 
@@ -109,6 +127,32 @@ These live in `backend/app/engine.py`:
 
 Students create a profile with a nickname and an optional class code, without a password. The browser stores a token; the "Ma progression" page shows it as a **recovery code** for another device.
 This is fine for revision at home or in class. Add real authentication before putting personal data on a public server.
+
+## Put it online (Fly.io)
+
+The root `Dockerfile` builds the frontend and serves it from the API: one small container.
+SQLite lives on a Fly volume mounted at `/data`, so progress survives restarts and deployments.
+With `ACCESS_CODE` set, the app asks for that code once per browser (profiles have no password).
+
+```bash
+fly volumes create data --region cdg --size 1     # once
+fly secrets set ACCESS_CODE=choose-a-code         # once, or to change the code
+fly deploy --ha=false                             # each update (--ha=false: one machine, SQLite)
+fly logs                                          # if something goes wrong
+```
+
+The app is then at https://revisions-10vp.fly.dev. It sleeps when unused and wakes up in a few
+seconds. Back up the database: `fly ssh sftp get /data/app.db`.
+
+## Rewards and focus sessions
+
+- **XP, levels and badges** are computed from the answers, missions and focus sessions
+  (`backend/app/rewards.py`, `GET /api/profiles/me/rewards`): change the rules or add a badge
+  there, past work counts too. A new badge or level shows a toast; all badges are on "Ma progression".
+- **Focus sessions** (button "⏱️ Concentration"): 15 or 20 minutes, then a 5-minute break screen
+  with an idea to move and videos on the chapter's theme. `break_videos` in unit.yaml lists them:
+  `{title, search}` opens a YouTube search, `{title, url}` with a YouTube link plays in the page.
+  A finished session is saved (`POST /api/profiles/me/focus`, table `focus_sessions`).
 
 ## Database
 

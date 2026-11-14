@@ -5,6 +5,7 @@ subtitle: Learn the English names of jobs, sorted by topic, then test yourself w
 subtitle_fr: Apprends les noms des métiers en anglais, classés par domaine, puis fais le quiz.
 order: 1
 ui_lang: en
+speech_lang: en-GB
 
 # Topics used by the vocab cards filter and the quiz filter (item field "category")
 categories:
@@ -18,6 +19,11 @@ categories:
   nature: Nature & animals
   safety: Safety & public service
   arts: Arts, media, beauty & sport
+
+# Suggested during focus breaks: `search` opens a YouTube search; `url` (a YouTube link) plays in the page
+break_videos:
+  - { title: "Jobs vocabulary", search: "jobs vocabulary English for kids" }
+  - { title: "What do you want to be? (song)", search: "what do you want to be when you grow up song" }
 
 lessons:
   - slug: learn

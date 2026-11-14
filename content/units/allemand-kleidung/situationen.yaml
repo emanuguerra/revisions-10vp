@@ -1,0 +1,104 @@
+# A short situation in German with the words of the chapter; "___" is the missing word.
+# `wrong` lists 3 wrong choices that clearly do not fit.
+kind: situation
+items:
+- key: sit-regen
+  de: Es regnet. Nimm deinen ___ mit!
+  fr: Il pleut. Prends ton parapluie !
+  answer: Schirm
+  wrong: [Schal, Gürtel, Akku]
+- key: sit-sonne
+  de: Die Sonne scheint sehr stark. Ich trage meine ___.
+  fr: Le soleil brille très fort. Je porte mes lunettes de soleil.
+  answer: Sonnenbrille
+  wrong: [Strumpfhose, Kapuze, Tasche]
+- key: sit-eng
+  de: Die Hose ist mir zu ___. Hast du eine grössere?
+  fr: Le pantalon est trop étroit pour moi. Tu en as un plus grand ?
+  answer: eng
+  wrong: [weit, billig, hell]
+- key: sit-billig
+  de: Die Jacke kostet nur zehn Franken. Sie ist sehr ___.
+  fr: La veste ne coûte que dix francs. Elle est très bon marché.
+  answer: billig
+  wrong: [teuer, eng, elegant]
+- key: sit-schuhe
+  de: Ich brauche neue Stiefel. Ich gehe ins ___.
+  fr: J'ai besoin de nouvelles bottes. Je vais au magasin de chaussures.
+  answer: Schuhgeschäft
+  wrong: [Reisebüro, Imbiss, Eingang]
+- key: sit-italien
+  de: Wir wollen in den Ferien nach Italien. Wir fragen im ___.
+  fr: Nous voulons aller en Italie pendant les vacances. Nous demandons à l'agence de voyages.
+  answer: Reisebüro
+  wrong: [Schuhgeschäft, Imbiss, Eingang]
+- key: sit-hunger
+  de: Ich habe Hunger. Gehen wir zum ___!
+  fr: J'ai faim. Allons au snack-bar !
+  answer: Imbiss
+  wrong: [Reisebüro, Schuhgeschäft, Akku]
+- key: sit-comic
+  de: Ich suche einen Comic. Ich gehe in die ___.
+  fr: Je cherche une BD. Je vais à la librairie.
+  answer: Buchhandlung
+  wrong: [Kasse, Modeschau, Kapuze]
+- key: sit-kasse
+  de: Du kannst an der ___ bezahlen.
+  fr: Tu peux payer à la caisse.
+  answer: Kasse
+  wrong: [Kette, Kapuze, Mütze]
+- key: sit-akku
+  de: Mein Handy geht nicht mehr. Der ___ ist leer.
+  fr: Mon portable ne marche plus. La batterie est vide.
+  answer: Akku
+  wrong: [Rappen, Gürtel, Preis]
+- key: sit-musik
+  de: Im Bus höre ich Musik mit meinem ___.
+  fr: Dans le bus, j'écoute de la musique avec mon casque.
+  answer: Kopfhörer
+  wrong: [Schirm, Gürtel, Mantel]
+- key: sit-wegwerfen
+  de: Die Jeans ist mir zu klein. Ich werfe sie nicht ___, ich tausche sie.
+  fr: Le jean est trop petit pour moi. Je ne le jette pas, je l'échange.
+  answer: weg
+  wrong: [an, ab, auf]
+- key: sit-anziehen
+  de: Es ist kalt. Ich ___ meine Jacke an.
+  fr: Il fait froid. Je mets ma veste.
+  answer: ziehe
+  wrong: [kaufe, leihe, bezahle]
+- key: sit-kabine
+  de: Kann ich die Hose ___? – Ja, die Kabine ist dort.
+  fr: Est-ce que je peux essayer le pantalon ? – Oui, la cabine est là-bas.
+  answer: anprobieren
+  wrong: [wegwerfen, bezahlen, verkaufen]
+- key: sit-leihen
+  de: Lea hat ihre Jacke vergessen. Kannst du ihr deine Jacke ___?
+  fr: Lea a oublié sa veste. Tu peux lui prêter ta veste ?
+  answer: leihen
+  wrong: [wegwerfen, bezahlen, kosten]
+- key: sit-rappen
+  de: Das T-Shirt kostet neun Franken fünfzig ___.
+  fr: Le t-shirt coûte neuf francs cinquante centimes.
+  answer: Rappen
+  wrong: [Preis, Eintritt, Akku]
+- key: sit-gratis
+  de: Für die Modeschau muss man nichts bezahlen. Der ___ ist gratis.
+  fr: Pour le défilé de mode, on ne doit rien payer. L'entrée est gratuite.
+  answer: Eintritt
+  wrong: [Eingang, Verkauf, Akku]
+- key: sit-nehmen
+  de: Das Kleid passt mir, es steht mir gut und es ist billig. Das ___ ich!
+  fr: La robe me va, elle me va bien et elle est bon marché. Je la prends !
+  answer: nehme
+  wrong: [verkaufe, werfe, leihe]
+- key: sit-dunkelblau
+  de: Ich mag keine hellen Farben. Ich mag ___ Farben.
+  fr: Je n'aime pas les couleurs claires. J'aime les couleurs foncées.
+  answer: dunkle
+  wrong: [enge, teure, unbequeme]
+- key: sit-handy
+  de: Ich brauche mein altes Handy nicht mehr. Ich ___ es.
+  fr: Je n'ai plus besoin de mon vieux natel. Je le vends.
+  answer: verkaufe
+  wrong: [kaufe, trage, ziehe]

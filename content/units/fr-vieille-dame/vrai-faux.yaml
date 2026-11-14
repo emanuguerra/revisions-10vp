@@ -1,0 +1,66 @@
+kind: vf
+items:
+- key: vf-suisse
+  statement: Friedrich Dürrenmatt est un écrivain suisse.
+  'true': true
+  why: Il est né en 1921 dans le canton de Berne et a vécu à Neuchâtel jusqu'à sa mort en 1990.
+- key: vf-francais
+  statement: Dürrenmatt a écrit la pièce en français.
+  'true': false
+  why: Il l'a écrite en allemand (<em>Der Besuch der alten Dame</em>). Nous la lisons en traduction.
+- key: vf-actes
+  statement: La pièce compte trois actes.
+  'true': true
+  why: C'est une « comédie tragique en trois actes ».
+- key: vf-riche
+  statement: Au début de la pièce, Güllen est une ville prospère.
+  'true': false
+  why: La ville est ruinée ; on apprendra que c'est Claire qui l'a voulu.
+- key: vf-refus
+  statement: Les habitants acceptent l'offre de Claire dès le premier soir.
+  'true': false
+  why: Le maire la refuse au nom de l'humanité. Mais les habitants commencent aussitôt à acheter à crédit.
+- key: vf-coupable
+  statement: Alfred Ill a vraiment commis une faute envers Klara dans sa jeunesse.
+  'true': true
+  why: 'Il a nié sa paternité avec de faux témoins. C''est ce qui rend la pièce complexe : la victime est aussi coupable.'
+- key: vf-enfant
+  statement: L'enfant de Klara est devenu un homme riche.
+  'true': false
+  why: L'enfant est mort très petit.
+- key: vf-cercueil
+  statement: Claire apporte un cercueil dans ses bagages dès son arrivée.
+  'true': true
+  why: 'Elle a tout prévu : le cercueil annonce la fin de la pièce.'
+- key: vf-chaussures
+  statement: Les chaussures jaunes neuves montrent que les habitants comptent déjà sur l'argent de Claire.
+  'true': true
+  why: 'Elles sont achetées à crédit : un symbole visible de la corruption de la ville.'
+- key: vf-fuite
+  statement: Ill réussit à quitter Güllen en train.
+  'true': false
+  why: Entouré des habitants à la gare, il n'ose pas monter dans le train.
+- key: vf-fusil
+  statement: Ill accepte le fusil que lui propose le maire pour se suicider.
+  'true': false
+  why: 'Il refuse : il veut que la ville assume elle-même sa décision.'
+- key: vf-justice
+  statement: L'assemblée dit voter pour l'argent.
+  'true': false
+  why: Elle prétend voter « pour la justice ». C'est de l'hypocrisie.
+- key: vf-capri
+  statement: Claire emporte le corps d'Ill pour l'enterrer à Capri.
+  'true': true
+  why: Elle lui a préparé un mausolée sur cette île.
+- key: vf-usines
+  statement: Claire a racheté les usines de Güllen pour les fermer.
+  'true': true
+  why: Elle a organisé la ruine de la ville pour que son offre soit irrésistible.
+- key: vf-instituteur
+  statement: L'instituteur est le seul à voter contre la mort d'Ill.
+  'true': false
+  why: Il est lucide, mais il vote avec les autres. Le vote est unanime.
+- key: vf-comique
+  statement: Il n'y a aucun élément comique dans la pièce.
+  'true': false
+  why: Le grotesque (la suite de Claire, ses maris, les situations absurdes) fait rire, mais d'un rire grinçant.

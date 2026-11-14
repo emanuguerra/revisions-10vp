@@ -1,0 +1,97 @@
+slug: allemand-gefuehle
+subject: allemand
+title: Wie geht's denn so?
+subtitle: "Geni@l klick, chapitre 3 : parler de ses sentiments et réagir aux sentiments des autres. Le vocabulaire du livre (pages 18 à 21), avec les cartes, le Memory et le quiz."
+order: 1
+ui_lang: fr
+speech_lang: de-DE
+
+# Topics used by the cards filter and the quiz filter (item field "category")
+# The three parts of the word list in the book
+categories:
+  wiegehts: "Na, wie geht's ?"
+  freude: Freude / Ärger haben
+  sollen: "Ich soll, aber ich will nicht !"
+
+# Suggested during focus breaks: `search` opens a YouTube search; `url` (a YouTube link) plays in the page
+break_videos:
+  - { title: "Gefühle auf Deutsch, pour débutants", search: "Gefühle Deutsch lernen A1" }
+  - { title: "Wie geht's? Petits dialogues", search: "Wie geht es dir Deutsch lernen Dialog" }
+  - { title: "Une chanson en allemand sur les émotions", search: "Lied Gefühle Deutsch lernen" }
+
+lessons:
+  - slug: lernen
+    title: "1. Lernen · Apprendre"
+    blocks:
+      - type: widget
+        widget: sound-check
+        props: { lang: de, sample: "Hallo! Wie geht's? Mir geht's gut." }
+      - type: widget
+        widget: wort-cards
+  - slug: wie-gehts
+    title: "2. Wie geht's ?"
+    blocks:
+      - type: html
+        file: wie-gehts.html
+  - slug: memory
+    title: "3. Memory"
+    blocks:
+      - type: widget
+        widget: memory-game
+
+exercises_title: "4. Quiz"
+exercises:
+  - key: fr_de
+    title: Traduis en allemand
+    generator: wort.fr_de
+  - key: de_fr
+    title: Que veut dire… ?
+    generator: wort.de_fr
+  - key: bild
+    title: Regarde l'émoji
+    generator: wort.picture
+    params:
+      categories: [wiegehts]
+      prompt: 'Wie fühlt er sich? Wie ist das? <small class="muted">(Quel mot correspond à l''émoji ?)</small>'
+  - key: gegenteil
+    title: Le contraire
+    generator: wort.opposite
+  - key: artikel
+    title: der, die ou das ?
+    generator: wort.artikel
+  - key: luecke
+    title: Complète la phrase
+    generator: wort.gap
+  - key: situation
+    title: Complète l'histoire
+    generator: wort.situation
+  - key: dialog
+    title: Que réponds-tu ?
+    generator: wort.dialog
+  - key: schreiben
+    title: Écris le mot
+    generator: wort.spell
+
+mission:
+  mode: mix
+  types: [fr_de, bild, de_fr, situation, gegenteil, artikel, luecke, dialog, schreiben]
+  counts: [10, 20, 30]
+  filter: category
+  review_mistakes: true
+  score_display: fraction
+  title: Bereit für das Quiz ?
+  description: "Questions variées : traduction, émojis, contraires, der/die/das, phrases à compléter, histoires, dialogues et orthographe. Seule une réponse juste du premier coup compte, comme dans un test de vocabulaire."
+  badges:
+    - Weiter so ! Retourne aux cartes et réessaie.
+    - Gut gemacht ! Continue à t'entraîner.
+    - Super ! Très bon travail.
+    - Perfekt ! Parfait !
+
+training: true
+
+scoring:
+  first: 1
+  retry: 0
+  hint_cost: 0
+  streak_bonus: 0
+  streak_from: 3

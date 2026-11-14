@@ -3,6 +3,8 @@ import { api, ApiError } from "../api";
 import type { Strings } from "../i18n";
 import { speak } from "../speech";
 import type { AnswerResult, Question, Scoring, Side } from "../types";
+import { Climograph } from "./widgets/Climograph";
+import { ForceFigure } from "./widgets/ForceFigure";
 import { TriangleFigure } from "./widgets/TriangleFigure";
 
 interface Props {
@@ -17,6 +19,7 @@ interface Props {
   quitLabel: string;
   onPause?: () => void;
   review?: boolean;                      // a finished question shown again: read only, no buttons
+  speechLang?: string;                   // voice used to pronounce the answer
 }
 
 const pick = <T,>(a: T[]) => a[Math.floor(Math.random() * a.length)];
@@ -31,7 +34,7 @@ function answerLabels(q: Question): string[] {
  * and the points. A wrong answer can be corrected until the last attempt.
  * A finished question (resumed session, or `review`) opens with its correction.
  */
-export function QuestionView({ question: q, t, scoring, header, isLast, onResult, onNext, onQuit, quitLabel, onPause, review }: Props) {
+export function QuestionView({ question: q, t, scoring, header, isLast, onResult, onNext, onQuit, quitLabel, onPause, review, speechLang }: Props) {
   const [value, setValue] = useState(q.result && q.kind !== "choice" ? q.answers[q.answers.length - 1] ?? "" : "");
   const [eliminated, setEliminated] = useState<(number | string)[]>(q.eliminated);
   const [tries, setTries] = useState(q.tries);
@@ -54,7 +57,7 @@ export function QuestionView({ question: q, t, scoring, header, isLast, onResult
     if (r.final) {
       setFinal(r);
       setMessage(null);
-      if (r.speak) speak(r.speak);
+      if (r.speak) speak(r.speak, speechLang);
     } else {
       setMessage({ kind: "retry", text: r.message });
       setTimeout(() => inputRef.current?.select(), 0);
@@ -87,15 +90,17 @@ export function QuestionView({ question: q, t, scoring, header, isLast, onResult
     <>
       {header}
       <div className="qtype">{q.category}</div>
-      <div className={`mq${q.figure ? "" : " nofig"}`}>
+      <div className={`mq${q.figure ? (q.figure.type === "right-triangle" ? "" : " wide") : " nofig"}`}>
         <div className="mprompt" dangerouslySetInnerHTML={{ __html: q.prompt }} />
-        {q.figure && (
+        {q.figure?.type === "right-triangle" && (
           <div>
             <TriangleFigure {...q.figure} sideState={sideState}
               click={q.figure.click && !done}
               onSide={k => { if (!eliminated.includes(k)) submit(k); }} />
           </div>
         )}
+        {q.figure?.type === "climograph" && <div><Climograph {...q.figure} /></div>}
+        {q.figure?.type === "forces" && <div><ForceFigure {...q.figure} /></div>}
       </div>
 
       {(q.kind === "number" || q.kind === "text") && (

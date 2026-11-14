@@ -1,0 +1,748 @@
+# Geni@l klick, chapitre 4 « Kaufen, verkaufen, leihen … », word list pages 24 to 27 of the book.
+# known: true = "Das kennst du schon" (grey box), plus: true = extra vocabulary (blue box).
+# Examples marked in the book are copied as they are; the others are simple sentences
+# with the same words. Swiss spelling (ss), like the book.
+kind: wort
+items:
+# --- Kleidung ---------------------------------------------------------------
+- key: muetze
+  category: kleidung
+  known: true
+  de: Mütze
+  art: die
+  pl: Mützen
+  fr: la casquette, le bonnet
+  pic: "🧢"
+  example: Zieh deine Mütze an, es ist kalt!
+  example_fr: Mets ton bonnet, il fait froid !
+- key: jacke
+  category: kleidung
+  known: true
+  de: Jacke
+  art: die
+  pl: Jacken
+  fr: la veste
+  pic: "🧥"
+  group: coat
+  example: Kannst du mir eine Jacke leihen?
+  example_fr: Peux-tu me prêter une veste ?
+- key: schal
+  category: kleidung
+  known: true
+  de: Schal
+  art: der
+  pl: Schals
+  fr: le foulard, l'écharpe
+  pic: "🧣"
+  example: Mein Schal ist aus Wolle.
+  example_fr: Mon écharpe est en laine.
+- key: pullover
+  category: kleidung
+  known: true
+  de: Pullover
+  art: der
+  pl: Pullover
+  fr: le pullover
+  pic: "🐑"
+  nopic: true
+  example: Im Winter trage ich einen warmen Pullover.
+  example_fr: En hiver, je porte un pullover chaud.
+- key: tasche
+  category: kleidung
+  known: true
+  de: Tasche
+  art: die
+  pl: Taschen
+  fr: le sac
+  pic: "👜"
+  example: Meine Tasche ist voll.
+  example_fr: Mon sac est plein.
+- key: brille
+  category: kleidung
+  known: true
+  de: Brille
+  art: die
+  pl: Brillen
+  fr: les lunettes
+  pic: "👓"
+  example: Ohne Brille sehe ich nichts.
+  example_fr: Sans lunettes, je ne vois rien.
+- key: anziehen
+  category: kleidung
+  known: true
+  de: anziehen
+  forms: er zieht … an, hat … angezogen
+  fr: mettre (un habit)
+  pic: "🧦"
+  example: Was soll ich heute anziehen?
+  example_fr: Qu'est-ce que je dois mettre aujourd'hui ?
+- key: hose
+  category: kleidung
+  de: Hose
+  art: die
+  pl: Hosen
+  fr: le pantalon
+  pic: "👖"
+  example: Ich kaufe eine Hose.
+  example_fr: J'achète un pantalon.
+- key: rock
+  category: kleidung
+  de: Rock
+  art: der
+  pl: Röcke
+  fr: la jupe
+  pic: "👗"
+  nopic: true
+  example: Der Rock ist zu kurz.
+  example_fr: La jupe est trop courte.
+- key: kleid
+  category: kleidung
+  de: Kleid
+  art: das
+  pl: Kleider
+  fr: la robe
+  pic: "👗"
+  example: Sie trägt ein elegantes Kleid.
+  example_fr: Elle porte une robe élégante.
+- key: bluse
+  category: kleidung
+  de: Bluse
+  art: die
+  pl: Blusen
+  fr: la blouse, le chemisier
+  pic: "👚"
+  group: top
+  example: Was kostet die Bluse?
+  example_fr: Combien coûte la blouse ?
+- key: hemd
+  category: kleidung
+  de: Hemd
+  art: das
+  pl: Hemden
+  fr: la chemise
+  pic: "👔"
+  group: top
+  example: Papa trägt ein weisses Hemd.
+  example_fr: Papa porte une chemise blanche.
+- key: mantel
+  category: kleidung
+  de: Mantel
+  art: der
+  pl: Mäntel
+  fr: le manteau
+  pic: "🧥"
+  group: coat
+  nopic: true
+  example: Der Mantel ist lang und warm.
+  example_fr: Le manteau est long et chaud.
+- key: schirm
+  category: kleidung
+  de: Schirm
+  art: der
+  pl: Schirme
+  fr: le parapluie
+  pic: "☂️"
+  example: Es regnet. Nimm deinen Schirm mit!
+  example_fr: Il pleut. Prends ton parapluie !
+- key: kette
+  category: kleidung
+  de: Kette
+  art: die
+  pl: Ketten
+  fr: la chaîne, le collier
+  pic: "📿"
+  example: Die Kette ist ein Geschenk von Oma.
+  example_fr: Le collier est un cadeau de grand-maman.
+- key: sonnenbrille
+  category: kleidung
+  de: Sonnenbrille
+  art: die
+  pl: Sonnenbrillen
+  fr: les lunettes de soleil
+  pic: "🕶️"
+  example: Im Sommer trage ich eine Sonnenbrille.
+  example_fr: En été, je porte des lunettes de soleil.
+- key: schuhe
+  category: kleidung
+  de: Schuhe
+  art: die
+  plural_only: true
+  fr: les chaussures
+  pic: "👞"
+  example: Meine Schuhe sind zu klein.
+  example_fr: Mes chaussures sont trop petites.
+- key: tragen
+  category: kleidung
+  de: tragen
+  forms: er trägt, hat getragen
+  fr: porter
+  pic: "👕"
+  example: Sie trägt am liebsten Röcke.
+  example_fr: Elle préfère porter des jupes.
+- key: leihen
+  category: kleidung
+  de: leihen
+  forms: er leiht, hat geliehen
+  fr: prêter
+  pic: "🤝"
+  example: Kannst du mir eine Jacke leihen?
+  example_fr: Peux-tu me prêter une veste ?
+- key: klamotten
+  category: kleidung
+  plus: true
+  de: Klamotten
+  art: die
+  plural_only: true
+  fr: les fringues
+  pic: "🛍️"
+  nopic: true
+  example: Meine Lieblingsklamotten sind blau.
+  example_fr: Mes fringues préférées sont bleues.
+- key: guertel
+  category: kleidung
+  plus: true
+  de: Gürtel
+  art: der
+  pl: Gürtel
+  fr: la ceinture
+  pic: "➰"
+  nopic: true
+  example: Die Hose ist zu weit, ich brauche einen Gürtel.
+  example_fr: Le pantalon est trop large, j'ai besoin d'une ceinture.
+- key: strumpfhose
+  category: kleidung
+  plus: true
+  de: Strumpfhose
+  art: die
+  pl: Strumpfhosen
+  fr: le collant
+  pic: "🎀"
+  nopic: true
+  example: Unter dem Rock trägt sie eine Strumpfhose.
+  example_fr: Sous la jupe, elle porte un collant.
+- key: socken
+  category: kleidung
+  plus: true
+  de: Socken
+  art: die
+  plural_only: true
+  fr: les chaussettes
+  pic: "🧦"
+  example: Wo sind meine Socken?
+  example_fr: Où sont mes chaussettes ?
+- key: stiefel
+  category: kleidung
+  plus: true
+  de: Stiefel
+  art: die
+  plural_only: true
+  fr: les bottes
+  pic: "👢"
+  example: Im Schnee trage ich Stiefel.
+  example_fr: Dans la neige, je porte des bottes.
+- key: sweatshirt
+  category: kleidung
+  plus: true
+  de: Sweatshirt
+  art: das
+  pl: Sweatshirts
+  fr: le sweatshirt
+  pic: "👕"
+  example: Sie mag das Sweatshirt mit Kapuze.
+  example_fr: Elle aime le sweatshirt à capuche.
+- key: kapuze
+  category: kleidung
+  plus: true
+  de: Kapuze
+  art: die
+  pl: Kapuzen
+  fr: la capuche
+  pic: "🧥"
+  nopic: true
+  example: Sie mag das Sweatshirt mit Kapuze.
+  example_fr: Elle aime le sweatshirt à capuche.
+- key: oberteil
+  category: kleidung
+  plus: true
+  de: Oberteil
+  art: das
+  pl: Oberteile
+  fr: le top (partie supérieure d'un vêtement)
+  pic: "👚"
+  group: top
+  nopic: true
+  example: Das Oberteil passt gut zur Hose.
+  example_fr: Le top va bien avec le pantalon.
+- key: hoch
+  category: kleidung
+  plus: true
+  de: hoch
+  fr: haut·e
+  pic: "👠"
+  nopic: true
+  example: Sie trägt hohe Schuhe.
+  example_fr: Elle porte des chaussures hautes.
+
+# --- Geschäfte und Orte -----------------------------------------------------
+- key: schuhgeschaeft
+  category: geschaefte
+  de: Schuhgeschäft
+  art: das
+  pl: Schuhgeschäfte
+  fr: le magasin de chaussures
+  pic: "👟"
+  example: Im Schuhgeschäft finde ich tolle Stiefel.
+  example_fr: Au magasin de chaussures, je trouve des bottes géniales.
+- key: reisebuero
+  category: geschaefte
+  de: Reisebüro
+  art: das
+  pl: Reisebüros
+  fr: l'agence de voyages
+  pic: "✈️"
+  example: Im Reisebüro buchen wir unsere Ferien.
+  example_fr: À l'agence de voyages, nous réservons nos vacances.
+- key: kaufhaus
+  category: geschaefte
+  de: Kaufhaus
+  art: das
+  pl: Kaufhäuser
+  fr: le grand magasin
+  pic: "🏬"
+  example: Im Kaufhaus gibt es Kleider, Bücher und Spielsachen.
+  example_fr: Dans le grand magasin, il y a des habits, des livres et des jouets.
+- key: shoppingcenter
+  category: geschaefte
+  plus: true
+  de: Shoppingcenter
+  art: das
+  pl: Shoppingcenter
+  fr: le centre commercial
+  pic: "🛒"
+  example: Am Samstag gehen wir ins Shoppingcenter.
+  example_fr: Samedi, nous allons au centre commercial.
+- key: buchhandlung
+  category: geschaefte
+  plus: true
+  de: Buchhandlung
+  art: die
+  pl: Buchhandlungen
+  fr: la librairie
+  pic: "📚"
+  example: In der Buchhandlung kaufe ich einen Comic.
+  example_fr: À la librairie, j'achète une BD.
+- key: imbiss
+  category: geschaefte
+  plus: true
+  de: Imbiss
+  art: der
+  pl: Imbisse
+  fr: le snack-bar
+  pic: "🌭"
+  example: Wir essen am Imbiss eine Wurst.
+  example_fr: Nous mangeons une saucisse au snack-bar.
+
+# --- Einkaufen --------------------------------------------------------------
+- key: verkaeufer
+  category: einkaufen
+  known: true
+  de: Verkäufer
+  art: der
+  pl: Verkäufer
+  fr: le vendeur
+  pic: "🛎️"
+  example: Der Verkäufer ist sehr freundlich.
+  example_fr: Le vendeur est très aimable.
+- key: verkaeuferin
+  category: einkaufen
+  known: true
+  de: Verkäuferin
+  art: die
+  pl: Verkäuferinnen
+  fr: la vendeuse
+  pic: "💁"
+  example: Die Verkäuferin hilft mir.
+  example_fr: La vendeuse m'aide.
+- key: wo-finde-ich
+  category: einkaufen
+  known: true
+  de: Entschuldigung, wo finde ich …?
+  fr: Pardon, où puis-je trouver… ?
+  pic: "🔍"
+  example: Entschuldigung, wo finde ich die Hosen?
+  example_fr: Pardon, où puis-je trouver les pantalons ?
+- key: ich-suche
+  category: einkaufen
+  known: true
+  de: Ich suche …
+  fr: Je cherche…
+  pic: "👀"
+  example: Ich suche eine Jacke in Grösse M.
+  example_fr: Je cherche une veste en taille M.
+- key: kosten
+  category: einkaufen
+  known: true
+  de: kosten
+  forms: es kostet, hat gekostet
+  fr: coûter
+  pic: "💶"
+  example: Wie viel kostet die Bluse?
+  example_fr: Combien coûte la blouse ?
+- key: was-kostet
+  category: einkaufen
+  known: true
+  de: Was kostet die Bluse?
+  fr: Combien coûte la blouse ?
+  pic: "🏷️"
+  example: Entschuldigung, was kostet die Bluse?
+  example_fr: Pardon, combien coûte la blouse ?
+- key: billig
+  category: einkaufen
+  known: true
+  de: billig
+  fr: bon marché
+  pic: "👛"
+  opposite: teuer
+  example: Das T-Shirt ist sehr billig.
+  example_fr: Le t-shirt est très bon marché.
+- key: teuer
+  category: einkaufen
+  known: true
+  de: teuer
+  fr: cher / chère
+  pic: "💰"
+  example: Die Stiefel sind mir zu teuer.
+  example_fr: Les bottes sont trop chères pour moi.
+- key: sieht-aus
+  category: einkaufen
+  known: true
+  de: Das sieht cool aus.
+  fr: Ça a l'air cool. Ça fait cool.
+  pic: "😎"
+  example: Deine neue Mütze? Das sieht cool aus!
+  example_fr: Ta nouvelle casquette ? Ça fait cool !
+- key: gefaellt-mir
+  category: einkaufen
+  known: true
+  de: Das gefällt mir (nicht).
+  fr: Ça (ne) me plaît (pas).
+  pic: "👍"
+  example: Die Farbe gefällt mir nicht.
+  example_fr: La couleur ne me plaît pas.
+- key: passt-mir
+  category: einkaufen
+  known: true
+  de: Das passt mir (nicht).
+  fr: Ça (ne) me va (pas). (la taille)
+  pic: "📏"
+  example: Die Hose ist zu klein, sie passt mir nicht.
+  example_fr: Le pantalon est trop petit, il ne me va pas.
+- key: steht-dir
+  category: einkaufen
+  known: true
+  de: Das steht dir (nicht).
+  fr: Ça (ne) te va (pas) bien.
+  pic: "🤩"
+  example: Das Kleid steht dir super!
+  example_fr: La robe te va super bien !
+- key: nehme-ich
+  category: einkaufen
+  known: true
+  de: Das nehme ich.
+  fr: Je prends ça.
+  pic: "🛍️"
+  example: Die Jacke ist schön und nicht teuer. Das nehme ich!
+  example_fr: La veste est belle et pas chère. Je la prends !
+- key: kurz
+  category: einkaufen
+  known: true
+  de: kurz
+  fr: court·e
+  pic: "✂️"
+  opposite: lang
+  example: Der Rock ist zu kurz.
+  example_fr: La jupe est trop courte.
+- key: lang
+  category: einkaufen
+  known: true
+  de: lang
+  fr: long / longue
+  pic: "📜"
+  example: Der Mantel ist sehr lang.
+  example_fr: Le manteau est très long.
+- key: kaufen
+  category: einkaufen
+  de: kaufen
+  forms: er kauft, hat gekauft
+  fr: acheter
+  pic: "🛒"
+  opposite: verkaufen
+  example: Ich kaufe eine Hose.
+  example_fr: J'achète un pantalon.
+- key: verkaufen
+  category: einkaufen
+  de: verkaufen
+  forms: er verkauft, hat verkauft
+  fr: vendre
+  pic: "💵"
+  example: Ich brauche mein Handy nicht mehr, ich verkaufe es.
+  example_fr: Je n'ai plus besoin de mon natel, je le vends.
+- key: groesse
+  category: einkaufen
+  de: Grösse
+  art: die
+  pl: Grössen
+  fr: la taille
+  pic: "📐"
+  example: Ich habe Grösse M.
+  example_fr: Je fais du M.
+- key: welche-groesse
+  category: einkaufen
+  de: Welche Grösse hast du?
+  fr: Quelle taille as-tu ?
+  pic: "❔"
+  example: "Welche Grösse hast du? – Grösse S."
+  example_fr: "Quelle taille as-tu ? – Taille S."
+- key: eng
+  category: einkaufen
+  de: eng
+  fr: étroit·e
+  pic: "🤏"
+  opposite: weit
+  example: Die Jeans ist zu eng.
+  example_fr: Le jean est trop étroit.
+- key: weit
+  category: einkaufen
+  de: weit
+  fr: large
+  pic: "↔️"
+  example: Der Pullover ist schön weit.
+  example_fr: Le pull est bien large.
+- key: bequem
+  category: einkaufen
+  de: bequem
+  fr: confortable
+  pic: "🛋️"
+  opposite: unbequem
+  example: Die Schuhe sind sehr bequem.
+  example_fr: Les chaussures sont très confortables.
+- key: unbequem
+  category: einkaufen
+  de: unbequem
+  fr: inconfortable
+  pic: "😣"
+  example: Hohe Schuhe sind unbequem.
+  example_fr: Les chaussures hautes sont inconfortables.
+- key: farbe
+  category: einkaufen
+  de: Farbe
+  art: die
+  pl: Farben
+  fr: la couleur
+  pic: "🎨"
+  example: Welche Farbe magst du?
+  example_fr: Quelle couleur aimes-tu ?
+- key: hell
+  category: einkaufen
+  de: hell
+  fr: clair·e
+  pic: "💡"
+  opposite: dunkel
+  example: Ich mag helle Farben, zum Beispiel Hellgrün.
+  example_fr: J'aime les couleurs claires, par exemple le vert clair.
+- key: dunkel
+  category: einkaufen
+  de: dunkel
+  fr: foncé·e
+  pic: "🌑"
+  example: Ich mag Dunkelblau.
+  example_fr: J'aime bien le bleu foncé.
+- key: preis
+  category: einkaufen
+  de: Preis
+  art: der
+  pl: Preise
+  fr: le prix
+  pic: "🏷️"
+  example: Der Preis steht auf dem Etikett.
+  example_fr: Le prix est sur l'étiquette.
+- key: kasse
+  category: einkaufen
+  de: Kasse
+  art: die
+  pl: Kassen
+  fr: la caisse
+  pic: "🏧"
+  example: Du kannst an der Kasse bezahlen.
+  example_fr: Tu peux payer à la caisse.
+- key: bezahlen
+  category: einkaufen
+  de: bezahlen
+  forms: er bezahlt, hat bezahlt
+  fr: payer
+  pic: "💳"
+  example: Du kannst an der Kasse bezahlen.
+  example_fr: Tu peux payer à la caisse.
+- key: eingang
+  category: einkaufen
+  de: Eingang
+  art: der
+  pl: Eingänge
+  fr: l'entrée
+  pic: "🚪"
+  example: Die Kasse ist beim Eingang.
+  example_fr: La caisse est à l'entrée.
+- key: helfen
+  category: einkaufen
+  plus: true
+  de: Kann ich dir / Ihnen helfen?
+  fr: Puis-je t'aider / vous aider ?
+  pic: "🙋"
+  example: Guten Tag! Kann ich Ihnen helfen?
+  example_fr: Bonjour ! Puis-je vous aider ?
+- key: anprobieren
+  category: einkaufen
+  plus: true
+  de: anprobieren
+  forms: er probiert … an, hat anprobiert
+  fr: essayer (un vêtement)
+  pic: "👗"
+  example: Kann ich die Hose anprobieren?
+  example_fr: Est-ce que je peux essayer le pantalon ?
+- key: kann-ich-anprobieren
+  category: einkaufen
+  plus: true
+  de: Kann ich das anprobieren?
+  fr: Est-ce que je peux essayer cela ?
+  pic: "🚪"
+  example: "Kann ich das anprobieren? – Ja, die Kabine ist dort."
+  example_fr: "Est-ce que je peux essayer cela ? – Oui, la cabine est là-bas."
+- key: elegant
+  category: einkaufen
+  plus: true
+  de: elegant
+  fr: élégant·e
+  pic: "🎩"
+  example: Das Kleid ist sehr elegant.
+  example_fr: La robe est très élégante.
+- key: in-sein
+  category: einkaufen
+  plus: true
+  de: modisch sein = in sein
+  fr: être à la mode = être in
+  pic: "🔥"
+  example: Diese Turnschuhe sind gerade in.
+  example_fr: Ces baskets sont à la mode en ce moment.
+- key: kopfhoerer
+  category: einkaufen
+  plus: true
+  de: Kopfhörer
+  art: der
+  pl: Kopfhörer
+  fr: le casque (audio)
+  pic: "🎧"
+  example: Ich höre Musik mit meinem Kopfhörer.
+  example_fr: J'écoute de la musique avec mon casque.
+- key: akku
+  category: einkaufen
+  plus: true
+  de: Akku
+  art: der
+  pl: Akkus
+  fr: la batterie (rechargeable)
+  pic: "🔋"
+  example: Mein Akku ist leer.
+  example_fr: Ma batterie est vide.
+
+# --- Kleidung herstellen und recyclen -------------------------------------
+- key: wegwerfen
+  category: recycling
+  de: wegwerfen
+  forms: er wirft … weg, hat weggeworfen
+  fr: jeter
+  pic: "🚮"
+  example: Ich will meine alte Jacke nicht wegwerfen.
+  example_fr: Je ne veux pas jeter ma vieille veste.
+- key: tauschen
+  category: recycling
+  de: tauschen
+  forms: er tauscht, hat getauscht
+  fr: échanger
+  pic: "🔄"
+  example: Wir tauschen Klamotten mit unseren Freundinnen.
+  example_fr: Nous échangeons des fringues avec nos amies.
+- key: modeschau
+  category: recycling
+  de: Modeschau
+  art: die
+  pl: Modeschauen
+  fr: le défilé de mode
+  pic: "💃"
+  example: Unsere Klasse macht eine Modeschau mit alten Kleidern.
+  example_fr: Notre classe organise un défilé de mode avec de vieux habits.
+- key: rappen
+  category: recycling
+  de: Rappen
+  art: der
+  pl: Rappen
+  fr: le centime (CH)
+  pic: "🇨🇭"
+  example: Das kostet zwei Franken fünfzig Rappen.
+  example_fr: Ça coûte deux francs cinquante centimes.
+- key: eintritt
+  category: recycling
+  de: Eintritt
+  art: der
+  singular_only: true
+  fr: l'entrée (le prix)
+  pic: "🎟️"
+  example: Der Eintritt kostet drei Franken.
+  example_fr: L'entrée coûte trois francs.
+- key: not
+  category: recycling
+  plus: true
+  de: Not
+  art: die
+  singular_only: true
+  fr: la misère, le besoin
+  pic: "🆘"
+  example: Wir geben das Geld Menschen in Not.
+  example_fr: Nous donnons l'argent à des gens dans le besoin.
+- key: model
+  category: recycling
+  plus: true
+  de: Model
+  art: das
+  pl: Models
+  fr: le mannequin
+  pic: "📸"
+  example: Bei der Modeschau sind wir die Models.
+  example_fr: Au défilé de mode, c'est nous les mannequins.
+- key: verkauf
+  category: recycling
+  plus: true
+  de: Verkauf
+  art: der
+  pl: Verkäufe
+  fr: la vente
+  pic: "🏪"
+  example: Das Geld vom Verkauf ist für ein Kinderprojekt.
+  example_fr: L'argent de la vente est pour un projet pour les enfants.
+- key: weltweit
+  category: recycling
+  plus: true
+  de: weltweit
+  fr: mondial·e
+  pic: "🌍"
+  example: Weltweit kaufen die Menschen immer mehr Kleider.
+  example_fr: Dans le monde entier, les gens achètent de plus en plus d'habits.
+- key: material
+  category: recycling
+  plus: true
+  de: Material
+  art: das
+  pl: Materialien
+  fr: le matériau
+  pic: "🔩"
+  example: Aus welchem Material ist die Tasche?
+  example_fr: En quel matériau est le sac ?

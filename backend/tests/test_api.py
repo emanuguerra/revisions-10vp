@@ -57,6 +57,18 @@ def test_math_mission_with_retry(client, student, db):
     prog = client.get("/api/profiles/me/progress?unit=maths-pythagore", headers=student).json()[0]
     assert prog["answered"] == 10 and prog["best"]["1"] == end["mission"]["score"]
 
+    # rewards: 9 first-try answers, 1 corrected, 1 mission, best streak of 9
+    rw = client.get("/api/profiles/me/rewards", headers=student).json()
+    assert rw["xp"] == 9 * 10 + 5 + 20 and rw["level"] == 2 and rw["level_start"] == 100 and rw["stats"]["best_streak"] == 9
+    earned = {b["id"] for b in rw["badges"] if b["earned"]}
+    assert {"first-step", "mission-1", "streak-5"} <= earned and "perfect" not in earned
+    assert rw["stats"]["days"] == 1
+
+    # a focus session adds XP and a badge; minutes are checked
+    assert client.post("/api/profiles/me/focus", json={"minutes": 2}, headers=student).status_code == 422
+    rw = client.post("/api/profiles/me/focus", json={"minutes": 15}, headers=student).json()
+    assert rw["xp"] == 145 and rw["next_level"] == 300 and "focus-1" in {b["id"] for b in rw["badges"] if b["earned"]}
+
 
 def test_number_retry_then_reveal(client, student, db):
     q = client.post("/api/questions", json={"unit": "maths-pythagore", "exercise": "calcHyp", "level": 0},
@@ -190,3 +202,15 @@ def test_training_session(client, student, db):
     # training never counts as a record
     prog = client.get("/api/profiles/me/progress?unit=maths-pythagore", headers=student).json()[0]
     assert prog["best"] == {} and prog["missions_done"] == 0
+
+
+def test_access_code(client, monkeypatch):
+    import app.main as main
+    monkeypatch.setattr(main, "ACCESS_CODE", "Secret")
+    assert client.get("/api/subjects").status_code == 403
+    assert client.get("/api/subjects", headers={"X-Access-Code": "secret"}).status_code == 200
+    assert client.get("/api/health").status_code == 200
+    assert client.get("/api/access").json() == {"required": True, "ok": False}
+    assert client.get("/api/access", headers={"X-Access-Code": "Secret"}).json() == {"required": True, "ok": True}
+    monkeypatch.setattr(main, "ACCESS_CODE", "")
+    assert client.get("/api/subjects").status_code == 200

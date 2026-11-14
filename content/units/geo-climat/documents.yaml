@@ -1,0 +1,93 @@
+# Short documents to analyse (objectifs 8, 9 et méthode). `doc` is shown in a box.
+kind: doc
+items:
+- key: d-source
+  category: meteo
+  doc: "<strong>Publication sur un réseau social, 2024</strong><br>« Le réchauffement, c'est une invention ! Chez moi, il fait 3 °C ce matin. » – @meteo_libre (compte anonyme)"
+  question: Quelle est la meilleure critique de ce document ?
+  answer: Une seule température locale ne dit rien du climat, et l'auteur est anonyme, sans source.
+  wrong:
+    - Le document est fiable car il donne un chiffre précis.
+    - Le document est fiable car il est récent.
+    - Il faut le croire car beaucoup de gens l'ont partagé.
+  why: "Pour analyser un document : qui est l'auteur ? quelle est sa source ? de quelle date ? à quelle échelle (un lieu, un jour ou la planète, 30 ans) ?"
+- key: d-axe
+  category: carbone
+  doc: "<strong>Graphique</strong> : concentration de CO₂ à Mauna Loa (Hawaï). L'axe vertical commence à 310 ppm et monte jusqu'à 425 ppm, de 1958 à 2024. La courbe monte régulièrement, avec de petites vagues chaque année."
+  question: Que faut-il remarquer en lisant ce graphique ?
+  answer: L'axe ne commence pas à 0, la hausse paraît plus forte, mais elle est réelle (de 315 à environ 420 ppm).
+  wrong:
+    - Le CO₂ a été multiplié par 100.
+    - Le CO₂ a baissé depuis 1958.
+    - Les petites vagues prouvent que le CO₂ n'augmente pas.
+  why: "Toujours lire les axes : où commencent-ils, quelle unité ? Les petites vagues viennent de la végétation de l'hémisphère nord, qui absorbe du CO₂ en été."
+- key: d-correlation
+  category: causes
+  doc: "<strong>Deux courbes de 1880 à aujourd'hui</strong> : la concentration de CO₂ dans l'air et la température moyenne mondiale. Les deux montent, surtout depuis 1950."
+  question: Quelle conclusion peut-on tirer de ce document seul ?
+  answer: Les deux évolutions vont ensemble ; c'est l'explication de l'effet de serre qui montre que le CO₂ cause le réchauffement.
+  wrong:
+    - Le document prouve à lui seul que la température fait augmenter le CO₂.
+    - Les deux courbes n'ont aucun rapport.
+    - La température va baisser dès l'an prochain.
+  why: Deux courbes qui montent ensemble montrent une corrélation. La cause s'explique par un mécanisme (les gaz qui retiennent la chaleur), étudié par les scientifiques.
+- key: d-glacier
+  category: consequences
+  doc: "<strong>Deux photos du glacier du Rhône</strong> (Valais), prises du même endroit en 1900 et en 2020. En 1900, le glacier descend jusque dans la vallée près de Gletsch ; en 2020, il a reculé de plus d'un kilomètre et des bâches blanches le couvrent en partie."
+  question: Que montrent ces photos ?
+  answer: Le recul du glacier, une conséquence du réchauffement en Suisse.
+  wrong:
+    - Que le glacier a grandi depuis 1900.
+    - Que la météo de 2020 était exceptionnellement froide.
+    - Que les bâches font fondre le glacier.
+  why: 'Les bâches blanches réfléchissent le soleil (albédo élevé) pour ralentir la fonte à un endroit touristique : c''est une petite mesure d''adaptation.'
+- key: d-modele
+  category: serre
+  doc: "<strong>Schéma d'un modèle climatique</strong> : la Terre est découpée en cubes (mailles) de 100 km de côté dans l'air et dans l'océan. L'ordinateur calcule pour chaque cube la température, le vent, l'humidité et les échanges d'énergie, selon deux scénarios : émissions fortes ou émissions faibles."
+  question: À quoi sert ce modèle ?
+  answer: À calculer l'évolution probable du climat selon les émissions futures de gaz à effet de serre.
+  wrong:
+    - À prévoir la météo exacte de chaque jour en 2100.
+    - À mesurer le CO₂ dans l'air aujourd'hui.
+    - À fabriquer de la pluie artificielle.
+  why: Un modèle simplifie la réalité avec des équations. Les scénarios montrent que l'avenir dépend de nos émissions.
+- key: d-albedo
+  category: glace
+  doc: "<strong>Tableau des albédos</strong> : neige fraîche 0,85 · banquise 0,6 · forêt 0,15 · océan 0,06."
+  question: Si la banquise est remplacée par l'océan, que se passe-t-il ?
+  answer: La surface absorbe beaucoup plus d'énergie solaire, ce qui renforce le réchauffement.
+  wrong:
+    - La surface réfléchit plus d'énergie, la région se refroidit.
+    - Rien ne change, car l'albédo ne joue aucun rôle.
+    - L'océan produit de la glace plus épaisse.
+  why: 'L''albédo passe de 0,6 à 0,06 : l''océan absorbe 94 % de l''énergie au lieu de 40 %. C''est l''amplification arctique.'
+- key: d-carte-arctique
+  category: polaire
+  doc: "<strong>Carte de l'Arctique</strong> : étendue de la banquise en septembre 1980 (grande tache blanche) et en septembre 2020 (tache beaucoup plus petite). Deux routes sont dessinées : le passage du Nord-Ouest le long du Canada et la route du Nord le long de la Russie."
+  question: Quelle information peut-on tirer de cette carte ?
+  answer: La banquise d'été a beaucoup reculé, ce qui ouvre des routes maritimes au nord du Canada et de la Russie.
+  wrong:
+    - La banquise d'été a doublé de surface.
+    - Les routes passent au milieu du Groenland.
+    - La carte montre l'inlandsis de l'Antarctique.
+  why: Une carte se lit avec sa légende et sa date. Comparer deux dates montre une évolution.
+- key: d-sahel
+  category: chaud
+  doc: "<strong>Témoignage d'Aminata, agricultrice au Niger</strong> : « Les pluies arrivent plus tard et s'arrêtent plus tôt. Mon mil n'a pas eu le temps de mûrir. Au marché, le prix du sac de céréales a doublé. »"
+  question: Quel enchaînement ce témoignage décrit-il ?
+  answer: Aléa climatique → mauvaise récolte → hausse des prix → risque de crise alimentaire.
+  wrong:
+    - Pluies abondantes → récolte record → baisse des prix.
+    - Canicule en Europe → plus de touristes au Niger.
+    - Fonte de la banquise → inondation au Niger.
+  why: Un témoignage est un point de vue personnel ; il faut le compléter par des chiffres et d'autres sources.
+- key: d-diagramme
+  category: climats
+  doc: "<strong>Diagramme climatique</strong> : températures entre 26 et 28 °C chaque mois, précipitations de plus de 200 mm la plupart des mois, latitude 3° S."
+  question: De quel climat s'agit-il ?
+  answer: Équatorial.
+  wrong:
+    - Méditerranéen.
+    - Polaire.
+    - Désertique.
+  why: 'Chaud toute l''année, très pluvieux et faible amplitude, près de l''équateur : climat équatorial (par exemple Manaus).'

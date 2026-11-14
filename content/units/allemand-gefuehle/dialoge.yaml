@@ -1,0 +1,75 @@
+# Someone says something: choose the right reply. `why` explains it in French.
+kind: dialog
+items:
+- key: dlg-los
+  says: Du weinst ja! Was ist denn los?
+  fr: Mais tu pleures ! Qu'est-ce qu'il y a ?
+  answer: Ich hatte Streit mit meiner Freundin.
+  wrong: ["Ich bin heute gut drauf.", "Ich finde das toll.", "Es geht mir sehr gut."]
+  why: « J'ai eu une dispute avec mon amie. » C'est la seule raison de pleurer.
+- key: dlg-ihnen
+  says: Guten Tag, Frau Huber! Wie geht es Ihnen?
+  fr: Bonjour Madame Huber ! Comment allez-vous ?
+  answer: Danke, es geht mir sehr gut.
+  wrong: ["Lass mich in Ruhe!", "Das ist doch Quatsch!", "Ich bin nicht einverstanden!"]
+  why: 'On répond poliment à la question : « Merci, je vais très bien. »'
+- key: dlg-vergessen
+  says: Entschuldigung, ich habe dein Buch vergessen.
+  fr: Pardon, j'ai oublié ton livre.
+  answer: Schon gut, kein Problem.
+  wrong: ["Toll, ich freue mich!", "Es geht mir sehr gut.", "Wie geht es Ihnen?"]
+  why: 'On accepte l''excuse : « C''est bon, pas de problème. »'
+- key: dlg-aufraeumen
+  says: Räum bitte dein Zimmer auf!
+  fr: Range ta chambre, s'il te plaît !
+  answer: Okay, ich räume es gleich auf.
+  wrong: ["Wie geht es Ihnen?", "Das ist romantisch.", "Ich habe eine gute Note."]
+  why: « D'accord, je la range tout de suite. » Le verbe aufräumen se sépare.
+- key: dlg-sechs
+  says: Ich habe eine 6 in Mathe bekommen!
+  fr: J'ai eu un 6 en maths !
+  answer: Super! Ich freue mich für dich.
+  wrong: ["Tut mir echt leid.", "Lass mich in Ruhe!", "Das ist so nervig."]
+  why: 'On partage la joie : « Super ! Je suis content·e pour toi. »'
+- key: dlg-katze
+  says: Meine Katze ist krank.
+  fr: Mon chat est malade.
+  answer: Oh, das tut mir echt leid.
+  wrong: ["Toll!", "Das ist cool.", "Ich bin froh."]
+  why: 'On montre qu''on comprend la tristesse : « Oh, je suis vraiment désolé·e. »'
+- key: dlg-abgeschrieben
+  says: Du hast im Test abgeschrieben!
+  fr: Tu as copié pendant le test !
+  answer: Das ist doch Quatsch! Das stimmt nicht.
+  wrong: ["Ja, ich bin glücklich.", "Wie geht's?", "Es gefällt mir, wenn es regnet."]
+  why: « Ce sont des bêtises ! Ce n'est pas vrai. » On contredit (widersprechen).
+- key: dlg-kino
+  says: Gehen wir am Samstag zusammen ins Kino?
+  fr: On va ensemble au cinéma samedi ?
+  answer: Ja, einverstanden!
+  wrong: ["Ich bin enttäuscht.", "Das ist streng.", "Ich habe Ärger mit meiner Mutter."]
+  why: « Oui, d'accord ! » On accepte la proposition.
+- key: dlg-streit
+  says: Hört endlich mit dem Streit auf!
+  fr: Arrêtez enfin de vous disputer !
+  answer: Okay, wir entschuldigen uns.
+  wrong: ["Wir freuen uns auf den Streit.", "Das ist romantisch.", "Danke, sehr gut."]
+  why: « D'accord, nous nous excusons. » Après une dispute, on s'excuse.
+- key: dlg-drauf
+  says: Warum bist du heute so gut drauf?
+  fr: Pourquoi es-tu de si bonne humeur aujourd'hui ?
+  answer: Weil ich heute meine Freunde besuche.
+  wrong: ["Weil ich Streit mit Ben hatte.", "Weil ich eine schlechte Note bekommen habe.", "Weil ich müde bin."]
+  why: « Parce que je rends visite à mes amis aujourd'hui. » C'est la seule bonne nouvelle.
+- key: dlg-wahrheit
+  says: Sag mir bitte die Wahrheit. Hast du mein Handy?
+  fr: Dis-moi la vérité, s'il te plaît. Tu as mon portable ?
+  answer: Ja, sorry. Tut mir echt leid.
+  wrong: ["Ich bin süss.", "Das gefällt mir.", "Ich habe gute Laune."]
+  why: 'On dit la vérité et on s''excuse : « Oui, pardon. Je suis vraiment désolé·e. »'
+- key: dlg-laut
+  says: Es stört mich, wenn du so laut bist.
+  fr: Ça me dérange quand tu es si bruyant·e.
+  answer: Sorry, ich bin jetzt leise.
+  wrong: ["Ich bin ordentlich.", "Toll, danke!", "Wie geht's?"]
+  why: « Pardon, maintenant je suis silencieux / silencieuse. » laut ≠ leise.

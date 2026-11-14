@@ -10,3 +10,8 @@ DATA_DIR = Path(os.getenv("DATA_DIR", BACKEND_DIR / "data"))
 DATABASE_URL = os.getenv("DATABASE_URL", f"sqlite:///{DATA_DIR / 'app.db'}")
 
 CORS_ORIGINS = [o.strip() for o in os.getenv("CORS_ORIGINS", "http://localhost:5180").split(",") if o.strip()]
+
+# Production: folder of the built frontend (served by the API) and the shared access code.
+# Without ACCESS_CODE the app is open to anyone who has the address (fine on localhost).
+STATIC_DIR = os.getenv("STATIC_DIR", "")
+ACCESS_CODE = os.getenv("ACCESS_CODE", "").strip()

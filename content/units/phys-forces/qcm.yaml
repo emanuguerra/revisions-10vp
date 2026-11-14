@@ -1,0 +1,278 @@
+kind: qcm
+items:
+# --- Représenter une force ----------------------------------------------
+- key: q-caract
+  category: vecteur
+  question: Quelles sont les quatre caractéristiques d'une force ?
+  answer: Point d'application, direction, sens, intensité.
+  wrong:
+    - Masse, volume, couleur, vitesse.
+    - Longueur, largeur, hauteur, poids.
+    - Départ, arrivée, durée, distance.
+  why: On représente une force par une flèche (un vecteur) qui montre ces quatre caractéristiques.
+- key: q-unite
+  category: vecteur
+  question: Quelle est l'unité de l'intensité d'une force ?
+  answer: Le newton (N).
+  wrong:
+    - Le kilogramme (kg).
+    - Le joule (J).
+    - Le mètre par seconde (m/s).
+  why: Le newton porte le nom d'Isaac Newton. Le kilogramme est l'unité de la masse.
+- key: q-dynamometre
+  category: vecteur
+  question: Avec quel instrument mesure-t-on l'intensité d'une force ?
+  answer: Un dynamomètre.
+  wrong:
+    - Une balance.
+    - Un thermomètre.
+    - Un chronomètre.
+  why: Le dynamomètre contient un ressort qui s'allonge proportionnellement à la force. La balance mesure une masse.
+- key: q-longueur
+  category: vecteur
+  question: Sur un schéma, que représente la longueur de la flèche d'une force ?
+  answer: Son intensité, selon l'échelle choisie.
+  wrong:
+    - Sa direction.
+    - La durée pendant laquelle elle agit.
+    - La masse de l'objet.
+  why: "Exemple : avec l'échelle 1 cm ↔ 10 N, une flèche de 3,5 cm représente 35 N."
+- key: q-direction-sens
+  category: vecteur
+  question: Quelle est la différence entre la direction et le sens d'une force ?
+  answer: La direction est la droite (par exemple verticale), le sens indique de quel côté elle va (vers le haut ou le bas).
+  wrong:
+    - Ce sont deux mots pour la même chose.
+    - La direction est la longueur, le sens est la couleur.
+    - Le sens indique l'intensité.
+  why: 'Une force verticale peut aller vers le haut ou vers le bas : même direction, sens contraires.'
+- key: q-effets
+  category: vecteur
+  question: Quels effets une force peut-elle avoir sur un objet ?
+  answer: Le mettre en mouvement, modifier son mouvement ou le déformer.
+  wrong:
+    - Changer sa masse.
+    - Changer sa couleur.
+    - Rien, sauf si l'objet est en métal.
+  why: Une force peut accélérer, freiner, dévier un objet ou le déformer (un ressort, une balle qu'on écrase).
+# --- Types de forces -----------------------------------------------------
+- key: q-poids-caract
+  category: types
+  question: Quelles sont la direction et le sens du poids d'un objet ?
+  answer: Verticale, vers le bas (vers le centre de la Terre).
+  wrong:
+    - Horizontale, vers la droite.
+    - Verticale, vers le haut.
+    - Cela dépend de la vitesse de l'objet.
+  why: Le poids s'applique au centre de gravité de l'objet et le tire vers le centre de la Terre.
+- key: q-soutien
+  category: types
+  question: Comment est dirigée la force de soutien d'une table sur un livre posé dessus ?
+  answer: Perpendiculaire à la table, vers le haut.
+  wrong:
+    - Parallèle à la table.
+    - Verticale, vers le bas.
+    - Elle n'existe pas, seul le poids agit.
+  why: Le support pousse l'objet perpendiculairement à sa surface. Sur une table horizontale, elle compense le poids.
+- key: q-tension
+  category: types
+  question: Comment est dirigée la tension d'un fil ?
+  answer: Le long du fil, en tirant vers le point d'attache.
+  wrong:
+    - Perpendiculaire au fil.
+    - Toujours vers le bas.
+    - Vers l'objet, en le poussant.
+  why: Un fil ne peut que tirer, jamais pousser, et toujours dans sa propre direction.
+- key: q-frottement
+  category: types
+  question: Comment agit la force de frottement ?
+  answer: Elle s'oppose au mouvement (ou au début de mouvement).
+  wrong:
+    - Elle pousse l'objet dans le sens du mouvement.
+    - Elle est toujours verticale.
+    - Elle n'existe que dans l'eau.
+  why: Les frottements freinent. Sans eux, on ne pourrait ni marcher ni freiner à vélo.
+- key: q-distance
+  category: types
+  question: Laquelle de ces forces agit <strong>à distance</strong>, sans contact ?
+  answer: Le poids (attraction de la Terre).
+  wrong:
+    - La force d'une main qui pousse une porte.
+    - La tension d'une corde.
+    - Le frottement des freins.
+  why: La gravitation et la force magnétique agissent à distance ; les autres sont des forces de contact.
+# --- Poids et masse ------------------------------------------------------
+- key: q-masse-poids
+  category: poids
+  question: Quelle est la différence entre la masse et le poids ?
+  answer: La masse (kg) est la quantité de matière ; le poids (N) est la force d'attraction de l'astre.
+  wrong:
+    - C'est la même chose, avec deux unités différentes.
+    - Le poids est en kg, la masse en N.
+    - La masse change sur la Lune, pas le poids.
+  why: Un astronaute a la même masse sur la Lune, mais son poids est environ 6 fois plus faible.
+- key: q-formule
+  category: poids
+  question: Comment calcule-t-on le poids d'un objet ?
+  answer: P = m · g
+  wrong:
+    - P = m ÷ g
+    - P = m + g
+    - P = g ÷ m
+  why: m en kg, g en N/kg (9,81 N/kg sur Terre), P en N.
+- key: q-g
+  category: poids
+  question: Que vaut g, l'intensité de la pesanteur, à la surface de la Terre ?
+  answer: Environ 9,81 N/kg.
+  wrong:
+    - Environ 1,62 N/kg.
+    - Exactement 100 N/kg.
+    - Environ 0,98 N/kg.
+  why: Un objet de 1 kg pèse donc environ 9,81 N sur Terre. Sur la Lune, g ≈ 1,62 N/kg.
+- key: q-lune
+  category: poids
+  question: Un astronaute de 80 kg va sur la Lune. Que devient sa masse ?
+  answer: Elle reste 80 kg.
+  wrong:
+    - Elle devient environ 13 kg.
+    - Elle devient 0 kg.
+    - Elle devient environ 480 kg.
+  why: La masse ne dépend pas du lieu. Son poids passe d'environ 785 N à environ 130 N.
+- key: q-balance
+  category: poids
+  question: Pourquoi une balance de cuisine affiche-t-elle des kilogrammes ?
+  answer: Elle mesure une force, mais elle est réglée pour afficher la masse sur Terre.
+  wrong:
+    - Parce que le poids s'exprime en kilogrammes.
+    - Parce que la masse est une force.
+    - Elle afficherait la même valeur sur la Lune.
+  why: Sur la Lune, une balance réglée pour la Terre afficherait une valeur environ 6 fois trop petite.
+# --- Ressorts -----------------------------------------------------------
+- key: q-hooke
+  category: ressort
+  question: Que dit la loi de Hooke pour un ressort ?
+  answer: 'L''allongement est proportionnel à la force : F = k · Δl.'
+  wrong:
+    - L'allongement ne dépend pas de la force.
+    - Plus la force est grande, plus le ressort raccourcit.
+    - F = k + Δl.
+  why: Si on double la force, l'allongement double (tant que le ressort n'est pas abîmé).
+- key: q-k
+  category: ressort
+  question: Que signifie une raideur k plus grande ?
+  answer: 'Le ressort est plus dur : il s''allonge moins pour la même force.'
+  wrong:
+    - Le ressort est plus mou.
+    - Le ressort est plus long.
+    - Le ressort est plus lourd.
+  why: k s'exprime en N/m. Un ressort de 500 N/m est 10 fois plus dur qu'un ressort de 50 N/m.
+- key: q-rappel
+  category: ressort
+  question: Quand on tire sur un ressort, quelle force exerce-t-il sur notre main ?
+  answer: Une force de rappel, de même intensité et de sens contraire.
+  wrong:
+    - Aucune force.
+    - Une force deux fois plus grande, dans le même sens.
+    - Une force qui dépend de la couleur du ressort.
+  why: C'est le principe des actions réciproques (3e loi de Newton).
+# --- Lois de Newton ------------------------------------------------------
+- key: q-inertie
+  category: newton
+  question: Que dit la 1re loi de Newton (principe d'inertie) ?
+  answer: Un objet sur lequel aucune force n'agit (ou dont les forces se compensent) reste immobile ou garde un mouvement rectiligne uniforme.
+  wrong:
+    - Tout objet finit par s'arrêter, même sans force.
+    - Un objet immobile se met en mouvement tout seul.
+    - Plus un objet est lourd, plus il tombe vite.
+  why: Dans l'espace, une sonde lancée continue en ligne droite à vitesse constante sans moteur.
+- key: q-ceinture
+  category: newton
+  question: Une voiture freine brusquement. Pourquoi les passagers sont-ils projetés vers l'avant ?
+  answer: Par inertie, leur corps continue son mouvement ; la ceinture les retient.
+  wrong:
+    - Parce que la voiture les pousse vers l'avant.
+    - Parce que leur masse augmente.
+    - Parce que la gravité s'inverse.
+  why: 'C''est la 1re loi de Newton : sans force, le mouvement continue.'
+- key: q-2e
+  category: newton
+  question: D'après la 2e loi de Newton, que se passe-t-il si on pousse avec la même force un objet deux fois plus lourd ?
+  answer: Sa vitesse change deux fois moins vite.
+  wrong:
+    - Sa vitesse change deux fois plus vite.
+    - Il ne bouge pas du tout.
+    - Sa vitesse change exactement de la même façon.
+  why: La variation de vitesse est proportionnelle à la force et inversement proportionnelle à la masse.
+- key: q-3e
+  category: newton
+  question: Que dit la 3e loi de Newton (actions réciproques) ?
+  answer: Si A exerce une force sur B, B exerce sur A une force de même direction, même intensité et sens contraire.
+  wrong:
+    - La force la plus grande gagne toujours.
+    - Seuls les objets lourds exercent des forces.
+    - Les deux forces s'additionnent sur le même objet.
+  why: Ces deux forces s'appliquent sur deux objets différents, donc elles ne s'annulent pas.
+- key: q-fusee
+  category: newton
+  question: Comment avance une fusée dans l'espace, où il n'y a pas d'air ?
+  answer: Elle éjecte des gaz vers l'arrière, et les gaz la poussent vers l'avant.
+  wrong:
+    - Elle s'appuie sur l'air.
+    - Elle est attirée par les étoiles.
+    - Elle ne peut pas avancer dans le vide.
+  why: 'Actions réciproques (3e loi) : la fusée pousse les gaz, les gaz poussent la fusée.'
+- key: q-newton-date
+  category: newton
+  question: Dans quel ouvrage Isaac Newton a-t-il publié ses trois lois du mouvement ?
+  answer: Les « Principia » (1687).
+  wrong:
+    - L'« Encyclopédie » (1751).
+    - « De la Terre à la Lune » (1865).
+    - La « Relativité générale » (1915).
+  why: Philosophiae naturalis principia mathematica, publié en 1687.
+# --- Équilibre ----------------------------------------------------------
+- key: q-eq2
+  category: equilibre
+  question: Quand un objet soumis à deux forces est-il en équilibre ?
+  answer: Quand les deux forces ont la même direction, la même intensité et des sens contraires.
+  wrong:
+    - Quand les deux forces ont le même sens.
+    - Quand une des forces est deux fois plus grande.
+    - Quand les forces sont perpendiculaires.
+  why: 'Leur résultante est alors nulle. Exemple : une lampe suspendue (poids et tension du fil).'
+- key: q-resultante
+  category: equilibre
+  question: Qu'est-ce que la résultante de plusieurs forces ?
+  answer: La force unique qui aurait le même effet que toutes les forces ensemble.
+  wrong:
+    - La plus grande des forces.
+    - La moyenne des intensités.
+    - La force qui s'applique en premier.
+  why: On l'obtient en additionnant les forces bout à bout (ou avec la règle du parallélogramme).
+- key: q-parallelogramme
+  category: equilibre
+  question: Comment construit-on la résultante de deux forces qui ne sont pas alignées ?
+  answer: On met les flèches bout à bout (ou on construit un parallélogramme) et on trace la diagonale.
+  wrong:
+    - On additionne simplement les longueurs des flèches.
+    - On garde la plus longue flèche.
+    - On trace la perpendiculaire à la plus petite force.
+  why: Si les forces sont perpendiculaires, la résultante se calcule avec Pythagore.
+- key: q-eq3
+  category: equilibre
+  question: Un objet est en équilibre sous trois forces. Que peut-on dire ?
+  answer: La résultante des trois forces est nulle ; chaque force compense la résultante des deux autres.
+  wrong:
+    - Les trois forces ont la même intensité.
+    - Les trois forces ont la même direction.
+    - Une des forces est forcément nulle.
+  why: Mises bout à bout, les trois flèches forment un triangle fermé.
+- key: q-immobile
+  category: equilibre
+  question: Un livre est posé, immobile, sur une table. Quelles forces agissent sur lui ?
+  answer: Son poids (vers le bas) et la force de soutien de la table (vers le haut), qui se compensent.
+  wrong:
+    - Aucune force, puisqu'il ne bouge pas.
+    - Seulement son poids.
+    - Seulement la force de la table.
+  why: 'Immobile ne veut pas dire « sans force » : les forces se compensent (1re loi de Newton).'

@@ -1,0 +1,54 @@
+<div class="duo">
+  <article class="box key">
+    <h2>Additionner des forces : la résultante</h2>
+    <p>La <strong>résultante</strong> R est la force unique qui a le même effet que toutes les forces ensemble.</p>
+    <div class="tablewrap">
+      <table class="when">
+        <thead><tr><th>Cas</th><th>Résultante</th><th>Exemple (30 N et 40 N)</th></tr></thead>
+        <tbody>
+          <tr><td>Même direction, même sens</td><td>R = F₁ + F₂</td><td>70 N</td></tr>
+          <tr><td>Même direction, sens contraires</td><td>R = F₁ − F₂ (sens de la plus grande)</td><td>10 N</td></tr>
+          <tr><td>Perpendiculaires</td><td>R = √(F₁² + F₂²)</td><td>50 N</td></tr>
+          <tr><td>Autre angle</td><td>Construction à l'échelle</td><td>Entre 10 et 70 N</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Construction</strong> : mets les flèches <strong>bout à bout</strong> (l'origine de F₂ à la pointe de F₁), ou trace le <strong>parallélogramme</strong> ; la résultante va de l'origine à la dernière pointe.</p>
+  </article>
+  <article class="box">
+    <h2>Explore</h2>
+    <div data-widget="force-adder"></div>
+  </article>
+</div>
+
+<div class="duo">
+  <article class="box key">
+    <h2>L'équilibre</h2>
+    <p>Un objet est <strong>en équilibre</strong> (immobile ou en mouvement rectiligne uniforme) quand la <strong>résultante des forces est nulle</strong>.</p>
+    <ul>
+      <li><strong>Deux forces</strong> : même direction, même intensité, sens contraires. Ex. : lampe suspendue (poids ↓, tension ↑).</li>
+      <li><strong>Trois forces</strong> (concourantes) : mises bout à bout, elles forment un <strong>triangle fermé</strong>. Chaque force compense la résultante des deux autres.</li>
+    </ul>
+    <div class="calc">Anneau tiré par 60 N → et 80 N ↑<br>Résultante : √(60² + 80²) = 100 N<br>Force d'équilibre F₃ : <strong>100 N</strong>, sens opposé à la résultante</div>
+  </article>
+  <article class="box">
+    <h2>Avec la trigonométrie</h2>
+    <p>Quand deux forces sont perpendiculaires, la résultante est l'hypoténuse d'un triangle rectangle :</p>
+    <div class="calc">tan(α) = F₂ ÷ F₁ &nbsp;→&nbsp; α = arctan(F₂ ÷ F₁)<br>cos(α) = F₁ ÷ R &nbsp;·&nbsp; sin(α) = F₂ ÷ R</div>
+    <div class="calc">F₁ = 60 N, F₂ = 80 N : tan(α) = 80 ÷ 60 ≈ 1,33 → α ≈ <strong>53,1°</strong></div>
+    <p><strong>Décomposer</strong> une force R faisant un angle α avec l'horizontale :</p>
+    <div class="calc">composante horizontale = R · cos(α)<br>composante verticale = R · sin(α)</div>
+    <p class="muted">Calculatrice en mode degrés (DEG) !</p>
+  </article>
+</div>
+
+<article class="box warn">
+  <h2>Méthode pour un problème d'équilibre</h2>
+  <ol>
+    <li>Fais un schéma : quel objet ? quelles forces agissent <strong>sur lui</strong> ?</li>
+    <li>Calcule les forces connues (le poids : P = m · g).</li>
+    <li>Choisis une échelle et dessine les forces depuis le même point.</li>
+    <li>Équilibre : la résultante est nulle. Trouve la force inconnue par construction (triangle fermé) ou par calcul (Pythagore, trigonométrie).</li>
+    <li>Vérifie les unités (N, kg, m) et la vraisemblance du résultat.</li>
+  </ol>
+</article>

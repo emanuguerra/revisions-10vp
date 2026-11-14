@@ -27,7 +27,7 @@ from .config import CONTENT_DIR
 from .generators import GENERATORS
 from .models import ExerciseType, Item, Lesson, Subject, Unit
 
-UNIT_CONFIG_KEYS = ("levels", "categories", "mission", "scoring", "training", "exercises_title", "subtitle_fr")
+UNIT_CONFIG_KEYS = ("speech_lang", "break_videos", "levels", "categories", "mission", "scoring", "training", "exercises_title", "subtitle_fr")
 
 
 class ContentError(Exception):
@@ -70,9 +70,13 @@ def validate(subjects: list[dict], units: list[dict]) -> list[str]:
         for k in mission.get("sequence", []) + mission.get("types", []):
             if k not in keys:
                 errors.append(f"{where}: mission refers to unknown exercise '{k}'")
+        all_keys: set = set()
         for kind, items in u["items"].items():
             seen = set()
             for it in items:
+                if it.get("key") in all_keys and kind in ("wort", "situation", "dialog"):
+                    errors.append(f"{where}: key '{it['key']}' is used by two kinds of items")
+                all_keys.add(it.get("key"))
                 if "key" not in it:
                     errors.append(f"{where}: an item of kind '{kind}' has no key")
                 elif it["key"] in seen:
@@ -82,6 +86,18 @@ def validate(subjects: list[dict], units: list[dict]) -> list[str]:
                     errors.append(f"{where}: example sentence of '{it['en']}' must contain the word")
                 if kind == "vocab" and it.get("category") not in u.get("categories", {}):
                     errors.append(f"{where}: '{it['en']}' has unknown category '{it.get('category')}'")
+                if kind == "wort" and it.get("category") not in u.get("categories", {}):
+                    errors.append(f"{where}: '{it.get('de')}' has unknown category '{it.get('category')}'")
+                if kind == "wort" and it.get("art") not in (None, "der", "die", "das"):
+                    errors.append(f"{where}: '{it.get('de')}' has a wrong article '{it['art']}'")
+                if kind == "wort" and it.get("opposite") and it["opposite"] not in {x["key"] for x in items}:
+                    errors.append(f"{where}: '{it.get('de')}' has an unknown opposite '{it['opposite']}'")
+                if kind == "station" and (len(it.get("temp", [])) != 12 or len(it.get("prec", [])) != 12):
+                    errors.append(f"{where}: station '{it.get('key')}' needs 12 temperatures and 12 precipitations")
+                if kind in ("qcm", "doc", "tri") and it.get("answer") not in (it.get("choices") or [it.get("answer")]):
+                    errors.append(f"{where}: {kind} '{it.get('key')}': the answer is not one of the choices")
+                if kind in ("situation", "dialog") and it.get("answer") in it.get("wrong", []):
+                    errors.append(f"{where}: {kind} '{it.get('key')}' lists its answer as wrong")
     return errors
 
 

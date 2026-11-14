@@ -1,5 +1,5 @@
 import type {
-  AnswerResult, Item, MissionFull, MissionNext, MissionState, Profile, Question, Subject, Unit, UnitProgress,
+  AnswerResult, Item, MissionFull, MissionNext, MissionState, Profile, Question, Rewards, Subject, Unit, UnitProgress,
 } from "./types";
 
 const TOKEN_KEY = "r10-token";
@@ -13,6 +13,15 @@ export function setToken(token: string | null) {
   try { if (token) localStorage.setItem(TOKEN_KEY, token); else localStorage.removeItem(TOKEN_KEY); } catch { /* private mode */ }
 }
 
+// Shared access code of an online installation (ACCESS_CODE on the server), kept in this browser
+const ACCESS_KEY = "r10-access";
+export function getAccess(): string {
+  try { return localStorage.getItem(ACCESS_KEY) ?? ""; } catch { return ""; }
+}
+export function setAccess(code: string) {
+  try { localStorage.setItem(ACCESS_KEY, code); } catch { /* private mode */ }
+}
+
 export class ApiError extends Error {
   constructor(public status: number, message: string) { super(message); }
 }
@@ -24,9 +33,11 @@ async function call<T>(path: string, init: RequestInit = {}): Promise<T> {
     headers: {
       "Content-Type": "application/json",
       ...(token ? { "X-Profile-Token": token } : {}),
+      ...(getAccess() ? { "X-Access-Code": getAccess() } : {}),
       ...init.headers,
     },
   });
+  if (res.status === 403) window.dispatchEvent(new Event("r10-access-needed"));
   if (!res.ok) {
     let msg = res.statusText;
     try { msg = (await res.json()).detail ?? msg; } catch { /* not JSON */ }
@@ -39,6 +50,7 @@ const post = <T>(path: string, body?: unknown) =>
   call<T>(path, { method: "POST", body: body === undefined ? undefined : JSON.stringify(body) });
 
 export const api = {
+  access: () => call<{ required: boolean; ok: boolean }>("/access"),
   subjects: () => call<Subject[]>("/subjects"),
   unit: (slug: string) => call<Unit>(`/units/${slug}`),
   items: <T>(slug: string, kind?: string) => call<Item<T>[]>(`/units/${slug}/items${kind ? `?kind=${kind}` : ""}`),
@@ -46,6 +58,8 @@ export const api = {
   createProfile: (nickname: string, class_code: string) => post<Profile>("/profiles", { nickname, class_code }),
   me: () => call<Profile>("/profiles/me"),
   progress: (unit?: string) => call<UnitProgress[]>(`/profiles/me/progress${unit ? `?unit=${unit}` : ""}`),
+  rewards: () => call<Rewards>("/profiles/me/rewards"),
+  focusDone: (minutes: number) => call<Rewards>("/profiles/me/focus", { method: "POST", body: JSON.stringify({ minutes }) }),
 
   startMission: (body: { unit: string; level?: number; count?: number; category?: string | null; item_keys?: string[] }) =>
     post<{ mission: MissionState; question: Question }>("/missions", body),

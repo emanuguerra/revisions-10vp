@@ -28,6 +28,8 @@ export interface UnitConfig {
   scoring?: Partial<Scoring>;
   training?: boolean;
   exercises_title?: string;
+  speech_lang?: string;          // voice for pronunciation, e.g. "de-DE" (default English)
+  break_videos?: BreakVideo[];   // suggested during focus breaks
   subtitle_fr?: string;
 }
 
@@ -42,6 +44,12 @@ export interface VocabData {
   category: string; en: string; alt?: string[]; fr: string; pic: string; definition: string; example: string;
 }
 
+export interface WortData {
+  category: string; de: string; art?: "der" | "die" | "das"; pl?: string; plural_only?: boolean;
+  singular_only?: boolean; forms?: string; opposite?: string; known?: boolean; plus?: boolean;
+  fr: string; pic: string; group?: string; example: string; example_fr: string;
+}
+
 export interface Profile { nickname: string; class_code: string; token: string; created_at: string }
 
 export interface UnitProgress {
@@ -49,10 +57,18 @@ export interface UnitProgress {
   best: Record<string, number>; missions_done: number; last_activity: string | null;
 }
 
-export interface Figure {
+export interface TriangleFig {
   type: "right-triangle"; a: number; b: number; names: string; rot?: number; flip?: boolean;
   lab?: Partial<Record<Side, string>>; click?: boolean;
 }
+export interface ClimographFig {
+  type: "climograph"; name: string; lat: number; alt: number; temp: number[]; prec: number[]; hide_name?: boolean;
+}
+export interface ForcesFig {
+  type: "forces"; w: number; h: number; scale: number;
+  forces: { x: number; y: number; dx: number; dy: number; label: string; color?: string }[];
+}
+export type Figure = TriangleFig | ClimographFig | ForcesFig;
 export type Side = "a" | "b" | "c";
 
 export interface Question {
@@ -83,4 +99,16 @@ export interface MissionFull { mission: MissionState; questions: Question[] }
 
 export interface MissionNext {
   mission: MissionState; question: Question | null; best?: number | null; previous_best?: number | null; mistakes: Mistake[];
+}
+
+/** A video for the break: a YouTube link (shown in the page) or a search on YouTube. */
+export interface BreakVideo { title: string; url?: string; search?: string }
+
+export interface Badge {
+  id: string; icon: string; title: string; description: string; goal: number; value: number; earned: boolean;
+}
+
+export interface Rewards {
+  xp: number; level: number; level_title: string; level_start: number; next_level: number;
+  stats: Record<string, number>; badges: Badge[];
 }

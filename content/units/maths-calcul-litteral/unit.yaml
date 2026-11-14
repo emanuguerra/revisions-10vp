@@ -13,6 +13,11 @@ levels:
   - label: Expert
     info: Deux lettres, plusieurs parenthèses, identités remarquables.
 
+# Suggested during focus breaks: `search` opens a YouTube search; `url` (a YouTube link) plays in the page
+break_videos:
+  - { title: "Développer et factoriser", search: "calcul littéral développer factoriser explication" }
+  - { title: "La double distributivité en vidéo", search: "double distributivité explication" }
+
 lessons:
   - slug: theorie
     title: "1. Réviser"

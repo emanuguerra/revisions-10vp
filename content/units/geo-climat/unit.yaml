@@ -1,0 +1,90 @@
+slug: geo-climat
+subject: geographie
+title: Météo, climat et changement climatique
+subtitle: "Révision pour l'épreuve du vendredi 20 novembre 2026 : météo et climat, diagrammes climatiques, effet de serre, cycle du carbone, conséquences et adaptation, régions polaires et régions chaudes."
+order: 1
+ui_lang: fr
+
+# Suggested during focus breaks: `search` opens a YouTube search; `url` (a YouTube link) plays in the page
+break_videos:
+  - { title: "L'effet de serre expliqué simplement", search: "effet de serre expliqué simplement" }
+  - { title: "Lire un diagramme climatique", search: "lire un diagramme climatique" }
+  - { title: "La fonte de la banquise et des glaciers", search: "fonte banquise inlandsis explication" }
+
+# Topics of the questions (the "category" field of the items), used by the training filter
+categories:
+  meteo: Météo et climat
+  climats: Les climats
+  causes: Causes de l'évolution du climat
+  serre: Atmosphère et effet de serre
+  carbone: Cycle du carbone
+  consequences: Conséquences et vulnérabilité
+  adaptation: Adaptation
+  glace: Banquise, inlandsis, pergélisol
+  polaire: Régions polaires
+  chaud: Régions chaudes
+
+lessons:
+  - slug: climat
+    title: "1. Météo et climats"
+    blocks:
+      - type: html
+        file: lecon-1-climats.html
+  - slug: effet-de-serre
+    title: "2. Effet de serre et carbone"
+    blocks:
+      - type: html
+        file: lecon-2-effet-de-serre.html
+  - slug: consequences
+    title: "3. Conséquences et adaptation"
+    blocks:
+      - type: html
+        file: lecon-3-consequences.html
+
+exercises_title: "4. Exercices"
+exercises:
+  - key: cours
+    title: Questions de cours
+    generator: common.mcq
+    params: { kind: qcm }
+  - key: tri
+    title: Classe dans la bonne case
+    generator: common.mcq
+    params: { kind: tri }
+  - key: diagramme
+    title: Lire un diagramme climatique
+    generator: climat.read_diagram
+  - key: type
+    title: Quel climat ?
+    generator: climat.classify
+  - key: vf
+    title: Vrai ou faux ?
+    generator: common.true_false
+    params: { kind: vf }
+  - key: albedo
+    title: Calculer avec l'albédo
+    generator: climat.albedo
+  - key: documents
+    title: Analyser un document
+    generator: common.mcq
+    params: { kind: doc }
+
+mission:
+  mode: sequence
+  sequence: [cours, diagramme, tri, vf, type, albedo, cours, documents, diagramme, tri, vf, cours]
+  title: "🎯 Mission : 12 questions"
+  description: "Un peu de tout, comme à l'épreuve. +10 points au premier essai, +5 si tu corriges ta réponse. +5 de bonus dès 3 réponses justes de suite du premier coup 🔥. Un indice coûte 3 points."
+  badges:
+    - Encore un effort ! Relis les leçons et réessaie.
+    - Apprenti·e climatologue
+    - Expert·e du climat
+    - Climatologue en chef·fe
+
+training: true
+
+scoring:
+  first: 10
+  retry: 5
+  hint_cost: 3
+  streak_bonus: 5
+  streak_from: 3

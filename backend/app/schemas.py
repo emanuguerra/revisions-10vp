@@ -180,3 +180,27 @@ class MissionNextOut(BaseModel):
     best: Optional[int] = None
     previous_best: Optional[int] = None
     mistakes: list[MistakeOut] = []
+
+
+class BadgeOut(BaseModel):
+    id: str
+    icon: str
+    title: str
+    description: str
+    goal: int
+    value: int
+    earned: bool
+
+
+class RewardsOut(BaseModel):
+    xp: int
+    level: int                    # starts at 1
+    level_title: str
+    level_start: int              # XP where this level starts
+    next_level: int               # XP where the next level starts
+    stats: dict[str, int]
+    badges: list[BadgeOut]
+
+
+class FocusIn(BaseModel):
+    minutes: int = Field(ge=5, le=60)

@@ -1,0 +1,499 @@
+# Questions de cours: one right answer, three wrong ones. `why` is the explanation.
+kind: qcm
+items:
+# --- Météo et climat (objectif 1) ---------------------------------------
+- key: q-meteo-def
+  category: meteo
+  question: Qu'est-ce que la <strong>météo</strong> ?
+  answer: L'état de l'atmosphère à un endroit et à un moment précis.
+  wrong:
+    - La moyenne du temps qu'il fait pendant au moins 30 ans.
+    - L'étude des volcans et des tremblements de terre.
+    - La quantité de pluie tombée en une année.
+  why: La météo décrit le temps qu'il fait sur une courte durée (quelques heures ou quelques jours).
+- key: q-climat-def
+  category: meteo
+  question: Qu'est-ce que le <strong>climat</strong> d'une région ?
+  answer: La moyenne des conditions météo observées pendant au moins 30 ans.
+  wrong:
+    - Le temps qu'il fera demain.
+    - La température mesurée aujourd'hui à midi.
+    - Un orage très violent.
+  why: Le climat se calcule sur une longue période, au moins 30 ans, pour une région.
+- key: q-parametres
+  category: meteo
+  question: Quels sont les deux <strong>paramètres climatiques</strong> représentés sur un diagramme climatique ?
+  answer: La température et les précipitations.
+  wrong:
+    - Le vent et la pression.
+    - L'ensoleillement et l'humidité.
+    - L'altitude et la latitude.
+  why: La courbe rouge montre la température moyenne de chaque mois, les barres bleues les précipitations.
+# --- Les climats (objectifs 3 et 4) --------------------------------------
+- key: q-amplitude
+  category: climats
+  question: Comment calcule-t-on l'<strong>amplitude thermique annuelle</strong> ?
+  answer: Température du mois le plus chaud − température du mois le plus froid.
+  wrong:
+    - Somme des températures des 12 mois.
+    - Température la plus chaude jamais mesurée.
+    - Moyenne des températures de l'année.
+  why: "Exemple : 20 °C en juillet et −6 °C en janvier donnent une amplitude de 26 °C."
+- key: q-amplitude-mer
+  category: climats
+  question: Pourquoi l'amplitude thermique est-elle faible au bord de l'océan ?
+  answer: L'océan se réchauffe et se refroidit lentement, il adoucit les températures.
+  wrong:
+    - Il pleut moins au bord de la mer.
+    - Le vent est toujours chaud près de la mer.
+    - Les côtes sont plus près de l'équateur.
+  why: L'eau garde la chaleur. Plus on s'éloigne de l'océan (continentalité), plus l'amplitude augmente.
+- key: q-altitude
+  category: climats
+  question: Que se passe-t-il quand on monte en altitude ?
+  answer: La température baisse d'environ 0,6 °C tous les 100 m.
+  wrong:
+    - La température monte d'environ 1 °C tous les 100 m.
+    - La température ne change pas.
+    - Il pleut de moins en moins.
+  why: C'est pourquoi le Säntis (2502 m) est bien plus froid que Genève (411 m).
+- key: q-microclimat
+  category: climats
+  question: Qu'est-ce qu'un <strong>microclimat</strong> ?
+  answer: Le climat particulier d'un petit endroit, différent des environs.
+  wrong:
+    - Le climat d'un très petit pays.
+    - Un climat qui dure moins d'un an.
+    - Le climat mesuré avec un petit thermomètre.
+  why: 'Exemples : le centre d''une ville plus chaud (îlot de chaleur), un versant au soleil (adret), les bords d''un lac.'
+- key: q-ilot
+  category: climats
+  question: Pourquoi fait-il plus chaud au centre d'une ville qu'à la campagne ?
+  answer: Le béton et le goudron stockent la chaleur et il y a peu de végétation.
+  wrong:
+    - Les villes sont toujours plus proches du Soleil.
+    - Il pleut davantage en ville.
+    - Les villes sont toujours en altitude.
+  why: C'est l'îlot de chaleur urbain, un exemple de microclimat.
+- key: q-mediterraneen
+  category: climats
+  question: Quel climat a des <strong>étés chauds et secs</strong> et des pluies en automne et en hiver ?
+  answer: Le climat méditerranéen.
+  wrong:
+    - Le climat équatorial.
+    - Le climat polaire.
+    - Le climat océanique.
+  why: Rome, Barcelone ou Athènes ont un climat méditerranéen.
+- key: q-equatorial
+  category: climats
+  question: Quel climat est chaud et pluvieux toute l'année, avec une amplitude thermique très faible ?
+  answer: Le climat équatorial.
+  wrong:
+    - Le climat continental.
+    - Le climat désertique.
+    - Le climat montagnard.
+  why: Près de l'équateur (Manaus, Amazonie), il fait environ 26 °C chaque mois et il pleut beaucoup.
+- key: q-facteurs
+  category: climats
+  question: Lequel n'est <strong>pas</strong> un facteur qui explique les différents climats ?
+  answer: La langue parlée dans la région.
+  wrong:
+    - La latitude.
+    - L'altitude.
+    - La distance à l'océan.
+  why: Les facteurs du climat sont la latitude, l'altitude, la distance à la mer, les courants marins et le relief.
+# --- Causes de l'évolution du climat (objectif 2) ------------------------
+- key: q-cause-naturelle
+  category: causes
+  question: Laquelle est une cause <strong>naturelle</strong> des changements du climat ?
+  answer: Les variations de l'orbite de la Terre autour du Soleil.
+  wrong:
+    - La combustion du pétrole.
+    - La déforestation.
+    - L'élevage intensif.
+  why: Ces cycles (de Milanković) expliquent les glaciations, sur des dizaines de milliers d'années.
+- key: q-volcan
+  category: causes
+  question: Quel effet peut avoir une grande éruption volcanique sur le climat ?
+  answer: Elle refroidit la Terre pendant un ou deux ans.
+  wrong:
+    - Elle réchauffe la Terre de 5 °C pendant un siècle.
+    - Elle n'a jamais aucun effet.
+    - Elle fait fondre les inlandsis.
+  why: Les poussières et le soufre envoyés très haut dans l'atmosphère cachent une partie du rayonnement solaire.
+- key: q-cause-humaine
+  category: causes
+  question: Quelle est la principale cause du réchauffement climatique actuel ?
+  answer: La combustion du charbon, du pétrole et du gaz.
+  wrong:
+    - L'activité du Soleil, qui augmente fortement.
+    - Les éruptions volcaniques.
+    - Le trou dans la couche d'ozone.
+  why: Les énergies fossiles libèrent du CO₂, qui renforce l'effet de serre. Le Soleil n'explique pas le réchauffement récent.
+- key: q-rapidite
+  category: causes
+  question: Qu'est-ce qui rend le réchauffement actuel exceptionnel ?
+  answer: 'Sa vitesse : en un siècle et demi, alors que les changements naturels prennent des milliers d''années.'
+  wrong:
+    - C'est la première fois que le climat change.
+    - Il ne touche que la Suisse.
+    - Il est dû à la Lune.
+  why: Le climat a toujours changé, mais jamais aussi vite depuis l'apparition des sociétés humaines.
+# --- Atmosphère et effet de serre (objectifs 5 et 6) --------------------
+- key: q-atmosphere
+  category: serre
+  question: De quoi est surtout composée l'atmosphère ?
+  answer: D'azote (environ 78 %) et d'oxygène (environ 21 %).
+  wrong:
+    - De CO₂ (environ 50 %) et d'oxygène.
+    - De vapeur d'eau (environ 90 %).
+    - De méthane et d'ozone.
+  why: Les gaz à effet de serre ne sont qu'une toute petite partie de l'atmosphère, mais ils ont un grand effet.
+- key: q-troposphere
+  category: serre
+  question: Dans quelle couche de l'atmosphère se forment les nuages et la météo ?
+  answer: La troposphère (de 0 à environ 12 km).
+  wrong:
+    - La stratosphère.
+    - La couche d'ozone.
+    - L'espace.
+  why: La stratosphère, au-dessus, contient la couche d'ozone qui nous protège des rayons UV.
+- key: q-effet-serre
+  category: serre
+  question: Comment fonctionne l'<strong>effet de serre</strong> ?
+  answer: Certains gaz retiennent la chaleur (infrarouges) émise par le sol et la renvoient vers la Terre.
+  wrong:
+    - La couche d'ozone empêche la lumière du Soleil d'arriver.
+    - Les nuages fabriquent de la chaleur.
+    - Le sol de la Terre produit sa propre lumière visible.
+  why: La lumière du Soleil traverse l'atmosphère et chauffe le sol ; le sol renvoie de la chaleur que les gaz à effet de serre retiennent en partie.
+- key: q-sans-serre
+  category: serre
+  question: Sans effet de serre naturel, quelle serait la température moyenne sur Terre ?
+  answer: Environ −18 °C au lieu de +15 °C.
+  wrong:
+    - Environ +40 °C.
+    - Exactement la même qu'aujourd'hui.
+    - Environ +15 °C au lieu de −18 °C.
+  why: L'effet de serre naturel est indispensable à la vie. C'est son renforcement par les humains qui pose problème.
+- key: q-ges-methane
+  category: serre
+  question: D'où vient une grande partie du <strong>méthane</strong> (CH₄) émis par les humains ?
+  answer: De l'élevage des vaches, des rizières et des décharges.
+  wrong:
+    - Des panneaux solaires.
+    - Des éoliennes.
+    - De la photosynthèse des forêts.
+  why: Le méthane réchauffe environ 28 fois plus que le CO₂, mais il reste moins longtemps dans l'atmosphère (environ 12 ans).
+- key: q-ges-n2o
+  category: serre
+  question: Quelle activité émet surtout du <strong>protoxyde d'azote</strong> (N₂O) ?
+  answer: L'utilisation d'engrais azotés dans l'agriculture.
+  wrong:
+    - La production d'électricité hydraulique.
+    - La respiration des poissons.
+    - Le recyclage du papier.
+  why: Le N₂O est un gaz à effet de serre très puissant (environ 270 fois le CO₂).
+- key: q-ges-fluores
+  category: serre
+  question: Où trouve-t-on des <strong>gaz fluorés</strong> à effet de serre ?
+  answer: Dans les climatiseurs, les frigos et les pompes à chaleur.
+  wrong:
+    - Dans l'eau du robinet.
+    - Dans le sable du désert.
+    - Dans les feuilles des arbres.
+  why: Ils sont émis en petites quantités mais réchauffent des milliers de fois plus que le CO₂.
+- key: q-ges-vapeur
+  category: serre
+  question: Quel est le gaz à effet de serre naturel le plus abondant ?
+  answer: La vapeur d'eau.
+  wrong:
+    - L'oxygène.
+    - L'azote.
+    - L'hélium.
+  why: Plus l'air est chaud, plus il contient de vapeur d'eau, ce qui renforce encore le réchauffement.
+- key: q-pas-ges
+  category: serre
+  question: Lequel de ces gaz n'est <strong>pas</strong> un gaz à effet de serre ?
+  answer: L'oxygène (O₂).
+  wrong:
+    - Le dioxyde de carbone (CO₂).
+    - Le méthane (CH₄).
+    - Le protoxyde d'azote (N₂O).
+  why: L'oxygène et l'azote, qui forment 99 % de l'air, ne retiennent pas la chaleur.
+# --- Cycle du carbone (objectif 7) ---------------------------------------
+- key: q-reservoirs
+  category: carbone
+  question: Lequel n'est <strong>pas</strong> un réservoir de carbone ?
+  answer: Le rayonnement solaire.
+  wrong:
+    - Les océans.
+    - Les forêts et les sols.
+    - Les roches et les énergies fossiles.
+  why: 'Le carbone circule entre l''atmosphère, les océans, la végétation, les sols et les roches : c''est le cycle du carbone.'
+- key: q-photosynthese
+  category: carbone
+  question: Comment les plantes <strong>stockent</strong>-elles du carbone ?
+  answer: Par la photosynthèse, elles absorbent du CO₂ de l'air.
+  wrong:
+    - En respirant de l'oxygène.
+    - En absorbant du méthane par les racines.
+    - En reflétant la lumière.
+  why: Une forêt qui pousse est un puits de carbone. Si on la brûle, le carbone retourne dans l'atmosphère.
+- key: q-destockage
+  category: carbone
+  question: Laquelle de ces activités <strong>déstocke</strong> du carbone (le renvoie dans l'atmosphère) ?
+  answer: Brûler une forêt pour faire des champs.
+  wrong:
+    - Planter des arbres.
+    - Protéger une tourbière.
+    - Laisser l'herbe pousser dans une prairie.
+  why: La déforestation et la combustion des énergies fossiles libèrent du carbone stocké depuis longtemps.
+- key: q-ocean-puits
+  category: carbone
+  question: Quel rôle joue l'océan dans le cycle du carbone ?
+  answer: Il absorbe environ un quart du CO₂ émis par les humains.
+  wrong:
+    - Il produit la moitié du pétrole de la planète.
+    - Il ne contient pas de carbone.
+    - Il rejette tout le CO₂ qu'il reçoit.
+  why: C'est un grand puits de carbone, mais l'eau devient plus acide, ce qui menace les coraux et les coquillages.
+- key: q-ppm
+  category: carbone
+  question: Comment a évolué la quantité de CO₂ dans l'air depuis 1850 environ ?
+  answer: Elle est passée d'environ 280 ppm à plus de 420 ppm.
+  wrong:
+    - Elle a diminué de moitié.
+    - Elle n'a pas changé.
+    - Elle a été multipliée par 100.
+  why: Le CO₂ a augmenté de 50 % environ, surtout à cause des énergies fossiles. ppm = parties par million.
+- key: q-fossiles
+  category: carbone
+  question: D'où vient le carbone contenu dans le charbon et le pétrole ?
+  answer: D'êtres vivants enfouis il y a des millions d'années.
+  wrong:
+    - Des volcans actifs aujourd'hui.
+    - De la pluie.
+    - Des usines qui les fabriquent.
+  why: En les brûlant, on renvoie en quelques décennies un carbone stocké pendant des millions d'années.
+# --- Conséquences (objectif 10) ------------------------------------------
+- key: q-niveau-mer
+  category: consequences
+  question: Quelles sont les deux causes principales de la montée du niveau des mers ?
+  answer: La fonte des glaciers et des inlandsis, et la dilatation de l'eau qui se réchauffe.
+  wrong:
+    - La fonte de la banquise et les marées.
+    - L'augmentation des pluies et les tsunamis.
+    - Les fleuves qui coulent plus vite et le vent.
+  why: L'eau chaude prend plus de place. La fonte de la banquise, elle, ne fait presque pas monter la mer.
+- key: q-suisse-glaciers
+  category: consequences
+  question: Quelle conséquence du réchauffement voit-on clairement en Suisse ?
+  answer: Les glaciers ont perdu plus de la moitié de leur volume depuis 1850.
+  wrong:
+    - Il n'y a plus jamais de neige en hiver.
+    - Les lacs ont tous gelé.
+    - Les Alpes ont perdu 500 m d'altitude.
+  why: La Suisse se réchauffe environ deux fois plus vite que la moyenne mondiale.
+- key: q-vulnerabilite
+  category: consequences
+  question: Qu'est-ce que la <strong>vulnérabilité</strong> face au changement climatique ?
+  answer: La fragilité d'une population ou d'un territoire face à un aléa, selon ses moyens de s'en protéger.
+  wrong:
+    - La force d'une tempête.
+    - La quantité de CO₂ émise par un pays.
+    - La vitesse de fonte d'un glacier.
+  why: Une même sécheresse fait plus de dégâts là où les gens sont pauvres et dépendent de l'agriculture.
+- key: q-risque
+  category: consequences
+  question: Quand parle-t-on de <strong>risque</strong> ?
+  answer: Quand un aléa (inondation, canicule…) peut toucher des personnes ou des biens vulnérables.
+  wrong:
+    - Quand il fait beau plusieurs jours de suite.
+    - Seulement quand une catastrophe a déjà eu lieu.
+    - Quand une région est inhabitée.
+  why: Risque = aléa + vulnérabilité. Un orage dans un désert vide n'est pas un risque pour les humains.
+- key: q-pays-vulnerable
+  category: consequences
+  question: Pourquoi le Bangladesh est-il très vulnérable à la montée de la mer ?
+  answer: Une grande partie du pays est très basse et très peuplée, et le pays a peu de moyens.
+  wrong:
+    - Parce qu'il est en altitude.
+    - Parce qu'il n'y pleut jamais.
+    - Parce qu'il émet le plus de CO₂ au monde.
+  why: Les pays qui émettent peu de CO₂ sont souvent ceux qui subissent le plus les conséquences.
+# --- Adaptation (objectif 11) --------------------------------------------
+- key: q-adaptation-def
+  category: adaptation
+  question: Qu'est-ce que l'<strong>adaptation</strong> au changement climatique ?
+  answer: Se préparer aux effets du réchauffement pour en limiter les dégâts.
+  wrong:
+    - Réduire les émissions de gaz à effet de serre.
+    - Arrêter complètement le réchauffement.
+    - Déménager sur une autre planète.
+  why: Réduire les émissions, c'est l'atténuation. Les deux sont nécessaires.
+- key: q-maladaptation
+  category: adaptation
+  question: Pourquoi installer partout des climatiseurs n'est-il pas une bonne adaptation à long terme ?
+  answer: Ils consomment beaucoup d'énergie et rejettent de la chaleur, ce qui aggrave le problème.
+  wrong:
+    - Ils ne rafraîchissent pas l'air.
+    - Ils produisent de la neige.
+    - Ils sont interdits en Suisse.
+  why: Une mesure qui aggrave le réchauffement s'appelle une mauvaise adaptation (maladaptation).
+- key: q-ville-verte
+  category: adaptation
+  question: Quelle mesure aide une ville à supporter les canicules ?
+  answer: Planter des arbres et créer des espaces verts et des points d'eau.
+  wrong:
+    - Goudronner les parcs pour faire des parkings.
+    - Peindre les toits en noir.
+    - Couper les arbres des avenues.
+  why: Les arbres font de l'ombre et rafraîchissent l'air ; les surfaces claires réfléchissent la chaleur.
+- key: q-evaluer
+  category: adaptation
+  question: Pour évaluer une mesure d'adaptation, quelle question est la plus utile ?
+  answer: Est-elle efficace, à quel coût, et a-t-elle des effets négatifs ?
+  wrong:
+    - Est-elle à la mode ?
+    - A-t-elle été inventée récemment ?
+    - Est-elle la plus chère possible ?
+  why: Une bonne mesure protège efficacement, est payable et ne crée pas de nouveaux problèmes.
+# --- Banquise, inlandsis, pergélisol (objectif 12) -----------------------
+- key: q-banquise
+  category: glace
+  question: Qu'est-ce que la <strong>banquise</strong> ?
+  answer: De l'eau de mer gelée qui flotte sur l'océan.
+  wrong:
+    - Une énorme calotte de glace posée sur un continent.
+    - Un sol gelé en permanence.
+    - Un glacier de montagne.
+  why: Elle mesure quelques mètres d'épaisseur. Elle fond et se reforme en partie chaque année.
+- key: q-inlandsis
+  category: glace
+  question: Qu'est-ce qu'un <strong>inlandsis</strong> ?
+  answer: Une immense calotte de glace qui recouvre un continent, comme au Groenland.
+  wrong:
+    - De l'eau de mer gelée.
+    - Un sol gelé en Sibérie.
+    - Une île de glace dans un lac.
+  why: Il n'en reste que deux, au Groenland et en Antarctique. Leur glace peut dépasser 3 km d'épaisseur.
+- key: q-pergelisol
+  category: glace
+  question: Qu'est-ce que le <strong>pergélisol</strong> (permafrost) ?
+  answer: Un sol qui reste gelé toute l'année, pendant au moins deux ans.
+  wrong:
+    - La glace qui flotte sur la mer.
+    - La neige fraîche de l'hiver.
+    - Un nuage de glace.
+  why: On en trouve en Sibérie, au Canada, mais aussi en haute montagne dans les Alpes suisses.
+- key: q-banquise-mer
+  category: glace
+  question: Si la banquise fond, le niveau de la mer monte-t-il ?
+  answer: Presque pas, car cette glace flotte déjà sur l'eau.
+  wrong:
+    - Oui, de plusieurs mètres.
+    - Oui, de 60 m.
+    - Non, il baisse fortement.
+  why: Comme un glaçon dans un verre. Mais la fonte de la banquise diminue l'albédo et accélère le réchauffement.
+- key: q-inlandsis-mer
+  category: glace
+  question: Que se passerait-il si l'inlandsis du Groenland fondait entièrement ?
+  answer: Le niveau des mers monterait d'environ 7 m.
+  wrong:
+    - Rien, car il flotte.
+    - Le niveau des mers baisserait.
+    - Le Groenland s'enfoncerait dans la mer.
+  why: 'Cette glace est posée sur un continent : en fondant, son eau s''ajoute à l''océan.'
+- key: q-pergelisol-degel
+  category: glace
+  question: Quelle est une conséquence du dégel du pergélisol dans les Alpes ?
+  answer: Des éboulements et des chutes de pierres plus fréquents.
+  wrong:
+    - Plus de neige en été.
+    - Des glaciers plus épais.
+    - Des lacs qui gèlent plus longtemps.
+  why: La glace du sol tenait les roches comme une colle. Le dégel déstabilise aussi les remontées mécaniques et les cabanes.
+- key: q-pergelisol-carbone
+  category: glace
+  question: Pourquoi le dégel du pergélisol de Sibérie inquiète-t-il les scientifiques ?
+  answer: Il libère du CO₂ et du méthane, ce qui renforce le réchauffement.
+  wrong:
+    - Il fait baisser le niveau des mers.
+    - Il produit de l'oxygène.
+    - Il refroidit l'Arctique.
+  why: 'Le sol gelé contient beaucoup de matière organique qui se décompose en dégelant : c''est une rétroaction.'
+# --- Régions polaires (objectif 13) --------------------------------------
+- key: q-arctique-vite
+  category: polaire
+  question: À quelle vitesse se réchauffe l'Arctique par rapport à la moyenne de la planète ?
+  answer: Environ trois à quatre fois plus vite.
+  wrong:
+    - Deux fois moins vite.
+    - À la même vitesse.
+    - Il se refroidit.
+  why: Quand la neige et la banquise fondent, l'albédo diminue et l'océan sombre absorbe plus de chaleur.
+- key: q-routes
+  category: polaire
+  question: Pourquoi de nouvelles routes maritimes s'ouvrent-elles dans l'Arctique ?
+  answer: La banquise fond en été, les bateaux peuvent passer plus longtemps.
+  wrong:
+    - On a creusé des canaux dans la glace.
+    - Le pôle Nord s'est déplacé.
+    - Les bateaux brise-glace ont été interdits.
+  why: Le passage du Nord-Ouest (Canada) et la route du Nord (Russie) relient l'Europe à l'Asie.
+- key: q-routes-avantage
+  category: polaire
+  question: Quel est l'avantage des routes de l'Arctique pour aller d'Europe en Asie ?
+  answer: Elles sont beaucoup plus courtes que la route par le canal de Suez.
+  wrong:
+    - Elles sont libres de glace toute l'année.
+    - Elles ne présentent aucun danger.
+    - Elles passent par l'équateur.
+  why: Le trajet entre l'Europe du Nord et le Japon peut être raccourci d'environ un tiers.
+- key: q-routes-enjeux
+  category: polaire
+  question: Lequel est un enjeu (un problème) lié aux routes de l'Arctique ?
+  answer: Le risque de marée noire dans un milieu fragile et difficile d'accès.
+  wrong:
+    - Le manque de soleil pour les panneaux solaires des bateaux.
+    - La chaleur trop forte pour les marins.
+    - L'absence de poissons dans l'océan.
+  why: Il y a aussi des tensions entre pays pour le pétrole, le gaz et le contrôle des passages, et des menaces pour les Inuits et la faune.
+# --- Régions chaudes (objectif 14) ---------------------------------------
+- key: q-desertification
+  category: chaud
+  question: Qu'est-ce que la <strong>désertification</strong> ?
+  answer: La dégradation des terres dans les régions sèches, à cause du climat et des activités humaines.
+  wrong:
+    - L'avancée des dunes de sable dans les villes d'Europe.
+    - La création de déserts artificiels pour le tourisme.
+    - La fonte des glaciers en montagne.
+  why: Sécheresses, surpâturage, déforestation et mauvaise irrigation rendent les sols pauvres et stériles.
+- key: q-sahel
+  category: chaud
+  question: Dans quelle région d'Afrique la désertification est-elle un problème majeur ?
+  answer: Le Sahel, au sud du Sahara.
+  wrong:
+    - Le bassin du Congo, dans la forêt équatoriale.
+    - L'Afrique du Sud, au bord de l'océan.
+    - Les montagnes du Kilimandjaro.
+  why: Les pluies y sont rares et irrégulières, et la population vit beaucoup de l'agriculture et de l'élevage.
+- key: q-crise
+  category: chaud
+  question: Comment une sécheresse peut-elle mener à une crise alimentaire ?
+  answer: Les récoltes et le bétail meurent, la nourriture manque et les prix augmentent.
+  wrong:
+    - La sécheresse fait pousser les cultures plus vite.
+    - Les gens mangent moins car il fait chaud.
+    - Les supermarchés ferment à cause de la chaleur.
+  why: Les familles pauvres ne peuvent plus acheter à manger ; des conflits et des migrations peuvent suivre.
+- key: q-muraille
+  category: chaud
+  question: Quel est le but de la « Grande Muraille verte » en Afrique ?
+  answer: Planter des arbres et restaurer les sols sur une bande à travers le Sahel.
+  wrong:
+    - Construire un mur pour arrêter le sable.
+    - Peindre les dunes en vert.
+    - Protéger les villes contre les inondations.
+  why: Les arbres retiennent le sol et l'eau, et redonnent des terres cultivables.

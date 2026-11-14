@@ -1,0 +1,75 @@
+# The story in order (`order`), for the chronology exercise.
+kind: event
+items:
+- key: e-proces
+  order: 1
+  part: il y a 45 ans
+  text: Ill gagne le procès en paternité grâce à deux faux témoins.
+- key: e-depart
+  order: 2
+  part: il y a 45 ans
+  text: Klara, enceinte et humiliée, doit quitter Güllen.
+- key: e-gare
+  order: 3
+  part: acte I
+  text: Les habitants ruinés attendent la milliardaire à la gare.
+- key: e-arrivee
+  order: 4
+  part: acte I
+  text: Claire arrive en faisant arrêter l'express avec le signal d'alarme.
+- key: e-foret
+  order: 5
+  part: acte I
+  text: Claire et Ill se promènent dans la forêt de leurs souvenirs.
+- key: e-offre
+  order: 6
+  part: acte I
+  text: Au banquet, Claire offre un milliard en échange de la mort d'Ill.
+- key: e-refus
+  order: 7
+  part: acte I
+  text: Le maire refuse l'offre « au nom de l'humanité ».
+- key: e-credit
+  order: 8
+  part: acte II
+  text: Les clients achètent à crédit des produits chers dans la boutique d'Ill.
+- key: e-chaussures
+  order: 9
+  part: acte II
+  text: Ill remarque que tout le monde porte des chaussures jaunes neuves.
+- key: e-autorites
+  order: 10
+  part: acte II
+  text: Ill demande en vain de l'aide au policier, au maire et au pasteur.
+- key: e-panthere
+  order: 11
+  part: acte II
+  text: La panthère noire de Claire est abattue devant le magasin d'Ill.
+- key: e-fuite
+  order: 12
+  part: acte II
+  text: À la gare, entouré par les habitants, Ill n'ose pas monter dans le train.
+- key: e-usines
+  order: 13
+  part: acte III
+  text: Claire révèle qu'elle a racheté et fermé les usines pour ruiner la ville.
+- key: e-fusil
+  order: 14
+  part: acte III
+  text: Le maire propose un fusil à Ill pour qu'il se suicide ; Ill refuse.
+- key: e-adieu
+  order: 15
+  part: acte III
+  text: Ill et Claire se retrouvent une dernière fois dans la forêt.
+- key: e-vote
+  order: 16
+  part: acte III
+  text: L'assemblée communale vote « pour la justice ».
+- key: e-mort
+  order: 17
+  part: acte III
+  text: Ill meurt au milieu des hommes de Güllen ; on parle d'une crise cardiaque.
+- key: e-cheque
+  order: 18
+  part: acte III
+  text: Claire remet le chèque et repart avec le corps d'Ill dans le cercueil.

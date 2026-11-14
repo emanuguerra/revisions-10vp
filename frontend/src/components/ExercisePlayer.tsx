@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { api, ApiError } from "../api";
 import { strings } from "../i18n";
 import type { AnswerResult, MissionNext, MissionState, Question, Scoring, Unit } from "../types";
+import { useRewards } from "../rewards";
 import { QuestionView } from "./QuestionView";
 
 const DEFAULT_SCORING: Scoring = { first: 10, retry: 5, hint_cost: 3, streak_bonus: 5, streak_from: 3 };
@@ -14,6 +15,7 @@ interface Play { mission: MissionState; questions: Question[]; view: number }
  *  Both are saved on the server: the student can pause and resume them later. */
 export function ExercisePlayer({ unit, onBackToLesson }: { unit: Unit; onBackToLesson: () => void }) {
   const t = strings(unit.ui_lang);
+  const { refresh: refreshRewards } = useRewards();
   const cfg = unit.config;
   const mcfg = cfg.mission ?? { mode: "sequence" };
   const scoring = { ...DEFAULT_SCORING, ...cfg.scoring };
@@ -63,6 +65,7 @@ export function ExercisePlayer({ unit, onBackToLesson }: { unit: Unit; onBackToL
 
   function onResult(r: AnswerResult) {
     if (r.mission) setPlay(p => (p ? { ...p, mission: r.mission! } : p));
+    if (r.final) refreshRewards();
   }
 
   const next = () => guard(async () => {
@@ -141,7 +144,7 @@ export function ExercisePlayer({ unit, onBackToLesson }: { unit: Unit; onBackToL
         <div style={{ display: reviewing ? "none" : "contents" }}>
           <QuestionView key={current.id} question={current} t={t} scoring={scoring} header={header}
             isLast={!training && last + 1 >= mission.total}
-            onResult={onResult} onNext={next} onQuit={quit} onPause={pause}
+            onResult={onResult} onNext={next} onQuit={quit} onPause={pause} speechLang={cfg.speech_lang}
             quitLabel={training ? t.quitTraining : t.quitMission} />
         </div>
         {error && <p className="feedback no">{error}</p>}

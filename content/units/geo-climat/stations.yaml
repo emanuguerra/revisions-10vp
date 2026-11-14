@@ -1,0 +1,93 @@
+# Climate stations for the diagrams: monthly means, January to December.
+# Values are rounded climate normals (about 1991–2020), good enough to read and compare
+# diagrams in class; they are not official measurements.
+kind: station
+items:
+- key: geneve
+  name: Genève
+  country: Suisse
+  lat: 46.2
+  alt: 411
+  climate: transition    # between oceanic and continental: not asked in "Quel climat ?"
+  temp: [1.5, 2.8, 6.6, 10.0, 14.4, 18.0, 20.3, 19.7, 15.6, 11.0, 5.6, 2.4]
+  prec: [76, 68, 70, 72, 84, 92, 79, 82, 100, 105, 88, 90]
+- key: brest
+  name: Brest
+  country: France
+  lat: 48.4
+  alt: 94
+  climate: oceanique
+  temp: [7.2, 7.1, 8.6, 9.8, 12.5, 15.1, 16.9, 17.1, 15.6, 13.1, 10.1, 8.0]
+  prec: [128, 100, 90, 78, 74, 55, 60, 64, 80, 110, 120, 135]
+- key: moscou
+  name: Moscou
+  country: Russie
+  lat: 55.8
+  alt: 156
+  climate: continental
+  temp: [-6.5, -6.7, -1.0, 6.7, 13.2, 17.0, 19.2, 17.0, 11.3, 5.6, -1.2, -5.2]
+  prec: [52, 41, 35, 37, 49, 80, 85, 82, 68, 71, 55, 52]
+- key: rome
+  name: Rome
+  country: Italie
+  lat: 41.9
+  alt: 20
+  climate: mediterraneen
+  temp: [8.0, 8.8, 11.2, 13.8, 18.2, 22.2, 25.0, 25.2, 21.4, 17.2, 12.4, 9.1]
+  prec: [69, 76, 59, 62, 44, 20, 15, 33, 68, 113, 110, 88]
+- key: manaus
+  name: Manaus
+  country: Brésil
+  lat: -3.1
+  alt: 67
+  climate: equatorial
+  temp: [26.1, 26.0, 26.1, 26.2, 26.4, 26.5, 26.7, 27.4, 27.8, 27.6, 27.2, 26.6]
+  prec: [290, 290, 320, 310, 250, 115, 85, 60, 85, 125, 180, 240]
+- key: le-caire
+  name: Le Caire
+  country: Égypte
+  lat: 30.1
+  alt: 23
+  climate: desertique
+  temp: [14.0, 15.3, 17.6, 21.4, 24.9, 27.4, 28.0, 27.9, 26.3, 23.5, 19.0, 15.4]
+  prec: [5, 4, 4, 1, 1, 0, 0, 0, 0, 1, 3, 6]
+- key: niamey
+  name: Niamey
+  country: Niger
+  lat: 13.5
+  alt: 223
+  climate: tropical-sec
+  temp: [24.5, 27.5, 31.2, 33.8, 33.5, 31.0, 28.5, 27.3, 28.6, 30.5, 28.4, 25.5]
+  prec: [0, 0, 3, 7, 37, 75, 150, 200, 90, 15, 1, 0]
+- key: mumbai
+  name: Mumbai
+  country: Inde
+  lat: 19.1
+  alt: 14
+  climate: tropical-sec
+  temp: [24.0, 25.0, 27.0, 28.6, 30.0, 29.0, 27.8, 27.5, 27.8, 28.6, 27.5, 25.5]
+  prec: [1, 1, 0, 1, 15, 520, 840, 580, 330, 85, 15, 3]
+- key: utqiagvik
+  name: Utqiaġvik (Barrow)
+  country: Alaska, États-Unis
+  lat: 71.3
+  alt: 10
+  climate: polaire
+  temp: [-25.3, -26.6, -25.4, -17.4, -6.5, 1.8, 4.7, 3.4, -0.5, -9.0, -17.6, -23.0]
+  prec: [4, 4, 3, 3, 4, 9, 25, 25, 17, 11, 6, 5]
+- key: saentis
+  name: Säntis
+  country: Suisse
+  lat: 47.2
+  alt: 2502
+  climate: montagnard
+  temp: [-7.4, -7.8, -5.9, -3.4, 1.0, 4.3, 6.6, 6.6, 3.9, 0.6, -3.8, -6.2]
+  prec: [195, 180, 205, 200, 200, 235, 240, 240, 180, 160, 190, 210]
+- key: sydney
+  name: Sydney
+  country: Australie
+  lat: -33.9
+  alt: 6
+  climate: subtropical   # not one of the types studied: not asked in "Quel climat ?"
+  temp: [22.8, 22.8, 21.6, 19.0, 16.1, 13.6, 12.8, 13.9, 16.2, 18.3, 20.0, 21.9]
+  prec: [100, 120, 130, 125, 120, 130, 95, 80, 70, 75, 85, 75]

@@ -1,0 +1,623 @@
+# Geni@l klick, chapitre 3 « Wie geht's denn so? », word list pages 18 to 21 of the book.
+# known: true = "Das kennst du schon" (grey box), plus: true = extra vocabulary (blue box).
+# Examples marked in the book are copied as they are; the others are simple sentences
+# with the same words. Swiss spelling (ss), like the book.
+kind: wort
+items:
+# --- Na, wie geht's ? -------------------------------------------------------
+- key: wie-gehts
+  category: wiegehts
+  known: true
+  de: Wie geht's?
+  fr: Comment ça va ?
+  pic: "👋"
+  example: Hallo Lea, wie geht's?
+  example_fr: Salut Lea, comment ça va ?
+- key: wie-geht-es-ihnen
+  category: wiegehts
+  known: true
+  de: Wie geht es Ihnen?
+  fr: Comment allez-vous ?
+  pic: "🎩"
+  example: Guten Tag, Frau Huber! Wie geht es Ihnen?
+  example_fr: Bonjour Madame Huber ! Comment allez-vous ?
+- key: sehr-gut
+  category: wiegehts
+  known: true
+  de: Es geht mir sehr gut.
+  fr: Je vais très bien.
+  pic: "😃"
+  example: Danke, es geht mir sehr gut. Und dir?
+  example_fr: Merci, je vais très bien. Et toi ?
+- key: ganz-gut
+  category: wiegehts
+  known: true
+  de: Es geht mir ganz gut.
+  fr: Je vais assez bien.
+  pic: "🙂"
+  example: Es geht mir ganz gut, danke.
+  example_fr: Je vais assez bien, merci.
+- key: nicht-gut
+  category: wiegehts
+  known: true
+  de: Es geht mir nicht gut.
+  fr: Je ne vais pas bien.
+  pic: "😕"
+  example: Es geht mir nicht gut, ich habe Kopfweh.
+  example_fr: Je ne vais pas bien, j'ai mal à la tête.
+- key: schlecht
+  category: wiegehts
+  known: true
+  de: Es geht mir schlecht.
+  fr: Je vais mal.
+  pic: "😩"
+  example: Es geht mir schlecht, ich bleibe im Bett.
+  example_fr: Je vais mal, je reste au lit.
+- key: gluecklich
+  category: wiegehts
+  known: true
+  de: glücklich
+  fr: heureux / heureuse
+  pic: "😄"
+  group: happy
+  example: Ich bin glücklich, wenn die Sonne scheint.
+  example_fr: Je suis heureux / heureuse quand le soleil brille.
+- key: muede
+  category: wiegehts
+  known: true
+  de: müde
+  fr: fatigué·e
+  pic: "😴"
+  example: Ich bin müde, ich gehe ins Bett.
+  example_fr: Je suis fatigué·e, je vais au lit.
+- key: cool
+  category: wiegehts
+  known: true
+  de: cool
+  fr: cool
+  pic: "😎"
+  group: great
+  example: Ich finde den Film cool.
+  example_fr: Je trouve le film cool.
+- key: toll
+  category: wiegehts
+  known: true
+  de: toll
+  fr: super, génial·e
+  pic: "🤩"
+  group: great
+  example: Ich finde das Konzert toll.
+  example_fr: Je trouve le concert génial.
+- key: bloed
+  category: wiegehts
+  known: true
+  de: blöd
+  fr: stupide, nul / nulle
+  pic: "🙄"
+  example: Ich finde das Spiel blöd.
+  example_fr: Je trouve ce jeu nul.
+- key: interessant
+  category: wiegehts
+  known: true
+  de: interessant
+  fr: intéressant·e
+  pic: "🧐"
+  opposite: langweilig
+  example: Das Buch ist sehr interessant.
+  example_fr: Le livre est très intéressant.
+- key: langweilig
+  category: wiegehts
+  known: true
+  de: langweilig
+  fr: ennuyeux / ennuyeuse
+  pic: "😑"
+  example: Die Stunde ist so langweilig!
+  example_fr: Le cours est tellement ennuyeux !
+- key: lustig
+  category: wiegehts
+  known: true
+  de: lustig
+  fr: drôle, amusant·e
+  pic: "😂"
+  opposite: traurig
+  example: Mein Onkel ist sehr lustig.
+  example_fr: Mon oncle est très drôle.
+- key: traurig
+  category: wiegehts
+  known: true
+  de: traurig
+  fr: triste
+  pic: "😢"
+  group: sad
+  example: Lea ist traurig, weil ihr Hamster krank ist.
+  example_fr: Lea est triste parce que son hamster est malade.
+- key: froh
+  category: wiegehts
+  de: froh
+  fr: content·e
+  pic: "😊"
+  group: happy
+  example: Ich bin froh, wenn du kommst.
+  example_fr: Je suis content·e si tu viens.
+- key: sauer
+  category: wiegehts
+  de: sauer
+  fr: fâché·e (acide)
+  pic: "😠"
+  group: angry
+  example: Er ist sauer, wenn er warten muss.
+  example_fr: Il est fâché quand il doit attendre.
+- key: wuetend
+  category: wiegehts
+  de: wütend
+  fr: furieux / furieuse
+  pic: "😡"
+  group: angry
+  example: Papa ist wütend, weil ich zu spät komme.
+  example_fr: Papa est furieux parce que j'arrive en retard.
+- key: nerven
+  category: wiegehts
+  de: nerven
+  forms: er nervt, hat genervt
+  fr: énerver, agacer
+  pic: "💢"
+  group: annoy
+  example: Es nervt mich, wenn du so laut bist.
+  example_fr: Ça m'énerve quand tu es si bruyant·e.
+- key: streng
+  category: wiegehts
+  de: streng
+  fr: strict·e, sévère
+  pic: "👮"
+  example: Unsere Lehrerin ist sehr streng.
+  example_fr: Notre maîtresse est très sévère.
+- key: suess
+  category: wiegehts
+  de: süss
+  fr: mignon / mignonne (sucré·e, doux / douce)
+  pic: "🐱"
+  example: Die kleine Katze ist so süss!
+  example_fr: Le petit chat est trop mignon !
+- key: aengstlich
+  category: wiegehts
+  de: ängstlich
+  fr: anxieux / anxieuse, qui a peur
+  pic: "😨"
+  example: Der kleine Hund ist sehr ängstlich.
+  example_fr: Le petit chien est très peureux.
+- key: was-ist-los
+  category: wiegehts
+  plus: true
+  de: Was ist denn los?
+  fr: Qu'est-ce qu'il y a ? Que se passe-t-il ?
+  pic: "❓"
+  example: Du weinst ja! Was ist denn los?
+  example_fr: Mais tu pleures ! Qu'est-ce qu'il y a ?
+- key: gute-laune
+  category: wiegehts
+  plus: true
+  de: Ich habe gute Laune.
+  fr: Je suis de bonne humeur.
+  pic: "🌞"
+  example: Heute habe ich sehr gute Laune.
+  example_fr: Aujourd'hui, je suis de très bonne humeur.
+- key: schlechte-laune
+  category: wiegehts
+  plus: true
+  de: Ich habe schlechte Laune.
+  fr: Je suis de mauvaise humeur.
+  pic: "🌧️"
+  example: Am Montag habe ich oft schlechte Laune.
+  example_fr: Le lundi, je suis souvent de mauvaise humeur.
+- key: ich-mag-es-nicht
+  category: wiegehts
+  plus: true
+  de: Ich mag es nicht, wenn …
+  fr: Je n'aime pas quand…
+  pic: "👎"
+  example: Ich mag es nicht, wenn es regnet.
+  example_fr: Je n'aime pas quand il pleut.
+- key: es-stoert-mich
+  category: wiegehts
+  plus: true
+  de: Es stört mich, wenn …
+  fr: Ça me dérange quand…
+  pic: "😤"
+  example: Es stört mich, wenn mein Bruder laut Musik hört.
+  example_fr: Ça me dérange quand mon frère écoute de la musique fort.
+- key: es-gefaellt-mir
+  category: wiegehts
+  plus: true
+  de: Es gefällt mir, wenn …
+  fr: Ça me plaît quand…
+  pic: "👍"
+  example: Es gefällt mir, wenn wir zusammen lachen.
+  example_fr: Ça me plaît quand nous rions ensemble.
+- key: romantisch
+  category: wiegehts
+  plus: true
+  de: romantisch
+  fr: romantique
+  pic: "🌹"
+  opposite: unromantisch
+  example: Der Film ist sehr romantisch.
+  example_fr: Le film est très romantique.
+- key: unromantisch
+  category: wiegehts
+  plus: true
+  de: unromantisch
+  fr: pas romantique
+  pic: "🥀"
+  example: Ein Picknick im Regen ist unromantisch.
+  example_fr: Un pique-nique sous la pluie, ce n'est pas romantique.
+- key: ruhig
+  category: wiegehts
+  plus: true
+  de: ruhig
+  fr: tranquille
+  pic: "😌"
+  example: Am Sonntag ist es bei uns ruhig.
+  example_fr: Le dimanche, c'est tranquille chez nous.
+- key: genervt
+  category: wiegehts
+  plus: true
+  de: genervt
+  fr: énervé·e, agacé·e
+  pic: "😒"
+  group: angry
+  example: Meine Mutter ist genervt, weil ich nicht aufräume.
+  example_fr: Ma mère est agacée parce que je ne range pas.
+- key: gut-drauf
+  category: wiegehts
+  plus: true
+  de: gut drauf sein
+  fr: être de bonne humeur
+  pic: "🕺"
+  group: happy
+  example: Heute ist Tim richtig gut drauf.
+  example_fr: Aujourd'hui, Tim est vraiment de bonne humeur.
+- key: enttaeuscht
+  category: wiegehts
+  plus: true
+  de: enttäuscht
+  fr: déçu·e
+  pic: "😞"
+  group: sad
+  example: Wir haben verloren, ich bin enttäuscht.
+  example_fr: Nous avons perdu, je suis déçu·e.
+- key: nervig
+  category: wiegehts
+  plus: true
+  de: nervig
+  fr: énervant·e, tuant·e
+  pic: "🔔"
+  example: Die Fliege ist so nervig!
+  example_fr: La mouche est tellement énervante !
+- key: stimmung
+  category: wiegehts
+  plus: true
+  de: Stimmung
+  art: die
+  pl: Stimmungen
+  fr: l'atmosphère, l'ambiance
+  pic: "🎈"
+  nopic: true
+  example: Die Stimmung ist schlecht.
+  example_fr: L'ambiance est mauvaise.
+
+# --- Freude / Ärger haben ---------------------------------------------------
+- key: sich-freuen
+  category: freude
+  de: sich freuen
+  forms: er freut sich, hat sich gefreut
+  fr: se réjouir
+  pic: "🎉"
+  example: Ich freue mich auf die Ferien.
+  example_fr: Je me réjouis des vacances.
+- key: reden
+  category: freude
+  de: reden
+  forms: er redet, hat geredet
+  fr: parler, causer
+  pic: "🗣️"
+  example: Wir reden oft über Musik.
+  example_fr: Nous parlons souvent de musique.
+- key: lieben
+  category: freude
+  de: lieben
+  forms: er liebt, hat geliebt
+  fr: aimer
+  pic: "❤️"
+  example: Ich liebe meine Familie.
+  example_fr: J'aime ma famille.
+- key: lachen
+  category: freude
+  de: lachen
+  forms: er lacht, hat gelacht
+  fr: rire
+  pic: "😆"
+  opposite: weinen
+  example: Wir lachen viel zusammen.
+  example_fr: Nous rions beaucoup ensemble.
+- key: sich-aergern
+  category: freude
+  de: sich ärgern
+  forms: er ärgert sich, hat sich geärgert
+  fr: s'énerver, se fâcher
+  pic: "😾"
+  group: annoy
+  example: Ich ärgere mich über meine Note.
+  example_fr: Je suis fâché·e à cause de ma note.
+- key: aerger
+  category: freude
+  de: Ärger
+  art: der
+  singular_only: true
+  fr: les ennuis
+  pic: "⚡"
+  example: Ich habe Ärger mit meiner Mutter.
+  example_fr: J'ai des ennuis avec ma mère.
+- key: weinen
+  category: freude
+  de: weinen
+  forms: er weint, hat geweint
+  fr: pleurer
+  pic: "😭"
+  example: Das Baby weint die ganze Nacht.
+  example_fr: Le bébé pleure toute la nuit.
+- key: sich-aufregen
+  category: freude
+  plus: true
+  de: sich aufregen
+  forms: er regt sich … auf, hat sich aufgeregt
+  fr: s'énerver
+  pic: "🌋"
+  group: annoy
+  example: Reg dich nicht so auf!
+  example_fr: Ne t'énerve pas comme ça !
+- key: streit
+  category: freude
+  plus: true
+  de: Streit
+  art: der
+  fr: la dispute
+  pic: "🗯️"
+  example: Heute hatte ich Streit mit Ben.
+  example_fr: Aujourd'hui, j'ai eu une dispute avec Ben.
+- key: sich-streiten
+  category: freude
+  plus: true
+  de: sich streiten
+  forms: er streitet sich, hat sich gestritten
+  fr: se disputer
+  pic: "🥊"
+  example: Meine Geschwister streiten sich oft.
+  example_fr: Mes frères et sœurs se disputent souvent.
+- key: aufhoeren
+  category: freude
+  plus: true
+  de: aufhören
+  forms: er hört … auf, hat aufgehört
+  fr: arrêter
+  pic: "✋"
+  example: Hört mit dem Streit auf!
+  example_fr: Arrêtez de vous disputer !
+- key: sich-entschuldigen
+  category: freude
+  plus: true
+  de: sich entschuldigen
+  forms: er entschuldigt sich, hat sich entschuldigt
+  fr: s'excuser
+  pic: "🙇"
+  example: Ben entschuldigt sich bei Lea.
+  example_fr: Ben s'excuse auprès de Lea.
+- key: einverstanden
+  category: freude
+  plus: true
+  de: einverstanden
+  fr: d'accord
+  pic: "👌"
+  example: Ich bin nicht einverstanden!
+  example_fr: Je ne suis pas d'accord !
+- key: abschreiben
+  category: freude
+  plus: true
+  de: abschreiben
+  forms: er schreibt … ab, hat abgeschrieben
+  fr: copier
+  pic: "📝"
+  example: Im Test darfst du nicht abschreiben!
+  example_fr: Pendant le test, tu n'as pas le droit de copier !
+- key: note
+  category: freude
+  plus: true
+  de: Note
+  art: die
+  pl: Noten
+  fr: la note
+  pic: "💯"
+  example: Ich habe eine gute Note in Deutsch.
+  example_fr: J'ai une bonne note en allemand.
+- key: bekommen
+  category: freude
+  plus: true
+  de: bekommen
+  forms: er bekommt, hat bekommen
+  fr: recevoir, avoir
+  pic: "📬"
+  example: Sie hat eine schlechte Note bekommen.
+  example_fr: Elle a eu une mauvaise note.
+- key: sich-wohlfuehlen
+  category: freude
+  plus: true
+  de: sich wohlfühlen
+  forms: er fühlt sich … wohl, hat sich wohlgefühlt
+  fr: se sentir bien, à l'aise
+  pic: "🛋️"
+  example: Ich fühle mich in meiner Klasse wohl.
+  example_fr: Je me sens bien dans ma classe.
+- key: sich-erinnern
+  category: freude
+  plus: true
+  de: sich erinnern
+  forms: er erinnert sich, hat sich erinnert
+  fr: se rappeler, se souvenir
+  pic: "💭"
+  example: Erinnerst du dich an unseren Ausflug?
+  example_fr: Tu te souviens de notre excursion ?
+- key: wahrheit
+  category: freude
+  plus: true
+  de: Wahrheit
+  art: die
+  pl: Wahrheiten
+  fr: la vérité
+  pic: "✅"
+  example: Sag mir bitte die Wahrheit!
+  example_fr: Dis-moi la vérité, s'il te plaît !
+- key: quatsch
+  category: freude
+  plus: true
+  de: Quatsch
+  art: der
+  singular_only: true
+  fr: les âneries, les bêtises
+  pic: "🤪"
+  example: Das ist doch Quatsch!
+  example_fr: Ce sont des bêtises !
+- key: widersprechen
+  category: freude
+  plus: true
+  de: widersprechen
+  forms: er widerspricht, hat widersprochen
+  fr: contredire
+  pic: "🙅"
+  example: Du sollst deinem Vater nicht immer widersprechen.
+  example_fr: Tu ne dois pas toujours contredire ton père.
+
+# --- Ich soll, aber ich will nicht ! ---------------------------------------
+- key: ordentlich
+  category: sollen
+  known: true
+  de: ordentlich
+  fr: ordonné·e
+  pic: "🗂️"
+  opposite: unordentlich
+  example: Mein Zimmer ist immer ordentlich.
+  example_fr: Ma chambre est toujours en ordre.
+- key: unordentlich
+  category: sollen
+  known: true
+  de: unordentlich
+  fr: désordonné·e
+  pic: "🌪️"
+  example: Mein Bruder ist sehr unordentlich.
+  example_fr: Mon frère est très désordonné.
+- key: leise
+  category: sollen
+  known: true
+  de: leise
+  fr: à voix basse, doucement
+  pic: "🤫"
+  opposite: laut
+  example: Sprich bitte leise, das Baby schläft.
+  example_fr: Parle doucement, s'il te plaît, le bébé dort.
+- key: laut
+  category: sollen
+  known: true
+  de: laut
+  fr: à voix haute, fort, bruyant·e
+  pic: "📢"
+  example: Die Musik ist viel zu laut!
+  example_fr: La musique est beaucoup trop forte !
+- key: aufraeumen
+  category: sollen
+  known: true
+  de: aufräumen
+  forms: er räumt … auf, hat aufgeräumt
+  fr: ranger
+  pic: "📦"
+  example: Ich muss heute mein Zimmer aufräumen.
+  example_fr: Je dois ranger ma chambre aujourd'hui.
+- key: anrufen
+  category: sollen
+  known: true
+  de: anrufen
+  forms: er ruft … an, hat angerufen
+  fr: appeler (au téléphone)
+  pic: "📞"
+  example: Kannst du mich heute Abend anrufen?
+  example_fr: Tu peux m'appeler ce soir ?
+- key: entschuldige
+  category: sollen
+  known: true
+  de: Entschuldigung! / Entschuldige bitte!
+  fr: Pardon ! / Excuse-moi !
+  pic: "🙏"
+  example: Entschuldige bitte, ich bin zu spät.
+  example_fr: Excuse-moi, je suis en retard.
+- key: tut-mir-leid
+  category: sollen
+  known: true
+  de: Sorry! / Tut mir echt leid.
+  fr: Pardon ! / Je suis vraiment désolé·e.
+  pic: "😔"
+  example: Sorry! Tut mir echt leid, ich habe es vergessen.
+  example_fr: Pardon ! Je suis vraiment désolé·e, je l'ai oublié.
+- key: ruhe
+  category: sollen
+  de: Ruhe
+  art: die
+  singular_only: true
+  fr: la tranquillité
+  pic: "🧘"
+  example: Lass mich in Ruhe!
+  example_fr: Laisse-moi tranquille !
+- key: sollen
+  category: sollen
+  de: sollen
+  forms: ich soll, er soll
+  fr: devoir
+  pic: "☝️"
+  example: Meine Mutter sagt, ich soll aufräumen.
+  example_fr: Ma mère dit que je dois ranger.
+- key: wenig
+  category: sollen
+  de: wenig
+  fr: peu (de)
+  pic: "🤏"
+  opposite: viel
+  example: Ich habe heute wenig Zeit.
+  example_fr: Aujourd'hui, j'ai peu de temps.
+- key: viel
+  category: sollen
+  de: viel
+  fr: beaucoup (de)
+  pic: "📚"
+  example: Wir haben viel Arbeit.
+  example_fr: Nous avons beaucoup de travail.
+- key: vergessen
+  category: sollen
+  de: vergessen
+  forms: er vergisst, hat vergessen
+  fr: oublier
+  pic: "🤦"
+  example: Er hat das Buch vergessen.
+  example_fr: Il a oublié le livre.
+- key: besuchen
+  category: sollen
+  de: besuchen
+  forms: er besucht, hat besucht
+  fr: visiter, rendre visite
+  pic: "🏡"
+  example: Am Sonntag besuchen wir Oma.
+  example_fr: Dimanche, nous rendons visite à grand-maman.
+- key: entschuldigung
+  category: sollen
+  de: Entschuldigung
+  art: die
+  pl: Entschuldigungen
+  fr: l'excuse
+  pic: "💌"
+  example: Das ist keine gute Entschuldigung!
+  example_fr: Ce n'est pas une bonne excuse !

@@ -164,3 +164,13 @@ class Question(Base):
     answered_at: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True), nullable=True)
 
     exercise_type: Mapped[ExerciseType] = relationship()
+
+
+class FocusSession(Base):
+    """A completed focus session (15 or 20 minutes of work before a break)."""
+    __tablename__ = "focus_sessions"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    profile_id: Mapped[int] = mapped_column(ForeignKey("profiles.id"), index=True)
+    minutes: Mapped[int] = mapped_column(Integer)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)

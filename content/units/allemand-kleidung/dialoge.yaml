@@ -1,0 +1,81 @@
+# In a shop or between friends: choose the right reply. `why` explains it in French.
+kind: dialog
+items:
+- key: dlg-helfen
+  says: Guten Tag! Kann ich Ihnen helfen?
+  fr: Bonjour ! Puis-je vous aider ?
+  answer: Ja, ich suche eine Jacke.
+  wrong: ["Ja, ich bin müde.", "Das ist doch Quatsch.", "Ich verkaufe es."]
+  why: 'On dit ce qu''on cherche : « Oui, je cherche une veste. »'
+- key: dlg-groesse
+  says: Welche Grösse hast du?
+  fr: Quelle taille as-tu ?
+  answer: Grösse M.
+  wrong: ["Dunkelblau.", "Zwanzig Franken.", "An der Kasse."]
+  why: 'Die Grösse, c''est la taille : « Taille M. »'
+- key: dlg-kosten
+  says: Was kostet die Bluse?
+  fr: Combien coûte la blouse ?
+  answer: Sie kostet 35 Franken.
+  wrong: ["Sie ist hellblau.", "Grösse S.", "Sie passt mir."]
+  why: 'On répond par le prix : « Elle coûte 35 francs. »'
+- key: dlg-kleid
+  says: Wie findest du mein neues Kleid?
+  fr: Comment trouves-tu ma nouvelle robe ?
+  answer: Toll! Das steht dir gut.
+  wrong: ["An der Kasse.", "Ich suche einen Schirm.", "Mein Akku ist leer."]
+  why: « Génial ! Ça te va bien. » Das steht dir = ça te va bien (le style).
+- key: dlg-eng
+  says: Die Hose ist zu eng.
+  fr: Le pantalon est trop étroit.
+  answer: Probier doch eine grössere Grösse an.
+  wrong: ["Super, das steht dir gut!", "Dann nimm sie!", "Der Eintritt ist gratis."]
+  why: '« Essaie donc une taille plus grande. » anprobieren se sépare : probier … an.'
+- key: dlg-teuer
+  says: Die Stiefel kosten 200 Franken.
+  fr: Les bottes coûtent 200 francs.
+  answer: Oh, das ist mir zu teuer.
+  wrong: ["Oh, das ist sehr billig.", "Sie sind zu kurz.", "Grösse L, bitte."]
+  why: « Oh, c'est trop cher pour moi. » billig ≠ teuer.
+- key: dlg-finden
+  says: Entschuldigung, wo finde ich die Schuhe?
+  fr: Pardon, où puis-je trouver les chaussures ?
+  answer: Dort hinten, neben dem Eingang.
+  wrong: ["Sie kosten 50 Franken.", "Das steht dir gut.", "Grösse 38."]
+  why: « Là-bas au fond, à côté de l'entrée. » On répond par un lieu.
+- key: dlg-anprobieren
+  says: Kann ich das anprobieren?
+  fr: Est-ce que je peux essayer cela ?
+  answer: Ja, natürlich. Die Kabine ist dort.
+  wrong: ["Nein, das ist mein Akku.", "Ich werfe es weg.", "Es kostet zehn Rappen."]
+  why: « Oui, bien sûr. La cabine est là-bas. »
+- key: dlg-leihen
+  says: Kannst du mir deine Jacke leihen?
+  fr: Peux-tu me prêter ta veste ?
+  answer: Ja, klar. Aber bring sie morgen zurück!
+  wrong: ["Nein, sie ist sehr hell.", "Ich bezahle an der Kasse.", "Das nehme ich."]
+  why: « Oui, bien sûr. Mais rapporte-la demain ! » leihen = prêter.
+- key: dlg-bezahlen
+  says: Wo kann ich bezahlen?
+  fr: Où est-ce que je peux payer ?
+  answer: An der Kasse, beim Eingang.
+  wrong: ["Mit Kapuze.", "Im Reisebüro.", "Grösse M."]
+  why: « À la caisse, à l'entrée. »
+- key: dlg-klamotten
+  says: Was machst du mit deinen alten Klamotten?
+  fr: Que fais-tu de tes vieilles fringues ?
+  answer: Ich werfe sie nicht weg, ich tausche sie.
+  wrong: ["Ich trage sie am Imbiss.", "Ich bin enttäuscht.", "Ich kaufe einen Akku."]
+  why: « Je ne les jette pas, je les échange. » Échanger, c'est mieux pour la planète.
+- key: dlg-eintritt
+  says: Wie viel kostet der Eintritt für die Modeschau?
+  fr: Combien coûte l'entrée pour le défilé de mode ?
+  answer: Drei Franken. Das Geld ist für Menschen in Not.
+  wrong: ["Im Kaufhaus.", "Am Samstag.", "Grösse S."]
+  why: « Trois francs. L'argent est pour des gens dans le besoin. »
+- key: dlg-nehmen
+  says: Die Jacke passt dir und sie steht dir super!
+  fr: La veste te va et elle te va super bien !
+  answer: Gut, das nehme ich.
+  wrong: ["Sie ist mir zu eng.", "Wo ist der Imbiss?", "Ich habe keinen Akku."]
+  why: « Bien, je la prends. » passt = la taille va, steht = le style va.

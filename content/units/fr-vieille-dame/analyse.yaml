@@ -1,0 +1,168 @@
+# Comprendre et interpréter : thèmes, symboles, vocabulaire du théâtre.
+kind: analyse
+items:
+# --- Thèmes ------------------------------------------------------------
+- key: a-theme-argent
+  category: themes
+  question: Quel est le thème principal de la pièce ?
+  answer: Le pouvoir de l'argent, qui peut corrompre toute une communauté.
+  wrong:
+    - L'amour impossible entre deux jeunes gens.
+    - La beauté de la nature suisse.
+    - La guerre entre deux pays.
+  why: Une ville entière finit par tuer un homme pour de l'argent, en se donnant bonne conscience.
+- key: a-justice
+  category: themes
+  question: Ce que Claire appelle « justice », est-ce vraiment de la justice ?
+  answer: Non, c'est une vengeance qu'elle achète avec son argent.
+  wrong:
+    - Oui, car un tribunal a jugé Ill.
+    - Oui, car Ill a avoué devant un juge.
+    - Non, car Ill est complètement innocent.
+  why: 'Ill a commis une faute réelle, mais Claire achète sa mort : elle confond justice et vengeance.'
+- key: a-collective
+  category: themes
+  question: Qui est responsable de la mort d'Ill ?
+  answer: Toute la communauté, qui vote et agit ensemble ; personne ne se sent coupable seul.
+  wrong:
+    - Uniquement Claire, qui le tue de ses propres mains.
+    - Personne, c'est un accident.
+    - Uniquement le policier.
+  why: 'Dürrenmatt montre une culpabilité collective : chacun se cache derrière les autres.'
+- key: a-hypocrisie
+  category: themes
+  question: Quel comportement des habitants Dürrenmatt dénonce-t-il surtout ?
+  answer: 'L''hypocrisie : ils parlent de morale et de justice tout en voulant l''argent.'
+  wrong:
+    - Leur paresse au travail.
+    - Leur amour du sport.
+    - Leur méfiance envers les étrangers.
+  why: Les grands discours cachent l'intérêt personnel.
+- key: a-ill-evolue
+  category: themes
+  question: Pourquoi peut-on dire qu'Ill grandit moralement à la fin ?
+  answer: Il reconnaît sa faute et affronte la mort sans fuir, contrairement à la ville lâche.
+  wrong:
+    - Parce qu'il devient le plus riche de la ville.
+    - Parce qu'il réussit à tuer Claire.
+    - Parce qu'il épouse Claire.
+  why: Ill, d'abord lâche et égoïste, devient le seul personnage qui assume ses actes.
+- key: a-actuel
+  category: themes
+  question: Pourquoi la pièce reste-t-elle actuelle ?
+  answer: 'Elle pose une question toujours valable : jusqu''où une société est-elle prête à aller pour l''argent ?'
+  wrong:
+    - Parce qu'elle raconte un fait divers réel de 2020.
+    - Parce qu'elle se passe sur Internet.
+    - Parce qu'elle donne des conseils pour devenir riche.
+  why: On peut penser aux pressions économiques, à la corruption, au conformisme de groupe.
+# --- Symboles ----------------------------------------------------------
+- key: a-chaussures
+  category: themes
+  question: Que symbolisent les chaussures jaunes neuves ?
+  answer: La corruption de la ville, qui dépense déjà l'argent du crime.
+  wrong:
+    - La joie du printemps.
+    - La mode venue de Paris.
+    - La pauvreté des habitants.
+  why: 'Un détail concret qui en dit long : un procédé typique du théâtre.'
+- key: a-panthere
+  category: themes
+  question: Que représente la chasse à la panthère noire ?
+  answer: Elle annonce la « chasse » à Ill, que Claire appelait autrefois « ma panthère noire ».
+  wrong:
+    - Le courage des habitants face au danger.
+    - L'amour de Claire pour les animaux.
+    - La fin des problèmes de Güllen.
+  why: La panthère tuée devant le magasin d'Ill préfigure sa mort.
+- key: a-train
+  category: themes
+  question: Quel rôle joue la gare dans la pièce ?
+  answer: Elle montre l'isolement de Güllen et le piège dans lequel Ill est enfermé.
+  wrong:
+    - C'est l'endroit où Claire est née.
+    - C'est le lieu du banquet.
+    - Elle n'a aucune importance.
+  why: Les trains ne s'arrêtent plus, Claire en fait arrêter un, et Ill ne parvient pas à en prendre un.
+- key: a-nom
+  category: themes
+  question: Pourquoi le nom de la ville, Güllen, est-il ironique ?
+  answer: 'En suisse allemand, il évoque le purin : une ville qui va se salir moralement.'
+  wrong:
+    - Il veut dire « ville de l'or ».
+    - C'est le nom d'un saint protecteur.
+    - Il n'a aucun sens particulier.
+  why: Dürrenmatt aime les noms qui annoncent le sens de l'histoire.
+- key: a-grotesque
+  category: themes
+  question: Qu'est-ce qui rend Claire grotesque, presque irréelle ?
+  answer: Sa suite étrange, ses nombreux maris, son corps en partie artificiel et sa toute-puissance.
+  wrong:
+    - Sa pauvreté et sa timidité.
+    - Son accent étranger seulement.
+    - Sa gentillesse avec tout le monde.
+  why: 'Le grotesque fait rire tout en mettant mal à l''aise : c''est le mélange de la comédie tragique.'
+# --- Le vocabulaire du théâtre ----------------------------------------
+- key: a-didascalie
+  category: theatre
+  question: Comment appelle-t-on les indications de l'auteur sur le décor, les gestes ou le ton (souvent en italique) ?
+  answer: Les didascalies.
+  wrong:
+    - Les répliques.
+    - Les apartés.
+    - Les tirades.
+  why: Chez Dürrenmatt, elles sont nombreuses et souvent ironiques.
+- key: a-replique
+  category: theatre
+  question: Comment appelle-t-on ce que dit un personnage quand il prend la parole dans un dialogue ?
+  answer: Une réplique.
+  wrong:
+    - Une didascalie.
+    - Une scène.
+    - Un acte.
+  why: Une très longue réplique s'appelle une tirade.
+- key: a-tragicomedie
+  category: theatre
+  question: Qu'est-ce qu'une comédie tragique (tragicomédie) ?
+  answer: Une pièce qui mêle des éléments comiques et une issue tragique.
+  wrong:
+    - Une pièce qui finit toujours bien.
+    - Une pièce chantée du début à la fin.
+    - Une pièce sans dialogue.
+  why: On rit de la ville, mais l'histoire finit par la mort d'un homme.
+- key: a-choeur
+  category: theatre
+  question: À la fin, les habitants parlent ensemble comme un chœur. À quel théâtre cela fait-il référence ?
+  answer: À la tragédie grecque antique.
+  wrong:
+    - Au théâtre de marionnettes.
+    - À l'opéra italien.
+    - Au cinéma muet.
+  why: 'C''est une parodie : le chœur célèbre la prospérité retrouvée, au prix d''un meurtre.'
+- key: a-denouement
+  category: theatre
+  question: Comment appelle-t-on la fin d'une pièce, où le conflit se résout ?
+  answer: Le dénouement.
+  wrong:
+    - L'exposition.
+    - Le nœud.
+    - L'aparté.
+  why: 'Le dénouement ici : le vote, la mort d''Ill et le départ de Claire.'
+- key: a-exposition
+  category: theatre
+  question: Comment appelle-t-on le début d'une pièce, qui présente les personnages et la situation ?
+  answer: L'exposition.
+  wrong:
+    - Le dénouement.
+    - La péripétie.
+    - L'épilogue.
+  why: Ici, la scène de la gare présente la ville ruinée et l'attente de la milliardaire.
+- key: a-aparte
+  category: theatre
+  question: Comment appelle-t-on une réplique qu'un personnage dit pour lui-même ou pour le public, sans que les autres l'entendent ?
+  answer: Un aparté.
+  wrong:
+    - Une tirade.
+    - Une didascalie.
+    - Un monologue de groupe.
+  why: Un monologue, lui, est un personnage seul en scène qui parle.

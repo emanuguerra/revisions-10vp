@@ -1,0 +1,63 @@
+# Qui est-ce ? Description → character.
+kind: qui
+items:
+- key: w-claire
+  category: personnages
+  question: Milliardaire, née à Güllen sous le nom de Klara Wäscher, elle revient après 45 ans avec une étrange suite. Qui est-ce ?
+  answer: Claire Zachanassian
+  wrong: [Mathilde Ill, Ottilie Ill, La femme du maire]
+  why: Elle a fait fortune grâce à ses mariages avec des hommes très riches.
+- key: w-ill
+  category: personnages
+  question: Épicier apprécié de tous, il a abandonné Klara quand elle attendait un enfant. Qui est-ce ?
+  answer: Alfred Ill
+  wrong: [Le maire, Le pasteur, Le policier]
+  why: Il est à la fois coupable d'une faute ancienne et victime de toute une ville.
+- key: w-maire
+  category: personnages
+  question: Il refuse d'abord l'offre « au nom de l'humanité », puis tend un fusil à Ill pour qu'il se suicide. Qui est-ce ?
+  answer: Le maire
+  wrong: [L'instituteur, Le médecin, Le majordome]
+  why: Il représente le pouvoir politique qui se laisse corrompre.
+- key: w-policier
+  category: personnages
+  question: Ill lui demande d'arrêter Claire ; il refuse, et on remarque qu'il a une nouvelle dent en or. Qui est-ce ?
+  answer: Le policier
+  wrong: [Le pasteur, Le maire, Le peintre]
+  why: Même la police, censée protéger, est achetée.
+- key: w-pasteur
+  category: personnages
+  question: Il fait acheter une nouvelle cloche pour l'église et finit par dire à Ill de fuir. Qui est-ce ?
+  answer: Le pasteur
+  wrong: [L'instituteur, Le maire, Le juge]
+  why: Il voit la tentation de la ville, mais il ne fait rien de plus pour l'empêcher.
+- key: w-instituteur
+  category: personnages
+  question: Humaniste cultivé, il sait que la ville va céder ; ivre, il veut dire la vérité aux journalistes. Qui est-ce ?
+  answer: L'instituteur
+  wrong: [Le pasteur, Le policier, Le majordome]
+  why: Il est lucide, mais finit lui aussi par voter avec les autres.
+- key: w-majordome
+  category: personnages
+  question: Au service de Claire, il était autrefois le juge du procès en paternité à Güllen. Qui est-ce ?
+  answer: Le majordome
+  wrong: [Le maire, Le policier, Le septième mari]
+  why: Claire a « acheté » l'ancien représentant de la justice.
+- key: w-aveugles
+  category: personnages
+  question: Ces deux hommes aveugles, à la suite de Claire, avaient menti au procès il y a 45 ans. Qui sont-ils ?
+  answer: Les deux faux témoins
+  wrong: [Les fils d'Ill, Les porteurs de la chaise, Les journalistes]
+  why: Ils avaient été payés pour mentir. Claire s'est vengée d'eux.
+- key: w-mathilde
+  category: personnages
+  question: L'épouse d'Ill, qui s'achète un manteau de fourrure à l'acte III. Qui est-ce ?
+  answer: Mathilde Ill
+  wrong: [Claire Zachanassian, La femme du pasteur, Ottilie Ill]
+  why: Ill l'avait épousée pour son argent et sa boutique, après avoir abandonné Klara.
+- key: w-habitants
+  category: personnages
+  question: Personnage collectif, ils passent de la pauvreté à la richesse en sacrifiant l'un d'entre eux. Qui sont-ils ?
+  answer: Les habitants de Güllen
+  wrong: [Les journalistes, Les maris de Claire, Les ouvriers des usines de Capri]
+  why: À la fin, ils forment un chœur, comme dans une tragédie grecque.

@@ -1,0 +1,74 @@
+slug: fr-vieille-dame
+subject: francais
+title: La Visite de la vieille dame
+subtitle: "Lecture de la pièce de Friedrich Dürrenmatt (1956) : l'histoire acte par acte, les personnages, les thèmes, le vocabulaire du théâtre, puis des exercices de compréhension."
+order: 1
+ui_lang: fr
+
+break_videos:
+  - { title: "Friedrich Dürrenmatt, l'auteur suisse", search: "Friedrich Dürrenmatt documentaire" }
+  - { title: "La Visite de la vieille dame : résumé", search: "La visite de la vieille dame Dürrenmatt résumé" }
+
+categories:
+  auteur: L'auteur et la pièce
+  acte1: Acte I
+  acte2: Acte II
+  acte3: Acte III
+  personnages: Les personnages
+  themes: Thèmes et symboles
+  theatre: Le vocabulaire du théâtre
+
+lessons:
+  - slug: histoire
+    title: "1. L'histoire"
+    blocks:
+      - type: html
+        file: lecon-1-histoire.html
+  - slug: analyse
+    title: "2. Personnages et thèmes"
+    blocks:
+      - type: html
+        file: lecon-2-analyse.html
+
+exercises_title: "3. Exercices"
+exercises:
+  - key: comprehension
+    title: As-tu bien lu ?
+    generator: common.mcq
+    params: { kind: qcm }
+  - key: qui
+    title: Qui est-ce ?
+    generator: common.mcq
+    params: { kind: qui }
+  - key: ordre
+    title: Dans quel ordre ?
+    generator: common.order
+    params: { kind: event }
+  - key: vf
+    title: Vrai ou faux ?
+    generator: common.true_false
+    params: { kind: vf }
+  - key: analyse
+    title: Comprendre et interpréter
+    generator: common.mcq
+    params: { kind: analyse }
+
+mission:
+  mode: sequence
+  sequence: [comprehension, qui, ordre, vf, analyse, comprehension, ordre, qui, vf, analyse, comprehension, ordre]
+  title: "🎯 Mission : 12 questions"
+  description: "Compréhension, personnages, chronologie et interprétation. +10 points au premier essai, +5 si tu corriges ta réponse. +5 de bonus dès 3 réponses justes de suite du premier coup 🔥."
+  badges:
+    - Relis le résumé et réessaie !
+    - Bon·ne lecteur·rice
+    - Fin·e analyste
+    - Citoyen·ne d'honneur de Güllen
+
+training: true
+
+scoring:
+  first: 10
+  retry: 5
+  hint_cost: 3
+  streak_bonus: 5
+  streak_from: 3

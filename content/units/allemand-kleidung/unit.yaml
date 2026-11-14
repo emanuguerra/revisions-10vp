@@ -1,0 +1,97 @@
+slug: allemand-kleidung
+subject: allemand
+title: Kaufen, verkaufen, leihen
+subtitle: "Geni@l klick, chapitre 4 : parler des habits et de la mode, faire des achats, produire et recycler les vêtements. Le vocabulaire du livre (pages 24 à 27), avec les cartes, le Memory et le quiz."
+order: 2
+ui_lang: fr
+speech_lang: de-DE
+
+# The four parts of the word list in the book
+categories:
+  kleidung: Kleidung
+  geschaefte: Geschäfte und Orte
+  einkaufen: Einkaufen
+  recycling: Kleidung herstellen und recyclen
+
+# Suggested during focus breaks: `search` opens a YouTube search; `url` (a YouTube link) plays in the page
+break_videos:
+  - { title: "Kleidung auf Deutsch, pour débutants", search: "Kleidung Deutsch lernen A1" }
+  - { title: "Im Kleidergeschäft : un dialogue", search: "Einkaufen Kleidung Dialog Deutsch A1" }
+  - { title: "Fast Fashion : d'où viennent nos habits ?", search: "Fast Fashion einfach erklärt" }
+
+lessons:
+  - slug: lernen
+    title: "1. Lernen · Apprendre"
+    blocks:
+      - type: widget
+        widget: sound-check
+        props: { lang: de, sample: "Guten Tag! Was kostet die Jacke? Das nehme ich." }
+      - type: widget
+        widget: wort-cards
+  - slug: im-geschaeft
+    title: "2. Im Geschäft"
+    blocks:
+      - type: html
+        file: lektion.html
+  - slug: memory
+    title: "3. Memory"
+    blocks:
+      - type: widget
+        widget: memory-game
+
+exercises_title: "4. Quiz"
+exercises:
+  - key: fr_de
+    title: Traduis en allemand
+    generator: wort.fr_de
+  - key: de_fr
+    title: Que veut dire… ?
+    generator: wort.de_fr
+  - key: bild
+    title: Regarde l'émoji
+    generator: wort.picture
+    params:
+      categories: [kleidung, geschaefte]
+      prompt: 'Was ist das? <small class="muted">(Qu''est-ce que c''est ?)</small>'
+  - key: gegenteil
+    title: Le contraire
+    generator: wort.opposite
+  - key: artikel
+    title: der, die ou das ?
+    generator: wort.artikel
+  - key: luecke
+    title: Complète la phrase
+    generator: wort.gap
+  - key: situation
+    title: Complète l'histoire
+    generator: wort.situation
+  - key: dialog
+    title: Que réponds-tu ?
+    generator: wort.dialog
+  - key: schreiben
+    title: Écris le mot
+    generator: wort.spell
+
+mission:
+  mode: mix
+  types: [fr_de, bild, de_fr, situation, gegenteil, artikel, luecke, dialog, schreiben]
+  counts: [10, 20, 30]
+  filter: category
+  review_mistakes: true
+  score_display: fraction
+  title: Bereit für das Quiz ?
+  description: "Questions variées : traduction, émojis, contraires, der/die/das, phrases à compléter, histoires, dialogues et orthographe. Seule une réponse juste du premier coup compte, comme dans un test de vocabulaire."
+  badges:
+    - Weiter so ! Retourne aux cartes et réessaie.
+    - Gut gemacht ! Continue à t'entraîner.
+    - Super ! Très bon travail.
+    - Perfekt ! Parfait !
+
+training: true
+
+scoring:
+  first: 1
+  retry: 0
+  hint_cost: 0
+  streak_bonus: 0
+  streak_from: 3

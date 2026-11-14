@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
 import { api } from "../../api";
 import { norm } from "../../format";
-import { speak, translateLink } from "../../speech";
+import { say, sayLabel, translateLink } from "../../speech";
 import type { Item, Unit, VocabData } from "../../types";
 
 function Card({ it, cat }: { it: Item<VocabData>; cat: string }) {
   const [flipped, setFlipped] = useState(false);
-  const [say, setSay] = useState("🔊 Listen");
+  const [label, setLabel] = useState("🔊 Listen");
+  const [labelFr, setLabelFr] = useState("🔊 FR");
   const j = it.data;
   const toggle = () => setFlipped(f => !f);
 
@@ -29,9 +30,14 @@ function Card({ it, cat }: { it: Item<VocabData>; cat: string }) {
           <div className="audio">
             <button className="speak" onClick={e => {
               e.stopPropagation();
-              setSay("🔊 Playing…");
-              speak(j.en).then(ok => setSay(ok ? "🔊 Listen" : "🔇 No sound, try Google ↗"));
-            }}>{say}</button>
+              setLabel("🔊 Playing…");
+              say(j.en, "en-GB").then(r => setLabel(sayLabel(r, "en-GB", "🔊 Listen")));
+            }}>{label}</button>
+            <button className="speak" title="Écouter en français" onClick={e => {
+              e.stopPropagation();
+              setLabelFr("🔊 …");
+              say(j.fr, "fr-FR").then(r => setLabelFr(r === "ok" ? "🔊 FR" : sayLabel(r, "fr-FR", "🔊 FR")));
+            }}>{labelFr}</button>
             <a className="alt" href={translateLink(j.en)} target="_blank" rel="noopener" onClick={e => e.stopPropagation()}>Google Translate ↗</a>
           </div>
         </div>
