@@ -27,7 +27,7 @@ from .config import CONTENT_DIR
 from .generators import GENERATORS
 from .models import ExerciseType, Item, Lesson, Subject, Unit
 
-UNIT_CONFIG_KEYS = ("speech_lang", "break_videos", "levels", "categories", "mission", "scoring", "training", "exercises_title", "subtitle_fr")
+UNIT_CONFIG_KEYS = ("speech_lang", "break_videos", "exam", "levels", "categories", "mission", "scoring", "training", "exercises_title", "subtitle_fr")
 
 
 class ContentError(Exception):
@@ -67,7 +67,7 @@ def validate(subjects: list[dict], units: list[dict]) -> list[str]:
             if e["generator"] not in GENERATORS:
                 errors.append(f"{where}: exercise '{e['key']}' uses unknown generator '{e['generator']}'")
         mission = u.get("mission", {})
-        for k in mission.get("sequence", []) + mission.get("types", []):
+        for k in mission.get("sequence", []) + mission.get("types", []) + u.get("exam", {}).get("sequence", []):
             if k not in keys:
                 errors.append(f"{where}: mission refers to unknown exercise '{k}'")
         all_keys: set = set()

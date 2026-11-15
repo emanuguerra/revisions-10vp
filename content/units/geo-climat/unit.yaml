@@ -68,6 +68,72 @@ exercises:
     title: Analyser un document
     generator: common.mcq
     params: { kind: doc }
+  - key: ecrit
+    title: Explique avec tes mots
+    generator: common.written
+    params: { kind: essai }
+
+  # --- Test de préparation au TS (exam_only: asked only in the test, one per objective) ---
+  - key: ts01
+    title: "Obj. 1 · Météo et climat"
+    generator: common.exam_item
+    params: { kinds: [qcm, tri], categories: [meteo], lesson: climat, exam_only: true }
+  - key: ts02
+    title: "Obj. 2 · Causes de l'évolution du climat"
+    generator: common.exam_item
+    params: { kinds: [qcm, tri], categories: [causes], lesson: effet-de-serre, exam_only: true }
+  - key: ts03
+    title: "Obj. 3 · Décrire et comparer les climats"
+    generator: climat.classify
+    params: { lesson: climat, exam_only: true }
+  - key: ts04
+    title: "Obj. 4 · Lire un diagramme climatique"
+    generator: climat.read_diagram
+    params: { lesson: climat, exam_only: true }
+  - key: ts05
+    title: "Obj. 5 · Atmosphère et effet de serre"
+    generator: common.exam_item
+    params: { kinds: [qcm], categories: [serre], lesson: effet-de-serre, exam_only: true }
+  - key: ts06
+    title: "Obj. 6 · Gaz à effet de serre (sources)"
+    generator: common.exam_item
+    params: { kinds: [tri], categories: [serre], lesson: effet-de-serre, exam_only: true }
+  - key: ts07
+    title: "Obj. 7 · Activités humaines et cycle du carbone"
+    generator: common.exam_item
+    params: { kinds: [qcm, tri], categories: [carbone], lesson: effet-de-serre, exam_only: true }
+  - key: ts08
+    title: "Obj. 8 · Analyse critique de documents"
+    generator: common.exam_item
+    params: { kinds: [doc], lesson: effet-de-serre, exam_only: true }
+  - key: ts09
+    title: "Obj. 9 · Modèle climatique et albédo"
+    generator: climat.albedo
+    params: { lesson: effet-de-serre, exam_only: true }
+  - key: ts10
+    title: "Obj. 10 · Conséquences et vulnérabilité"
+    generator: common.exam_item
+    params: { kinds: [qcm, doc], categories: [consequences], lesson: consequences, exam_only: true }
+  - key: ts11
+    title: "Obj. 11 · Mesures d'adaptation"
+    generator: common.exam_item
+    params: { kinds: [qcm, tri], categories: [adaptation], lesson: consequences, exam_only: true }
+  - key: ts12
+    title: "Obj. 12 · Banquise, inlandsis, pergélisol"
+    generator: common.exam_item
+    params: { kinds: [qcm, tri], categories: [glace], lesson: consequences, exam_only: true }
+  - key: ts13
+    title: "Obj. 13 · Régions polaires et routes maritimes"
+    generator: common.exam_item
+    params: { kinds: [qcm, doc], categories: [polaire], lesson: consequences, exam_only: true }
+  - key: ts14
+    title: "Obj. 14 · Régions chaudes : sécheresse et crises alimentaires"
+    generator: common.exam_item
+    params: { kinds: [qcm, doc], categories: [chaud], lesson: consequences, exam_only: true }
+  - key: tsw
+    title: "Expliquer : question à rédiger"
+    generator: common.written
+    params: { kind: essai, lesson: effet-de-serre, exam_only: true }
 
 mission:
   mode: sequence
@@ -79,6 +145,12 @@ mission:
     - Apprenti·e climatologue
     - Expert·e du climat
     - Climatologue en chef·fe
+
+# Test de préparation au TS: one attempt, no hint, grade and result by objective
+exam:
+  title: "📝 Test de préparation au TS"
+  description: "20 questions sur les 14 objectifs, dans les conditions du test : un seul essai, pas d'indice. À la fin : une note estimée et, pour chaque objectif, ce qu'il faut encore réviser."
+  sequence: [ts01, ts04, ts03, ts02, ts05, ts06, ts07, ts08, ts09, ts10, ts11, ts12, ts13, ts14, tsw, ts01, ts04, ts07, ts12, tsw]
 
 training: true
 

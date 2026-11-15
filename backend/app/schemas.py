@@ -134,6 +134,7 @@ class QuestionOut(BaseModel):
     status: str
     position: Optional[int]
     answers: list[Any] = []                 # the student's checked answers, in order
+    long: bool = False                      # a written explanation: several lines
     result: Optional["AnswerOut"] = None    # filled once the question is finished (review, resume)
 
 
@@ -154,6 +155,7 @@ class MissionIn(BaseModel):
     count: Optional[int] = None
     category: Optional[str] = None
     item_keys: Optional[list[str]] = None   # "Practise my mistakes"
+    exam: bool = False                      # the unit's test (unit.yaml `exam`) instead of the mission
 
 
 class MistakeOut(BaseModel):
@@ -174,12 +176,28 @@ class MissionFullOut(BaseModel):
     questions: list[QuestionOut]
 
 
+class ObjectiveResult(BaseModel):
+    label: str
+    lesson: Optional[str] = None
+    good: int
+    total: int
+
+
+class ExamResult(BaseModel):
+    grade: float                  # Swiss scale, 1 to 6
+    good: int
+    total: int
+    verdict: str
+    objectives: list[ObjectiveResult]
+
+
 class MissionNextOut(BaseModel):
     mission: MissionState
     question: Optional[QuestionOut] = None
     best: Optional[int] = None
     previous_best: Optional[int] = None
     mistakes: list[MistakeOut] = []
+    exam: Optional[ExamResult] = None
 
 
 class BadgeOut(BaseModel):

@@ -21,6 +21,7 @@ from .algebra import check_answer
 from .formatting import fr, norm_text, parse_num
 from .generators import GENERATORS, GenContext
 from .models import ExerciseType, Item, Mission, Profile, Question, Unit, now
+from .rubric import feedback_html, grade, words
 
 DEFAULT_SCORING = {"first": 10, "retry": 5, "hint_cost": 3, "streak_bonus": 5, "streak_from": 3}
 DEFAULT_RETRY = "Ce n'est pas la bonne réponse. Corrige ta réponse et vérifie à nouveau."
@@ -71,6 +72,25 @@ class Outcome:
     message: str = ""
 
 
+def _check_written(q: Question, raw: str) -> Outcome:
+    """A written explanation, graded with the expected ideas of the rubric (see rubric.py)."""
+    sol = q.solution
+    rub = sol["answer"]
+    if words(raw) < rub.get("min_words", 12):
+        return Outcome("invalid", f"Écris au moins {rub.get('min_words', 12)} mots : explique avec des phrases complètes.")
+    g = grade(raw, rub["ideas"])
+    q.first_answer = q.first_answer or raw[:200]
+    # the checklist of the last attempt is kept with the correction
+    q.solution = {**sol, "graded": feedback_html(g)}
+    if g.score >= rub.get("pass", (g.total + 1) // 2):
+        return Outcome("correct")
+    q.tries += 1
+    if q.tries >= q.payload["max_tries"]:
+        return Outcome("wrong")
+    tips = " ".join(f"Pense à : {i['hint']}" for i in g.missing[:2] if i.get("hint"))
+    return Outcome("retry", f"Il manque des idées importantes ({g.score} / {g.total}). {tips} Complète ta réponse.")
+
+
 def _check(q: Question, value: Any) -> Outcome:
     kind, sol = q.payload["kind"], q.solution
     retry_msg = sol.get("retry_message") or DEFAULT_RETRY
@@ -94,6 +114,8 @@ def _check(q: Question, value: Any) -> Outcome:
         raw = str(value).strip()
         if not raw:
             return Outcome("invalid", "Type an answer. · Écris une réponse.")
+        if sol.get("check") == "rubric":
+            return _check_written(q, raw)
         if sol.get("check") == "expr":
             res = check_answer(raw, sol["answer"][0], sol.get("form") or "reduced")
             if res.status in ("invalid", "form"):  # an equivalent answer in the wrong form costs no attempt
@@ -164,7 +186,7 @@ def answer(db: Session, q: Question, value: Any) -> Outcome:
         raise EngineError("question already finished")
     out = _check(q, value)
     if out.status != "invalid":
-        q.answers = [*q.answers, str(value)[:200]]
+        q.answers = [*q.answers, str(value)[:2000 if q.payload.get("long") else 200]]
     if out.status == "retry" and q.mission_id:
         mission = db.get(Mission, q.mission_id)
         mission.streak = 0
@@ -218,6 +240,9 @@ def mission_question(db: Session, profile: Profile, mission: Mission) -> Questio
         db, profile, ex, mission.level, mission=mission, category=st.get("category"),
         exclude=set(st.get("used", [])), forced_item=forced[mission.index] if mission.index < len(forced) else None,
     )
+    if mission.mode == "exam":  # test conditions: one attempt, no hint
+        q.payload = {**q.payload, "max_tries": 1, "has_hint": False}
+        q.solution = {**q.solution, "hint": None}
     if q.item_key:
         mission.state = {**st, "used": [*st.get("used", []), q.item_key]}
     return q
@@ -268,6 +293,42 @@ def start_mission(db: Session, profile: Profile, unit: Unit, level: int, count: 
     db.add(m)
     db.flush()
     return m, mission_question(db, profile, m)
+
+
+def start_exam(db: Session, profile: Profile, unit: Unit) -> tuple[Mission, Question]:
+    """Test conditions (unit.yaml `exam`): fixed sequence, one attempt, no hint; result by objective."""
+    exam = unit.config.get("exam")
+    if not exam:
+        raise EngineError("this unit has no test")
+    _close_paused(db, profile, unit, "exam")
+    m = Mission(profile_id=profile.id, unit_id=unit.id, level=0, mode="exam", sequence=list(exam["sequence"]), state={})
+    db.add(m)
+    db.flush()
+    return m, mission_question(db, profile, m)
+
+
+EXAM_VERDICTS = [  # (minimum grade, verdict)
+    (5.5, "Prêt·e ! Tu maîtrises le sujet."),
+    (4.5, "Presque prêt·e : revois les objectifs en orange ou en rouge."),
+    (4.0, "C'est suffisant, mais juste : il faut encore réviser."),
+    (0.0, "Pas encore prêt·e : relis les leçons, puis refais le test."),
+]
+
+
+def exam_result(m: Mission, questions: list[Question]) -> dict:
+    """Grade on the Swiss scale (1 to 6, rounded to the half) and the result of each objective."""
+    objectives: dict[str, dict] = {}
+    for q in questions:
+        ex = q.exercise_type
+        o = objectives.setdefault(ex.key, {"label": ex.title, "lesson": (ex.params or {}).get("lesson"), "good": 0, "total": 0})
+        o["total"] += 1
+        o["good"] += q.status == "correct"
+    total = sum(o["total"] for o in objectives.values()) or 1
+    good = sum(o["good"] for o in objectives.values())
+    grade = round((1 + 5 * good / total) * 2) / 2
+    return {"grade": grade, "good": good, "total": total,
+            "verdict": next(v for g, v in EXAM_VERDICTS if grade >= g),
+            "objectives": list(objectives.values())}
 
 
 def next_in_mission(db: Session, profile: Profile, m: Mission) -> Optional[Question]:

@@ -29,7 +29,8 @@ def me(profile: Profile = Depends(current_profile)):
 def best_scores(db: Session, profile_id: int, unit_id: int) -> dict[int, int]:
     rows = db.execute(
         select(Mission.level, func.max(Mission.score))
-        .where(Mission.profile_id == profile_id, Mission.unit_id == unit_id, Mission.status == "done")
+        .where(Mission.profile_id == profile_id, Mission.unit_id == unit_id, Mission.status == "done",
+               Mission.mode == "mission")
         .group_by(Mission.level)
     ).all()
     return {level: score for level, score in rows}

@@ -30,6 +30,7 @@ export interface UnitConfig {
   exercises_title?: string;
   speech_lang?: string;          // voice for pronunciation, e.g. "de-DE" (default English)
   break_videos?: BreakVideo[];   // suggested during focus breaks
+  exam?: { title: string; description?: string; sequence: string[] };   // test conditions, result by objective
   subtitle_fr?: string;
 }
 
@@ -77,13 +78,14 @@ export interface Question {
   has_hint: boolean; hint: string | null; max_tries: number; tries: number;
   eliminated: (number | string)[]; status: "open" | "correct" | "wrong"; position: number | null;
   answers: string[];               // the student's checked answers, in order
+  long?: boolean;                  // a written explanation: multi-line box, graded with expected ideas
   result: AnswerResult | null;     // correction, once the question is finished
 }
 
 export interface MissionState {
   id: number; unit: string; level: number; index: number; total: number; score: number;
   streak: number; good: number; good_first: number; status: string;
-  mode: "mission" | "training"; exercise: string | null; answered: number;
+  mode: "mission" | "training" | "exam"; exercise: string | null; answered: number;
 }
 
 export interface AnswerResult {
@@ -97,8 +99,12 @@ export interface Mistake { item_key: string | null; summary: string | null; give
 
 export interface MissionFull { mission: MissionState; questions: Question[] }
 
+export interface ObjectiveResult { label: string; lesson: string | null; good: number; total: number }
+export interface ExamResult { grade: number; good: number; total: number; verdict: string; objectives: ObjectiveResult[] }
+
 export interface MissionNext {
   mission: MissionState; question: Question | null; best?: number | null; previous_best?: number | null; mistakes: Mistake[];
+  exam?: ExamResult | null;
 }
 
 /** A video for the break: a YouTube link (shown in the page) or a search on YouTube. */

@@ -26,6 +26,7 @@ def q_out(q: Question) -> QuestionOut:
         prompt=p["prompt"], choices=p.get("choices"), unit=p.get("unit", ""), figure=p.get("figure"),
         has_hint=p["has_hint"], hint=q.solution.get("hint") if q.hint_used else None,
         max_tries=p["max_tries"], tries=q.tries, eliminated=q.eliminated, status=q.status, position=q.position,
+        long=p.get("long", False),
         answers=q.answers or [], result=result,
     )
 
@@ -67,7 +68,7 @@ def final_out(db: Session, q: Question, status: str, message: str = "", with_mis
                     max_tries=q.payload["max_tries"], eliminated=q.eliminated, points=q.points,
                     mission=m_out(mission) if mission else None)
     if final:
-        out.explain = sol["explain"]
+        out.explain = (sol.get("graded") or "") + sol["explain"]
         out.correct_answer = sol["answer"] if q.payload["kind"] in ("choice", "side") else None
         out.answer_display = sol.get("answer_display")
         out.summary = sol.get("summary")
@@ -158,7 +159,10 @@ def start_mission(body: MissionIn, profile: Profile = Depends(current_profile), 
     if body.count and counts and body.count not in counts:
         raise HTTPException(400, "Nombre de questions invalide.")
     try:
-        m, q = engine.start_mission(db, profile, unit, body.level, body.count, body.category, body.item_keys)
+        if body.exam:
+            m, q = engine.start_exam(db, profile, unit)
+        else:
+            m, q = engine.start_mission(db, profile, unit, body.level, body.count, body.category, body.item_keys)
     except engine.EngineError as e:
         fail(e)
     db.commit()
@@ -180,7 +184,8 @@ def next_question(mid: int, profile: Profile = Depends(current_profile), db: Ses
     mistakes = [MistakeOut(item_key=x.item_key, summary=x.solution.get("summary"), given=x.first_answer,
                            category=x.payload["category"])
                 for x in qs if not (x.status == "correct" and x.tries == 0)]
-    return MissionNextOut(mission=m_out(m), best=max(previous, m.score), previous_best=previous, mistakes=mistakes)
+    exam = engine.exam_result(m, qs) if m.mode == "exam" else None
+    return MissionNextOut(mission=m_out(m), best=max(previous, m.score), previous_best=previous, mistakes=mistakes, exam=exam)
 
 
 @router.post("/missions/{mid}/abandon", response_model=MissionState)

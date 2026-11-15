@@ -49,7 +49,8 @@ export function UnitPage() {
         )}
       </nav>
       {lesson && <LessonView lesson={lesson} unit={unit} />}
-      {current === EXERCISES && <ExercisePlayer unit={unit} onBackToLesson={() => go(unit.lessons[0]?.slug ?? EXERCISES)} />}
+      {current === EXERCISES && <ExercisePlayer unit={unit} onBackToLesson={() => go(unit.lessons[0]?.slug ?? EXERCISES)}
+        onOpenLesson={go} />}
     </div>
   );
 }

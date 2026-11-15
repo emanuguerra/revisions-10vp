@@ -42,7 +42,7 @@ export function QuestionView({ question: q, t, scoring, header, isLast, onResult
   const [final, setFinal] = useState<AnswerResult | null>(q.result);
   const [hint, setHint] = useState<string | null>(q.hint);
   const [busy, setBusy] = useState(false);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement & HTMLTextAreaElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
   const praise = useRef(pick(t.correct));
 
@@ -60,7 +60,8 @@ export function QuestionView({ question: q, t, scoring, header, isLast, onResult
       if (r.speak) speak(r.speak, speechLang);
     } else {
       setMessage({ kind: "retry", text: r.message });
-      setTimeout(() => inputRef.current?.select(), 0);
+      // a written answer is completed, not retyped: keep the text and put the cursor at the end
+      setTimeout(() => (q.long ? inputRef.current?.focus() : inputRef.current?.select()), 0);
     }
   }
 
@@ -103,7 +104,17 @@ export function QuestionView({ question: q, t, scoring, header, isLast, onResult
         {q.figure?.type === "forces" && <div><ForceFigure {...q.figure} /></div>}
       </div>
 
-      {(q.kind === "number" || q.kind === "text") && (
+      {q.long && (
+        <form className="typein long" autoComplete="off" onSubmit={e => { e.preventDefault(); if (value.trim()) submit(value); }}>
+          <textarea ref={inputRef} id="answer" value={value} onChange={e => setValue(e.target.value)} disabled={done}
+            rows={6} aria-label={t.yourAnswer} placeholder="Écris ta réponse en quelques phrases…" spellCheck />
+          <div className="row">
+            <span className="muted small-note">{value.trim() ? value.trim().split(/\s+/).length : 0} mots</span>
+            <button className="btn" type="submit" disabled={done || busy}>{t.check}</button>
+          </div>
+        </form>
+      )}
+      {(q.kind === "number" || q.kind === "text") && !q.long && (
         <form className="typein" autoComplete="off" onSubmit={e => { e.preventDefault(); if (value.trim()) submit(value); }}>
           <input ref={inputRef} id="answer" value={value} onChange={e => setValue(e.target.value)} disabled={done}
             inputMode={q.kind === "number" ? "decimal" : "text"} aria-label={t.yourAnswer} placeholder={t.yourAnswer}

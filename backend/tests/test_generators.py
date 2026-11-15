@@ -36,6 +36,8 @@ def test_generator_output_is_well_formed(unit, ex):
                 assert len(set(g.choices)) == len(g.choices), g.choices
             elif g.kind == "side":
                 assert g.answer in g.choices
+            elif g.kind == "text" and g.check == "rubric":
+                assert g.long and g.answer["ideas"] and 1 <= g.answer["pass"] <= len(g.answer["ideas"])
             elif g.kind == "text":
                 assert g.answer and all(isinstance(a, str) for a in g.answer)
             else:
@@ -216,3 +218,16 @@ def test_forces_and_chronology():
         orders = [events[t] for t in g.choices]
         pick = orders[g.answer]
         assert pick == (min(orders) if "premier" in g.prompt else max(orders)) and len(set(orders)) == 4
+
+
+def test_written_answers_are_graded_with_the_ideas():
+    from app.rubric import grade
+
+    play = next(u for u in UNITS if u["slug"] == "fr-vieille-dame")
+    for it in [it for u in UNITS for it in u["items"].get("essai", [])]:
+        g = grade(it["model"], it["ideas"])
+        need = it.get("pass", (len(it["ideas"]) + 1) // 2)
+        assert g.score >= need, (it["key"], [i["idea"] for i in g.missing])   # the model answer passes
+        assert grade("Je ne sais pas trop, c'est une histoire.", it["ideas"]).score < need
+    g = grade("Ils achètent À CRÉDIT, grâce au milliard : ils ont accepté qu'il meure.", play["items"]["essai"][0]["ideas"])
+    assert g.score == 3

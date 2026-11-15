@@ -112,6 +112,17 @@ uv run python -m app.seed           # update the database (student history is ke
 Answer kinds: `number` (with `tol` and `unit`), `choice` (index in `choices`), `side` (click on a side of a right-triangle figure), `text` (list of accepted spellings; with `check="expr"` the answer is an algebraic expression compared by `app/algebra.py`: any equivalent expression in the requested `form` is accepted, e.g. `15 + 6x` for `6x + 15`).
 The server checks answers, so the right answer is never sent to the browser before the end.
 
+**Tests** (`exam` in unit.yaml, e.g. geo-climat "Test de préparation au TS"): a fixed `sequence` of
+exercises asked in test conditions (one attempt, no hint). Exercises with `exam_only: true` in their params
+are asked only there (one per objective, title = objective, `lesson` = lesson to revise); `common.exam_item`
+picks a question of given `kinds` and `categories`. The result gives a grade on the Swiss scale (1 to 6) and
+the result of each objective. Tests never count as mission records.
+
+**Written answers** (`common.written`, items of kind `essai`): the student writes a few sentences, graded by
+`app/rubric.py` against the expected ideas of the item (each idea has keywords; accents and case do not
+matter, a keyword can be the start of a word). Two attempts, hints for the missing ideas, then the checklist
+of ideas found and a model answer. A test checks that every model answer passes its own rubric.
+
 **New interactive widget**: add a component in `frontend/src/components/widgets/` and register it in `widgets/index.tsx`.
 
 ## Rules for answers and points

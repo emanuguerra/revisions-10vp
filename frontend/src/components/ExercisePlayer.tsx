@@ -13,7 +13,9 @@ interface Play { mission: MissionState; questions: Question[]; view: number }
 
 /** Exercise tab of a unit: setup (level, count, topic), mission or free training, result.
  *  Both are saved on the server: the student can pause and resume them later. */
-export function ExercisePlayer({ unit, onBackToLesson }: { unit: Unit; onBackToLesson: () => void }) {
+export function ExercisePlayer({ unit, onBackToLesson, onOpenLesson }: {
+  unit: Unit; onBackToLesson: () => void; onOpenLesson?: (slug: string) => void;
+}) {
   const t = strings(unit.ui_lang);
   const { refresh: refreshRewards } = useRewards();
   const cfg = unit.config;
@@ -45,6 +47,11 @@ export function ExercisePlayer({ unit, onBackToLesson }: { unit: Unit; onBackToL
 
   const startMission = (item_keys?: string[]) => guard(async () => {
     const r = await api.startMission({ unit: unit.slug, level, count, category, item_keys });
+    begin(r.mission, [r.question]);
+  });
+
+  const startExam = () => guard(async () => {
+    const r = await api.startMission({ unit: unit.slug, exam: true });
     begin(r.mission, [r.question]);
   });
 
@@ -103,6 +110,7 @@ export function ExercisePlayer({ unit, onBackToLesson }: { unit: Unit; onBackToL
   if (play) {
     const { mission, questions, view } = play;
     const training = mission.mode === "training";
+    const exam = mission.mode === "exam";
     const last = questions.length - 1;
     const reviewing = view < last;
     const header = (
@@ -112,8 +120,9 @@ export function ExercisePlayer({ unit, onBackToLesson }: { unit: Unit; onBackToL
             <button className="arrow" onClick={() => goTo(view - 1)} disabled={view === 0}
               aria-label={t.previous} title={t.previous}>◀</button>
             <span>
+              {exam && "📝 Test TS · "}
               {training ? `${t.question} ${view + 1}` : `${t.question} ${view + 1} / ${mission.total}`}
-              {levels.length > 0 && ` · ${levels[mission.level].label}`}
+              {levels.length > 0 && !exam && ` · ${levels[mission.level].label}`}
             </span>
             <button className="arrow" onClick={() => goTo(view + 1)} disabled={view === last}
               aria-label={t.following} title={t.following}>▶</button>
@@ -145,7 +154,62 @@ export function ExercisePlayer({ unit, onBackToLesson }: { unit: Unit; onBackToL
           <QuestionView key={current.id} question={current} t={t} scoring={scoring} header={header}
             isLast={!training && last + 1 >= mission.total}
             onResult={onResult} onNext={next} onQuit={quit} onPause={pause} speechLang={cfg.speech_lang}
-            quitLabel={training ? t.quitTraining : t.quitMission} />
+            quitLabel={training ? t.quitTraining : exam ? "Abandonner le test" : t.quitMission} />
+        </div>
+        {error && <p className="feedback no">{error}</p>}
+      </section>
+    );
+  }
+
+  // ------------------------------------------------------------- test result
+  if (result?.exam) {
+    const x = result.exam;
+    const level = x.grade >= 5.5 ? "ok" : x.grade >= 4 ? "mid" : "no";
+    return (
+      <section className="panel">
+        <div className="qtype">📝 Test de préparation au TS · terminé</div>
+        <div className={`exam-grade ${level}`}>
+          <span className="exam-note">{String(x.grade).replace(".", ",")}</span>
+          <span><strong>Note estimée</strong><br />{x.good} réponses justes sur {x.total}</span>
+        </div>
+        <h2 style={{ margin: 0 }}>{x.verdict}</h2>
+        <p className="muted small-note">Note estimée = 1 + 5 × (réponses justes ÷ questions), arrondie au demi-point. C'est une indication : le vrai TS peut avoir d'autres questions et un autre barème.</p>
+        <h3>Résultat par objectif</h3>
+        <div className="tablewrap">
+          <table className="when exam-table">
+            <thead><tr><th>Objectif</th><th>Résultat</th><th>À faire</th></tr></thead>
+            <tbody>
+              {x.objectives.map(o => {
+                const icon = o.good === o.total ? "✅" : o.good > 0 ? "🟠" : "❌";
+                const lesson = unit.lessons.find(l => l.slug === o.lesson);
+                return (
+                  <tr key={o.label}>
+                    <td>{o.label}</td>
+                    <td className="num">{icon} {o.good} / {o.total}</td>
+                    <td>{o.good === o.total ? <span className="muted">Acquis</span>
+                      : lesson && onOpenLesson
+                        ? <button className="btn ghost small" onClick={() => onOpenLesson(lesson.slug)}>Revoir « {lesson.title} »</button>
+                        : "À revoir"}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+        {result.mistakes.filter(m => m.summary).length > 0 && (
+          <>
+            <h3>Les corrections de tes erreurs</h3>
+            <ul className="review">
+              {result.mistakes.filter(m => m.summary).map((m, i) => (
+                <li key={i}><span dangerouslySetInnerHTML={{ __html: m.summary ?? "" }} />
+                  {m.given && <span className="muted"> ({t.youAnswered}: {m.given})</span>}</li>
+              ))}
+            </ul>
+          </>
+        )}
+        <div className="row">
+          <button className="btn ghost" onClick={() => setResult(null)}>{t.menu}</button>
+          <button className="btn" onClick={startExam}>Refaire un test</button>
         </div>
         {error && <p className="feedback no">{error}</p>}
       </section>
@@ -205,7 +269,7 @@ export function ExercisePlayer({ unit, onBackToLesson }: { unit: Unit; onBackToL
       {paused.map(m => (
         <div key={m.id} className="mission paused">
           <div>
-            <h3>{m.mode === "training" ? t.pausedTraining(m.exercise ?? "") : t.pausedMission}</h3>
+            <h3>{m.mode === "training" ? t.pausedTraining(m.exercise ?? "") : m.mode === "exam" ? "📝 Test TS en pause" : t.pausedMission}</h3>
             <p className="muted">
               {levels.length > 0 && `${levels[m.level]?.label} · `}
               {m.mode === "training" ? t.pausedTrainingInfo(m.good, m.answered) : t.pausedInfo(m.index + 1, m.total, m.score)}
@@ -244,6 +308,15 @@ export function ExercisePlayer({ unit, onBackToLesson }: { unit: Unit; onBackToL
           <div className="chips">
             {mcfg.counts.map(n => <button key={n} className="chip" aria-pressed={n === count} onClick={() => setCount(n)}>{n}</button>)}
           </div>
+        </div>
+      )}
+      {cfg.exam && (
+        <div className="mission exam">
+          <div>
+            <h3>{cfg.exam.title}</h3>
+            {cfg.exam.description && <p className="muted">{cfg.exam.description}</p>}
+          </div>
+          <button className="btn" onClick={startExam}>Commencer le test</button>
         </div>
       )}
       <div className="mission">

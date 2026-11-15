@@ -42,7 +42,10 @@ def mcq(ctx: GenContext) -> Generated:
     (the choices then stay in their order, e.g. ["Météo", "Climat"]).
     `doc` is a short document shown above the question (HTML).
     """
-    it = ctx.pick_item(ctx.params.get("kind", "qcm"))
+    return _mcq_item(ctx, ctx.pick_item(ctx.params.get("kind", "qcm")))
+
+
+def _mcq_item(ctx: GenContext, it) -> Generated:
     choices = list(it["choices"]) if it.get("choices") else ctx.shuffle([it["answer"], *it["wrong"]])
     doc = f'<div class="doc">{it["doc"]}</div>' if it.get("doc") else ""
     return Generated(
@@ -80,3 +83,37 @@ def order(ctx: GenContext) -> Generated:
         summary="Dans l'ordre :<br>" + "<br>".join(f"{i + 1}. {e['text']}" + (f" ({e['part']})" if e.get("part") else "")
                                          for i, e in enumerate(ordered)),
     )
+
+
+@register("common.written")
+def written(ctx: GenContext) -> Generated:
+    """A question to answer in a few sentences, graded with the expected ideas (app/rubric.py).
+
+    Items (params kind, default "essai"): {key, question, doc? (excerpt, HTML), ideas: [{idea, hint,
+    keywords}], pass? (ideas needed, default half), min_words? (default 12), model (model answer)}.
+    """
+    it = ctx.pick_item(ctx.params.get("kind", "essai"))
+    doc = f'<div class="doc">{it["doc"]}</div>' if it.get("doc") else ""
+    n = len(it["ideas"])
+    need = it.get("pass", (n + 1) // 2)
+    return Generated(
+        kind="text", category=ctx.title, long=True, check="rubric", max_tries=2,
+        prompt=doc + it["question"]
+               + f'<br><small class="muted">Réponds en quelques phrases complètes. Ta réponse est évaluée selon '
+                 f'les idées attendues ({need} sur {n} au moins). Tu as deux essais.</small>',
+        answer={"ideas": it["ideas"], "pass": need, "min_words": it.get("min_words", 12)},
+        hint="Idées à développer : " + " · ".join(i["hint"] for i in it["ideas"] if i.get("hint")),
+        explain=f"<p><strong>Exemple de réponse :</strong> {it['model']}</p>", item_key=it["key"],
+    )
+
+
+@register("common.exam_item")
+def exam_item(ctx: GenContext) -> Generated:
+    """One question on one objective, for a test: an item of `kinds` (qcm, tri, doc) whose category
+    is one of `categories` (params). Used by the TS rehearsal."""
+    kinds, cats = ctx.params.get("kinds", ["qcm"]), ctx.params.get("categories", [])
+    pool = [it for k in kinds for it in ctx.items.get(k, []) if not cats or it.get("category") in cats]
+    for it in pool:
+        if it["key"] == ctx.forced_item:
+            return _mcq_item(ctx, it)
+    return _mcq_item(ctx, ctx.pick([it for it in pool if it["key"] not in ctx.exclude] or pool))

@@ -227,3 +227,21 @@ a { color: var(--accent); }
 .fg-origin { fill: var(--ink); }
 .fg-label { font: 700 13px var(--f-body); }
 .fg-label.f1 { fill: #2f5bea; } .fg-label.f2 { fill: #1f8a4c; } .fg-label.r { fill: #d6342a; }
+
+/* Written explanation */
+.typein.long { display: grid; gap: 8px; }
+.typein.long textarea {
+  font: inherit; width: 100%; padding: 12px 14px; border-radius: 12px; border: 2px solid var(--line);
+  background: var(--bg); color: var(--ink); resize: vertical; min-height: 140px; line-height: 1.5;
+}
+.typein.long textarea:focus { outline: none; border-color: var(--accent); }
+.typein.long .row { justify-content: space-between; align-items: center; }
+
+/* TS rehearsal */
+.mission.exam { border: 2px solid var(--marker); }
+.exam-grade { display: flex; align-items: center; gap: 16px; padding: 14px 18px; border-radius: 16px; }
+.exam-grade.ok { background: var(--good-bg); }
+.exam-grade.mid { background: var(--sq-a); }
+.exam-grade.no { background: var(--bad-bg); }
+.exam-note { font: 800 3rem var(--f-display); line-height: 1; font-variant-numeric: tabular-nums; }
+.exam-table td:first-child { min-width: 180px; }

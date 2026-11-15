@@ -214,3 +214,41 @@ def test_access_code(client, monkeypatch):
     assert client.get("/api/access", headers={"X-Access-Code": "Secret"}).json() == {"required": True, "ok": True}
     monkeypatch.setattr(main, "ACCESS_CODE", "")
     assert client.get("/api/subjects").status_code == 200
+
+
+def test_written_answer(client, student):
+    q = client.post("/api/questions", json={"unit": "fr-vieille-dame", "exercise": "ecrit", "level": 0}, headers=student).json()
+    assert q["long"] and q["kind"] == "text"
+    short = client.post(f"/api/questions/{q['id']}/answer", json={"value": "Parce que."}, headers=student).json()
+    assert short["status"] == "invalid" and short["tries"] == 0
+    weak = "Je pense que c'est parce que la scène est importante dans la pièce et que les personnages parlent beaucoup."
+    a = client.post(f"/api/questions/{q['id']}/answer", json={"value": weak}, headers=student).json()
+    assert a["status"] == "retry" and "Il manque" in a["message"]
+    a = client.post(f"/api/questions/{q['id']}/answer", json={"value": weak}, headers=student).json()
+    assert a["status"] == "wrong" and a["final"] and "Idées trouvées" in a["explain"] and "Exemple de réponse" in a["explain"]
+
+
+def test_ts_rehearsal(client, student, db):
+    r = client.post("/api/missions", json={"unit": "geo-climat", "exam": True}, headers=student).json()
+    mission, q = r["mission"], r["question"]
+    assert mission["mode"] == "exam" and mission["total"] == 20
+    unit = client.get("/api/units/geo-climat").json()
+    assert not any(e["key"].startswith("ts") for e in unit["exercises"])   # test-only exercises are hidden
+    for i in range(20):
+        assert q["max_tries"] == 1 and not q["has_hint"]
+        sol = solution(db, q["id"])
+        if sol.get("check") == "rubric":
+            value = " ".join(i["keywords"][0] for i in sol["answer"]["ideas"]) + " " + "et donc " * 8
+        else:
+            value = sol["answer"]
+            if q["kind"] == "number":
+                value = str(value).replace(".", ",")
+        a = client.post(f"/api/questions/{q['id']}/answer", json={"value": value}, headers=student).json()
+        assert a["status"] == "correct", (q["exercise"], a)
+        n = client.post(f"/api/missions/{mission['id']}/next", headers=student).json()
+        q = n["question"]
+    assert q is None and n["exam"]["grade"] == 6 and n["exam"]["good"] == 20
+    assert len(n["exam"]["objectives"]) == 15 and n["exam"]["objectives"][0]["lesson"] == "climat"
+    # the test never counts as a mission record
+    prog = client.get("/api/profiles/me/progress?unit=geo-climat", headers=student).json()[0]
+    assert prog["best"] == {}

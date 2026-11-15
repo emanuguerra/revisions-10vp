@@ -34,7 +34,9 @@ def unit(slug: str, db: Session = Depends(get_db)):
     return UnitOut(
         slug=u.slug, title=u.title, subtitle=u.subtitle, ui_lang=u.ui_lang, subject=u.subject.slug,
         config=u.config, lessons=[LessonOut.model_validate(lesson) for lesson in u.lessons],
-        exercises=[ExerciseOut.model_validate(e) for e in u.exercise_types if e.enabled],
+        # exercises marked exam_only are asked in the unit's test, not offered in free training
+        exercises=[ExerciseOut.model_validate(e) for e in u.exercise_types
+                   if e.enabled and not (e.params or {}).get("exam_only")],
     )
 
 

@@ -61,7 +61,7 @@ export const api = {
   rewards: () => call<Rewards>("/profiles/me/rewards"),
   focusDone: (minutes: number) => call<Rewards>("/profiles/me/focus", { method: "POST", body: JSON.stringify({ minutes }) }),
 
-  startMission: (body: { unit: string; level?: number; count?: number; category?: string | null; item_keys?: string[] }) =>
+  startMission: (body: { unit: string; level?: number; count?: number; category?: string | null; item_keys?: string[]; exam?: boolean }) =>
     post<{ mission: MissionState; question: Question }>("/missions", body),
   nextInMission: (id: number) => post<MissionNext>(`/missions/${id}/next`),
   abandonMission: (id: number) => post<MissionState>(`/missions/${id}/abandon`),

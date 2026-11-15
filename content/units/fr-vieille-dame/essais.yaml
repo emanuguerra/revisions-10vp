@@ -1,0 +1,194 @@
+# Questions à développer. Les extraits sont des scènes RÉÉCRITES pour l'exercice (texte adapté,
+# pas l'original de Dürrenmatt). Chaque idée attendue a des mots-clés : l'idée compte si l'un d'eux
+# apparaît dans la réponse (début de mot accepté : "culpabil" = culpabilité, culpabilisé…).
+kind: essai
+items:
+- key: es-chaussures
+  category: acte2
+  doc: "<strong>Texte adapté (acte II, la boutique d'Ill)</strong><br>LE PREMIER CLIENT. – Du tabac. Le meilleur, pas le bon marché.<br>ILL. – Le meilleur ? Tu fumais toujours le moins cher…<br>LE PREMIER CLIENT. – Note-le, Ill. Je paierai plus tard.<br><em>(Ill regarde les pieds de ses clients : tous portent des chaussures jaunes, toutes neuves.)</em><br>ILL. – Des chaussures neuves… Avec quoi allez-vous payer ?"
+  question: Pourquoi Ill s'inquiète-t-il dans cette scène ? Explique ce que montrent les chaussures jaunes.
+  ideas:
+    - idea: Les clients achètent des choses chères à crédit (ils paieront plus tard).
+      hint: comment les clients paient-ils ?
+      keywords: [credit, plus tard, dette, endett, payer, paie, note, ardoise, cher, meilleur]
+    - idea: Ils comptent sur l'argent promis par Claire (le milliard).
+      hint: d'où viendra l'argent ?
+      keywords: [milliard, argent, claire, riche, recompense, promesse, promis]
+    - idea: Cela montre qu'ils ont déjà accepté, au fond, la mort d'Ill.
+      hint: qu'est-ce que cela veut dire pour Ill ?
+      keywords: [mort, mourir, tuer, tue, condamn, sacrifi, accept, deja decide, sa vie]
+  model: "Les clients achètent des produits plus chers qu'avant et les font noter : ils paieront plus tard. Les chaussures jaunes neuves, que tout le monde porte, montrent qu'ils dépensent déjà l'argent du milliard promis par Claire. Ill comprend qu'au fond, ils ont déjà accepté sa mort : c'est le signe visible de la corruption de la ville."
+- key: es-refus
+  category: acte1
+  doc: "<strong>Texte adapté (fin de l'acte I, le banquet)</strong><br>LE MAIRE, <em>se levant, très digne</em>. – Madame, nous sommes en Europe, nous ne sommes pas des barbares. Au nom de l'humanité, je refuse votre offre.<br><em>(Applaudissements de toute la salle.)</em><br>CLAIRE. – J'attendrai."
+  question: Le refus du maire est-il sincère ? Explique en t'appuyant sur ce qui se passe ensuite dans la pièce.
+  ideas:
+    - idea: Sur le moment, le refus paraît noble et moral (humanité, applaudissements).
+      hint: comment la salle réagit-elle ?
+      keywords: [humanit, moral, noble, digne, applaudi, sincere, honnete, valeurs, refus]
+    - idea: Mais ensuite les habitants changent d'attitude (achats à crédit, chaussures, nouveaux objets).
+      hint: que font les habitants à l'acte II ?
+      keywords: [credit, achat, achete, chaussure, change, cede, ensuite, apres, acte 2, acte ii, peu a peu]
+    - idea: 'Le refus est hypocrite ou fragile : l''argent est plus fort que les principes.'
+      hint: qu'est-ce qui l'emporte à la fin ?
+      keywords: [hypocri, argent, tentation, corromp, corruption, faux, mensonge, fragile, plus fort, pas sincere]
+    - idea: Claire sait qu'ils finiront par céder (« J'attendrai »).
+      hint: que répond Claire ?
+      keywords: [attendr, patience, sait, certaine, sur d elle, temps]
+  model: "Sur le moment, le refus semble sincère : le maire parle d'humanité et toute la salle applaudit. Mais dès l'acte II, les habitants achètent à crédit des chaussures neuves et des objets chers : ils comptent déjà sur le milliard. Le refus était donc fragile, presque hypocrite : l'argent est plus fort que les principes. Claire le savait, puisqu'elle répond simplement : « J'attendrai »."
+- key: es-gare
+  category: acte2
+  doc: "<strong>Texte adapté (acte II, la gare)</strong><br><em>(Ill arrive avec une petite valise. Les habitants sont là, sur le quai, de plus en plus nombreux autour de lui.)</em><br>LE MAIRE. – Alors, Ill, vous partez ? Bon voyage !<br>LES HABITANTS. – Bon voyage ! Bon voyage !<br><em>(Le train entre en gare. Ill ne bouge pas.)</em><br>ILL. – Pourquoi êtes-vous tous autour de moi ?<br><em>(Le train repart sans lui. Ill s'effondre.)</em><br>ILL. – Je suis perdu."
+  question: Personne n'empêche Ill de monter dans le train. Pourquoi ne part-il pas ? Que montre cette scène ?
+  ideas:
+    - idea: Ill est paralysé par la peur.
+      hint: que ressent Ill ?
+      keywords: [peur, paralys, angoiss, panique, terroris, effray, n ose pas, ose pas]
+    - idea: 'Les habitants l''entourent et le surveillent : la pression du groupe suffit.'
+      hint: où sont les habitants ?
+      keywords: [entour, foule, habitants, groupe, surveill, pression, encercl, nombreux, autour]
+    - idea: 'Il est prisonnier de la ville : il ne peut pas échapper à son destin.'
+      hint: peut-il vraiment s'enfuir ?
+      keywords: [piege, prisonnier, echapp, fuir, fuite, impossible, destin, perdu, enferm]
+    - idea: Les paroles gentilles (« bon voyage ») cachent une menace.
+      hint: que veulent vraiment dire leurs paroles ?
+      keywords: [menace, ironi, faux, hypocri, gentil, bon voyage, cache, sourire]
+  model: "Personne ne le retient physiquement, mais les habitants l'entourent de plus en plus nombreux, ce qui crée une pression terrible. Leurs « bon voyage » sont faussement gentils et cachent une menace. Ill, paralysé par la peur, n'ose pas monter. La scène montre qu'il est prisonnier de la ville : il ne peut plus échapper à son destin, d'où son cri « Je suis perdu »."
+- key: es-justice
+  category: themes
+  question: Claire dit vouloir « s'acheter la justice ». Est-ce vraiment de la justice ? Donne ton avis en l'argumentant.
+  ideas:
+    - idea: C'est plutôt une vengeance personnelle.
+      hint: quel est le vrai motif de Claire ?
+      keywords: [vengeance, venger, rancune, revanche, punir, haine]
+    - idea: La vraie justice ne s'achète pas avec de l'argent.
+      hint: peut-on payer pour obtenir la justice ?
+      keywords: [achet, argent, payer, milliard, s achete pas, acheter, corrupt]
+    - idea: Pourtant Ill a vraiment commis une faute (faux témoins, enfant abandonné).
+      hint: Ill est-il innocent ?
+      keywords: [coupable, faute, temoin, proces, paternite, enfant, menti, abandon, injust]
+    - idea: La justice devrait être rendue par un tribunal impartial, selon la loi, pas par une foule.
+      hint: qui devrait juger ?
+      keywords: [tribunal, juge, loi, impartial, droit, proces equitable, foule, ville entiere]
+  model: "Claire parle de justice, mais il s'agit surtout d'une vengeance personnelle. Certes, Ill a commis une vraie faute : il a menti avec de faux témoins et abandonné Klara et leur enfant. Mais la justice ne s'achète pas : elle doit être rendue par un tribunal impartial, selon la loi. Ici, c'est l'argent qui pousse une foule à tuer un homme. Ce n'est donc pas de la justice."
+- key: es-ill
+  category: personnages
+  question: Comment Alfred Ill change-t-il entre le début et la fin de la pièce ?
+  ideas:
+    - idea: Au début (et dans sa jeunesse), il est lâche ou égoïste.
+      hint: comment s'est-il comporté avec Klara ?
+      keywords: [lache, egois, menti, menteur, abandon, nie, faux temoin, interet, epicier apprecie]
+    - idea: À l'acte II, il a peur et essaie de se défendre ou de fuir.
+      hint: que fait-il à l'acte II ?
+      keywords: [peur, angoiss, fuir, fuite, train, gare, aide, policier, pasteur, panique]
+    - idea: À la fin, il reconnaît et accepte sa culpabilité.
+      hint: que reconnaît-il à l'acte III ?
+      keywords: [accept, culpabil, coupable, reconna, responsab, assum, faute]
+    - idea: Il refuse le fusil et affronte la mort avec dignité.
+      hint: que refuse-t-il ?
+      keywords: [fusil, suicid, digne, dignite, courage, calme, affronte, grandit]
+  model: "Au début, Ill est un épicier apprécié, mais dans sa jeunesse il s'est montré lâche et égoïste : il a nié être le père avec de faux témoins. À l'acte II, il a peur : il demande de l'aide et essaie de fuir. À l'acte III, il change : il reconnaît sa faute, refuse le fusil du maire et affronte la mort avec dignité. Il est finalement le seul personnage qui assume ses actes."
+- key: es-vote
+  category: acte3
+  doc: "<strong>Texte adapté (acte III, l'assemblée communale)</strong><br>LE MAIRE. – Ce n'est pas pour l'argent… <br>LES HABITANTS, <em>en chœur</em>. – … ce n'est pas pour l'argent…<br>LE MAIRE. – … mais pour la justice !<br>LES HABITANTS. – … mais pour la justice !<br><em>(Les journalistes prennent des photos. Tous lèvent la main.)</em>"
+  question: Pourquoi peut-on dire que ce vote « pour la justice » est hypocrite ?
+  ideas:
+    - idea: Le vrai motif est l'argent (le milliard).
+      hint: pourquoi votent-ils vraiment ?
+      keywords: [argent, milliard, riche, cheque, interet, pour l argent]
+    - idea: Le mot « justice » sert de prétexte pour cacher un meurtre.
+      hint: à quoi sert le mot justice ?
+      keywords: [pretexte, cacher, cache, deguis, mot, excuse, meurtre, masque, bonne conscience]
+    - idea: Ils soignent les apparences devant la presse (et mentent ensuite sur la mort d'Ill).
+      hint: pourquoi la présence des journalistes compte-t-elle ?
+      keywords: [presse, journalist, photo, image, apparence, mensonge, crise cardiaque, mort de joie]
+    - idea: 'La décision est collective : personne ne se sent responsable seul.'
+      hint: qui décide ?
+      keywords: [tous, collectif, collective, unanim, ensemble, personne, groupe, choeur, chacun]
+  model: "Les habitants répètent en chœur que ce n'est « pas pour l'argent », alors que c'est exactement le milliard qui les pousse. Le mot « justice » sert de prétexte pour cacher un meurtre. Ils soignent leur image devant les journalistes, puis mentiront sur la mort d'Ill (« crise cardiaque »). Enfin, le vote unanime permet à chacun de se cacher derrière le groupe : personne ne se sent responsable."
+- key: es-tragicomedie
+  category: theatre
+  question: Pourquoi Dürrenmatt appelle-t-il sa pièce une « comédie tragique » ? Donne un élément comique et un élément tragique.
+  ideas:
+    - idea: La pièce contient du comique (grotesque, ridicule, satire).
+      hint: qu'est-ce qui fait rire ?
+      keywords: [comique, comedie, rire, drole, grotesque, ridicule, absurde, satire, humour, exager]
+    - idea: Un exemple comique précis (la suite de Claire, ses maris, ses prothèses, les chaussures…).
+      hint: donne un exemple de la pièce
+      keywords: [aveugle, mari, prothese, jambe, main, panthere, chaise, porteur, suite, chaussure, cercueil, train]
+    - idea: L'histoire est tragique (un homme est condamné et meurt).
+      hint: comment finit l'histoire ?
+      keywords: [tragique, tragedie, mort, meurtre, tue, sacrifi, condamn, destin, mourir]
+  model: "La pièce fait rire par son côté grotesque : Claire arrive avec une suite absurde (deux aveugles, des porteurs, une panthère, un cercueil) et change de mari pendant la pièce. Mais l'histoire est tragique : Ill est condamné d'avance et meurt, sacrifié par toute la ville. C'est ce mélange de rire et de tragique, un rire grinçant, que Dürrenmatt appelle « comédie tragique »."
+- key: es-instituteur
+  category: personnages
+  question: Quel rôle joue l'instituteur dans la pièce ? Pourquoi est-il un personnage intéressant ?
+  ideas:
+    - idea: 'Il est lucide : il comprend ce qui va arriver.'
+      hint: que comprend-il ?
+      keywords: [lucide, comprend, sait, voit, conscien, intellig, prevoit]
+    - idea: Il essaie de dire la vérité (à la presse, ivre) ou d'avertir.
+      hint: que veut-il faire avec les journalistes ?
+      keywords: [verite, presse, journalist, ivre, averti, denonc, parler]
+    - idea: 'Mais il finit par voter comme les autres : sa lucidité ne l''empêche pas d''être lâche.'
+      hint: que fait-il lors du vote ?
+      keywords: [vote, lache, lachete, cede, participe, comme les autres, accept, abandonne]
+  model: "L'instituteur est l'homme cultivé de Güllen : il est lucide et comprend très tôt que la ville va céder. Il essaie même de dire la vérité aux journalistes, ivre, mais on l'en empêche. Pourtant il finit par voter avec les autres. Il est intéressant parce qu'il montre que savoir ce qui est juste ne suffit pas : il faut aussi avoir le courage d'agir."
+- key: es-panthere
+  category: themes
+  question: Explique le lien entre la chasse à la panthère noire et le destin d'Alfred Ill.
+  ideas:
+    - idea: Claire appelait autrefois Ill « sa panthère noire ».
+      hint: quel surnom Claire donnait-elle à Ill ?
+      keywords: [surnom, appelait, panthere noire, ma panthere, son amant, jeunesse]
+    - idea: La chasse annonce (symbolise) la chasse à Ill.
+      hint: que représente cette chasse ?
+      keywords: [annonce, prefigur, symbol, represent, comme lui, chasse a l homme, presage]
+    - idea: Les hommes armés tuent la panthère devant le magasin d'Ill.
+      hint: où la panthère est-elle tuée ?
+      keywords: [magasin, boutique, devant, fusil, arme, tuee, abattu, chasseur]
+  model: "Dans leur jeunesse, Claire appelait Ill « ma panthère noire ». Quand la panthère s'échappe, les hommes de Güllen la chassent avec des fusils et l'abattent juste devant le magasin d'Ill. Cette chasse annonce symboliquement la « chasse à l'homme » qui vise Ill : comme l'animal, il sera traqué et tué par la ville."
+- key: es-claire
+  category: personnages
+  question: Pourquoi Claire peut-elle être vue à la fois comme une victime et comme un bourreau ?
+  ideas:
+    - idea: Elle a été victime (procès perdu, humiliation, enfant mort, misère).
+      hint: que lui est-il arrivé il y a 45 ans ?
+      keywords: [victime, proces, enfant, humili, chass, prostitu, misere, abandon, injust, faux temoin]
+    - idea: Elle devient bourreau (elle achète la mort d'Ill, se venge cruellement, ruine la ville).
+      hint: que fait-elle avec son argent ?
+      keywords: [bourreau, vengeance, venge, cruel, tuer, mort, ruin, achete, punit, usines]
+    - idea: Une conclusion nuancée qui relie les deux aspects.
+      hint: relie les deux idées
+      keywords: [a la fois, mais, pourtant, cependant, en meme temps, ambigu, nuanc, les deux]
+  model: "Claire a d'abord été une victime : Ill a gagné le procès grâce à de faux témoins, elle a été chassée de Güllen, son enfant est mort et elle a connu la misère. Mais devenue milliardaire, elle se transforme en bourreau : elle ruine volontairement la ville et achète la mort d'Ill. Elle est donc à la fois victime et bourreau, ce qui rend le personnage ambigu."
+- key: es-actuel
+  category: themes
+  question: La pièce parle-t-elle encore de notre monde aujourd'hui ? Donne ton avis avec un exemple.
+  min_words: 20
+  ideas:
+    - idea: Le thème de l'argent et de la corruption reste actuel.
+      hint: quel problème de la pièce existe encore ?
+      keywords: [argent, corrupt, pot de vin, riche, richesse, profit, milliardaire]
+    - idea: 'La pression du groupe : on suit les autres sans réfléchir.'
+      hint: pense au comportement de groupe
+      keywords: [groupe, foule, suivre, suit, harcelement, reseaux, pression, tout le monde, conform, majorite]
+    - idea: Un exemple concret d'aujourd'hui.
+      hint: donne un exemple précis
+      keywords: [exemple, aujourd hui, actuel, entreprise, politique, ecole, reseaux sociaux, internet, harcelement, pays]
+  model: "Oui, la pièce reste actuelle. L'argent peut toujours corrompre : des responsables ferment les yeux sur une injustice pour un profit. Elle parle aussi de la pression du groupe : par exemple, dans une classe ou sur les réseaux sociaux, beaucoup de gens participent au harcèlement d'une personne parce que « tout le monde le fait », sans se sentir responsables."
+- key: es-didascalie
+  category: theatre
+  doc: "<strong>Texte adapté (acte II, le balcon de l'hôtel)</strong><br><em>(Claire, sur son balcon, fume un cigare. En bas, dans la rue, Ill passe, très pâle. Il lève les yeux.)</em><br>CLAIRE, <em>souriante</em>. – Bonjour, Alfred. Tu as bien dormi ?<br>ILL, <em>la voix tremblante</em>. – Laisse-moi tranquille, Klara.<br><em>(On entend au loin des coups de feu : la chasse à la panthère a commencé.)</em>"
+  question: Relève une didascalie de cet extrait et explique ce qu'elle apporte à la scène.
+  ideas:
+    - idea: Identifier une didascalie (une indication de l'auteur, en italique ou entre parenthèses).
+      hint: comment reconnaît-on une didascalie ?
+      keywords: [didascalie, indication, parenthese, italique, auteur]
+    - idea: Citer un élément précis de l'extrait.
+      hint: cite les mots de la didascalie
+      keywords: [cigare, balcon, pale, leve les yeux, souriante, tremblante, coups de feu, chasse, panthere, rue]
+    - idea: Expliquer son effet (elle montre un sentiment, une opposition, une menace…).
+      hint: qu'est-ce qu'elle nous fait comprendre ?
+      keywords: [montre, indique, comprendre, revele, ironi, souligne, contraste, oppos, peur, menace, puissance, domine, annonce]
+  model: "La didascalie « la voix tremblante » est une indication de l'auteur, en italique. Elle montre qu'Ill a très peur, alors que Claire est « souriante » et domine la scène depuis son balcon : ce contraste souligne la puissance de Claire. Les « coups de feu » au loin annoncent aussi, de façon menaçante, la chasse qui vise Ill."

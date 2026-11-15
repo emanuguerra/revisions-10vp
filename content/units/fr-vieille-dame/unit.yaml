@@ -52,12 +52,16 @@ exercises:
     title: Comprendre et interpréter
     generator: common.mcq
     params: { kind: analyse }
+  - key: ecrit
+    title: "Explique avec tes mots (analyse de texte)"
+    generator: common.written
+    params: { kind: essai }
 
 mission:
   mode: sequence
-  sequence: [comprehension, qui, ordre, vf, analyse, comprehension, ordre, qui, vf, analyse, comprehension, ordre]
+  sequence: [comprehension, qui, ordre, vf, analyse, ecrit, ordre, qui, vf, analyse, comprehension, ecrit]
   title: "🎯 Mission : 12 questions"
-  description: "Compréhension, personnages, chronologie et interprétation. +10 points au premier essai, +5 si tu corriges ta réponse. +5 de bonus dès 3 réponses justes de suite du premier coup 🔥."
+  description: "Compréhension, personnages, chronologie, interprétation et deux questions à rédiger. +10 points au premier essai, +5 si tu corriges ta réponse. +5 de bonus dès 3 réponses justes de suite du premier coup 🔥."
   badges:
     - Relis le résumé et réessaie !
     - Bon·ne lecteur·rice

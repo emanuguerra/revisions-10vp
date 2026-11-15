@@ -1,0 +1,90 @@
+# Questions à rédiger (objectifs « expliquer »). Chaque idée attendue a des mots-clés :
+# l'idée compte si l'un d'eux apparaît (début de mot accepté).
+kind: essai
+items:
+- key: ge-serre
+  category: serre
+  question: Explique le fonctionnement de l'effet de serre et pourquoi il se renforce aujourd'hui.
+  ideas:
+    - idea: Le rayonnement du Soleil traverse l'atmosphère et chauffe le sol.
+      hint: d'où vient l'énergie ?
+      keywords: [soleil, rayonnement, lumiere, rayons solaires]
+    - idea: Le sol renvoie de la chaleur (infrarouges).
+      hint: que fait le sol chauffé ?
+      keywords: [infrarouge, chaleur, renvoie, emet, reemet, rayonne]
+    - idea: Les gaz à effet de serre retiennent une partie de cette chaleur.
+      hint: quel est le rôle des gaz ?
+      keywords: [gaz a effet de serre, ges, retien, piege, absorb, co2, methane, vapeur d eau]
+    - idea: 'Les activités humaines ajoutent des gaz (énergies fossiles) : l''effet est renforcé.'
+      hint: pourquoi se renforce-t-il ?
+      keywords: [humain, energie fossile, petrole, charbon, gaz naturel, combustion, renforc, emission, deforest]
+  model: "Le rayonnement du Soleil traverse l'atmosphère et chauffe le sol. Le sol chaud renvoie de la chaleur sous forme d'infrarouges. Les gaz à effet de serre (vapeur d'eau, CO₂, méthane) retiennent une partie de cette chaleur et la renvoient vers la Terre. Aujourd'hui, la combustion des énergies fossiles et la déforestation ajoutent du CO₂ : l'effet de serre est renforcé et la Terre se réchauffe."
+- key: ge-causes
+  category: causes
+  question: Explique deux causes naturelles et deux causes humaines de l'évolution du climat.
+  min_words: 15
+  ideas:
+    - idea: Une cause naturelle astronomique ou solaire (orbite, activité du Soleil).
+      hint: pense au Soleil et à la Terre
+      keywords: [orbite, milankovi, soleil, solaire, inclinaison, astronom]
+    - idea: Une autre cause naturelle (volcans, courants océaniques, dérive des continents).
+      hint: pense à la Terre elle-même
+      keywords: [volcan, eruption, courant, ocean, el nino, derive, continent]
+    - idea: La combustion des énergies fossiles.
+      hint: quelle est la principale cause humaine ?
+      keywords: [fossile, petrole, charbon, gaz, combustion, voiture, essence, centrale, transport]
+    - idea: Une autre cause humaine (déforestation, élevage, agriculture, industrie).
+      hint: pense aux forêts et à l'agriculture
+      keywords: [deforest, foret, elevage, vache, agricult, engrais, riz, industr, ciment, urbanis]
+  pass: 3
+  model: "Causes naturelles : les variations de l'orbite de la Terre autour du Soleil (qui expliquent les glaciations) et les grandes éruptions volcaniques, qui refroidissent le climat pendant un ou deux ans. Causes humaines : la combustion des énergies fossiles (pétrole, charbon, gaz) qui émet du CO₂, et la déforestation, qui libère du carbone et supprime un puits de carbone."
+- key: ge-albedo
+  category: glace
+  question: Explique ce qu'est l'albédo et pourquoi la fonte de la banquise accélère le réchauffement.
+  ideas:
+    - idea: L'albédo est la part du rayonnement solaire réfléchie par une surface.
+      hint: définis l'albédo
+      keywords: [reflechi, reflet, renvoie, part du rayonnement, pourcentage, proportion]
+    - idea: La glace (claire) a un albédo élevé, l'océan (sombre) un albédo faible.
+      hint: compare la glace et l'océan
+      keywords: [clair, blanc, sombre, fonce, eleve, faible, ocean, 0 6, 0 06]
+    - idea: L'océan absorbe donc plus de chaleur.
+      hint: que se passe-t-il quand l'océan remplace la glace ?
+      keywords: [absorb, chauffe, rechauffe, plus de chaleur, plus d energie]
+    - idea: 'C''est une rétroaction (un cercle vicieux) : plus de fonte, encore plus de chaleur.'
+      hint: quel enchaînement se répète ?
+      keywords: [retroaction, cercle vicieux, accelere, encore plus, s amplifie, amplification, boucle]
+  model: "L'albédo est la part du rayonnement solaire réfléchie par une surface (de 0 à 1). La banquise, blanche, a un albédo élevé (environ 0,6) : elle renvoie beaucoup d'énergie. Quand elle fond, elle laisse place à l'océan sombre (albédo environ 0,06), qui absorbe presque toute la chaleur. La région se réchauffe, la glace fond encore plus : c'est une rétroaction qui accélère le réchauffement."
+- key: ge-adaptation
+  category: adaptation
+  question: Choisis une mesure d'adaptation au changement climatique et évalue-la (avantages, limites).
+  min_words: 15
+  ideas:
+    - idea: Une mesure d'adaptation précise.
+      hint: nomme une mesure
+      keywords: [digue, arbre, vegetal, espace vert, irrigation, goutte, culture resistante, alerte, canicule, filet, protection, reserve d eau, climatis]
+    - idea: Un avantage (elle protège, réduit les dégâts).
+      hint: à quoi sert-elle ?
+      keywords: [protege, avantage, reduit, limite, efficace, sauve, rafraich, permet]
+    - idea: Une limite (coût, durée, effets négatifs, ne règle pas la cause).
+      hint: quels sont ses défauts ?
+      keywords: [cout, cher, limite, inconvenient, energie, eau, temporaire, maladapt, cause, ne regle pas, pas suffisant]
+  model: "Planter des arbres en ville est une mesure d'adaptation aux canicules. Avantage : les arbres font de l'ombre et rafraîchissent l'air, ce qui protège surtout les personnes âgées. Limites : ils mettent des années à pousser, il faut de l'eau pour les arroser, et cela ne règle pas la cause du réchauffement : il faut aussi réduire les émissions (atténuation)."
+- key: ge-sahel
+  category: chaud
+  question: Explique le lien entre aléas climatiques, sécheresse, désertification et crise alimentaire dans les régions chaudes.
+  min_words: 15
+  ideas:
+    - idea: Des aléas climatiques (pluies irrégulières, canicules) provoquent des sécheresses.
+      hint: quel est le point de départ ?
+      keywords: [alea, pluie, irregul, canicule, secheresse, chaleur, manque d eau]
+    - idea: La désertification dégrade les sols (aussi à cause du surpâturage, de la déforestation).
+      hint: que deviennent les sols ?
+      keywords: [desertif, sol, degrad, surpatur, deforest, steril, sable]
+    - idea: 'Les récoltes et le bétail sont perdus : la nourriture manque et les prix montent.'
+      hint: quelles conséquences pour la nourriture ?
+      keywords: [recolte, betail, nourriture, aliment, famine, faim, prix, manque]
+    - idea: Les populations pauvres sont très vulnérables (crise, migrations, conflits).
+      hint: qui est le plus touché ?
+      keywords: [pauvre, vulnerab, migr, conflit, crise, sahel, aide]
+  model: "Dans les régions chaudes comme le Sahel, les aléas climatiques (pluies irrégulières, canicules) provoquent des sécheresses. Avec le surpâturage et la déforestation, les sols se dégradent : c'est la désertification. Les récoltes et le bétail sont perdus, la nourriture manque et les prix augmentent. Les populations pauvres, très vulnérables, subissent alors une crise alimentaire, qui peut entraîner des migrations et des conflits."

@@ -10,6 +10,8 @@ Answer kinds:
     text    answer: list of accepted spellings
             with check="expr": answer[0] is an expression compared by algebra.check_answer,
             `form` says what is expected ("reduced" or "value")
+            with check="rubric": answer is {ideas, pass, min_words}, a written explanation
+            graded by rubric.grade (set long=True for a multi-line answer box)
 """
 from __future__ import annotations
 
@@ -79,6 +81,7 @@ class Generated:
     answer_display: Optional[str] = None
     check: Optional[str] = None       # "expr": compare algebraic expressions, not spellings
     form: Optional[str] = None
+    long: bool = False                # written explanation (several lines, graded with a rubric)
 
     def payload(self) -> dict[str, Any]:
         return {
@@ -90,6 +93,7 @@ class Generated:
             "figure": self.figure,
             "has_hint": bool(self.hint),
             "max_tries": self.max_tries,
+            "long": self.long,
         }
 
     def solution(self) -> dict[str, Any]:
