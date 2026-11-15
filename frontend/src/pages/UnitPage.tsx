@@ -18,9 +18,12 @@ export function UnitPage() {
   const navigate = useNavigate();
   const [unit, setUnit] = useState<Unit | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [fiches, setFiches] = useState(0);
 
   useEffect(() => {
     setUnit(null);
+    setFiches(0);
+    api.wiki(slug).then(t => setFiches(t.reduce((n, th) => n + th.pages.length, 0))).catch(() => setFiches(0));
     api.unit(slug).then(setUnit).catch(e => setError(e instanceof ApiError ? e.message : "Erreur réseau."));
   }, [slug]);
 
@@ -37,6 +40,7 @@ export function UnitPage() {
         <Title text={unit.title} />
         <p>{unit.subtitle}</p>
         {unit.config.subtitle_fr && <p className="fr" lang="fr">{unit.config.subtitle_fr}</p>}
+        {fiches > 0 && <p className="unit-wiki" lang="fr"><Link to={`/wiki?unit=${unit.slug}`}>📚 {fiches} fiches de révision sur ce chapitre</Link></p>}
       </header>
       <nav className="tabs" role="tablist">
         {unit.lessons.map(l => (

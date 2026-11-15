@@ -125,6 +125,19 @@ of ideas found and a model answer. A test checks that every model answer passes 
 
 **New interactive widget**: add a component in `frontend/src/components/widgets/` and register it in `widgets/index.tsx`.
 
+## Knowledge base (fiches)
+
+`content/knowledge/<subject>/<theme>/<page>.md`: one Markdown page per notion, with a YAML header
+(`title`, `summary`, `keywords`, `objectives`, `units`, `lessons`, `sources`, `related`; see
+`backend/app/knowledge.py` and `content/knowledge/README.md`). Pages are written in our own words from
+the sources; they are the reference for writing lessons and exercises, and the base for a future chat.
+
+- In the app: "Fiches" (`/wiki`), a search box, and a link from each unit to its pages.
+- API: `GET /api/wiki` (tree, `?unit=`), `GET /api/wiki/page/<path>`, `GET /api/wiki/search?q=`.
+- Link to another page: `[albédo](wiki:geographie/climat/albedo)`. Widgets work as in lessons.
+- `python -m app.seed --check` also checks the pages (header, links, units, lessons).
+- `ressources/` (official PDFs, private use only) is ignored by git and Docker.
+
 ## Rules for answers and points
 
 These live in `backend/app/engine.py`:

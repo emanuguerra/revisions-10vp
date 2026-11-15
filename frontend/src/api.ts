@@ -1,5 +1,6 @@
 import type {
   AnswerResult, Item, MissionFull, MissionNext, MissionState, Profile, Question, Rewards, Subject, Unit, UnitProgress,
+  WikiHit, WikiPage, WikiTheme,
 } from "./types";
 
 const TOKEN_KEY = "r10-token";
@@ -71,6 +72,10 @@ export const api = {
   startTraining: (unit: string, exercise: string, level: number) =>
     post<{ mission: MissionState; question: Question }>("/training", { unit, exercise, level }),
   question: (id: string) => call<Question>(`/questions/${id}`),
+
+  wiki: (unit?: string) => call<WikiTheme[]>(`/wiki${unit ? `?unit=${encodeURIComponent(unit)}` : ""}`),
+  wikiPage: (path: string) => call<WikiPage>(`/wiki/page/${path}`),
+  wikiSearch: (q: string) => call<WikiHit[]>(`/wiki/search?q=${encodeURIComponent(q)}`),
 
   trainingQuestion: (unit: string, exercise: string, level: number) => post<Question>("/questions", { unit, exercise, level }),
   answer: (id: string, value: string | number) => post<AnswerResult>(`/questions/${id}/answer`, { value }),

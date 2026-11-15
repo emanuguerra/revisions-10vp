@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 
 from .config import ACCESS_CODE, CORS_ORIGINS, STATIC_DIR
-from .routers import catalog, play, profiles
+from .routers import catalog, play, profiles, wiki
 
 app = FastAPI(title="Révisions 10VP", version="0.1.0")
 
@@ -32,6 +32,7 @@ async def access_code(request: Request, call_next):
 app.include_router(catalog.router)
 app.include_router(profiles.router)
 app.include_router(play.router)
+app.include_router(wiki.router)
 
 
 @app.get("/api/health")

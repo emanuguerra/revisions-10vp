@@ -101,10 +101,26 @@ def validate(subjects: list[dict], units: list[dict]) -> list[str]:
     return errors
 
 
+def validate_knowledge(content_dir: Path, subjects: list[dict], units: list[dict]) -> list[str]:
+    """Pages of content/knowledge: header, links between pages, units and lessons they point to."""
+    from .knowledge import load
+    themes, errors = load(content_dir / "knowledge")
+    subject_slugs = {s["slug"] for s in subjects}
+    lessons = {f"{u['slug']}/{lesson['slug']}" for u in units for lesson in u.get("lessons", [])}
+    unit_slugs = {u["slug"] for u in units}
+    for t in themes:
+        if t.subject not in subject_slugs:
+            errors.append(f"knowledge/{t.subject}: unknown subject (see subjects.yaml)")
+        for p in t.pages:
+            errors += [f"knowledge/{p.path}.md: unknown unit '{u}'" for u in p.get("units") if u not in unit_slugs]
+            errors += [f"knowledge/{p.path}.md: unknown lesson '{x}'" for x in p.get("lessons") if x not in lessons]
+    return errors
+
+
 def read_content(content_dir: Path = CONTENT_DIR) -> tuple[list[dict], list[dict]]:
     subjects = load_yaml(content_dir / "subjects.yaml")["subjects"]
     units = [read_unit(f) for f in sorted((content_dir / "units").iterdir()) if (f / "unit.yaml").exists()]
-    errors = validate(subjects, units)
+    errors = validate(subjects, units) + validate_knowledge(content_dir, subjects, units)
     if errors:
         raise ContentError("\n".join(errors))
     return subjects, units
@@ -190,7 +206,9 @@ def main() -> None:
     try:
         if args.check:
             subjects, units = read_content()
-            print(f"Content OK: {len(subjects)} subjects, {len(units)} units")
+            from .knowledge import load
+            n = sum(len(t.pages) for t in load(CONTENT_DIR / "knowledge")[0])
+            print(f"Content OK: {len(subjects)} subjects, {len(units)} units, {n} knowledge pages")
             return
         from .db import SessionLocal
         with SessionLocal() as db:

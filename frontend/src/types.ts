@@ -118,3 +118,12 @@ export interface Rewards {
   xp: number; level: number; level_title: string; level_start: number; next_level: number;
   stats: Record<string, number>; badges: Badge[];
 }
+
+// Knowledge base (content/knowledge)
+export interface WikiBrief { path: string; subject: string; theme: string; title: string; summary: string }
+export interface WikiTheme { subject: string; slug: string; title: string; pages: WikiBrief[] }
+export interface WikiPage extends WikiBrief {
+  theme_title: string; body: string; keywords: string[]; objectives: string[];
+  units: string[]; lessons: string[]; sources: string[]; related: WikiBrief[];
+}
+export interface WikiHit extends WikiBrief { score: number }
