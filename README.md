@@ -117,6 +117,8 @@ exercises asked in test conditions (one attempt, no hint). Exercises with `exam_
 are asked only there (one per objective, title = objective, `lesson` = lesson to revise); `common.exam_item`
 picks a question of given `kinds` and `categories`. The result gives a grade on the Swiss scale (1 to 6) and
 the result of each objective. Tests never count as mission records.
+maths-calcul-litteral has a test modelled on the class TS (`generators/litteral_ts.py`: the 8 kinds of
+questions, figures drawn as inline SVG in the prompt).
 
 **Written answers** (`common.written`, items of kind `essai`): the student writes a few sentences, graded by
 `app/rubric.py` against the expected ideas of the item (each idea has keywords; accents and case do not

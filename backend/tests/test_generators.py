@@ -231,3 +231,20 @@ def test_written_answers_are_graded_with_the_ideas():
         assert grade("Je ne sais pas trop, c'est une histoire.", it["ideas"]).score < need
     g = grade("Ils achètent À CRÉDIT, grâce au milliard : ils ont accepté qu'il meure.", play["items"]["essai"][0]["ideas"])
     assert g.score == 3
+
+
+def test_calcul_litteral_test_questions():
+    """TS practice test: the shown answer passes the checker; oui/non matches the algebra."""
+    unit = next(u for u in UNITS if u["slug"] == "maths-calcul-litteral")
+    for ex in (e for e in unit["exercises"] if e["key"].startswith("ts")):
+        for i in range(RUNS):
+            g = GENERATORS[ex["generator"]](ctx_for(unit, ex, 0, i))
+            if g.kind == "choice":
+                assert g.choices[g.answer].startswith(("oui", "non"))
+                continue
+            shown = g.answer_display.replace(" cm²", "").replace(" cm", "")
+            res = check_answer(shown, g.answer[0], g.form or "reduced")
+            assert res.status == "correct", (ex["key"], g.prompt, g.answer, shown, res)
+    gen = lambda key, seed: GENERATORS[f"litteral.{key}"](ctx_for(unit, {"title": "t", "params": {}}, 0, seed))
+    assert check_answer("16x^8", "16x^8", "reduced").status == "correct"
+    assert any(g.answer == ["6x - 6"] for g in (gen("ts_squares", s) for s in range(100)))

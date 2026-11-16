@@ -53,6 +53,39 @@ exercises:
     title: Trouve l'erreur
     generator: common.find_mistake
     params: { kind: error }
+  # --- Test de préparation au TS (exam_only: asked only in the test), modelled on the class test ---
+  - key: ts1
+    title: "Ex. 1 · Réduire"
+    generator: litteral.ts_reduce
+    params: { lesson: theorie, exam_only: true }
+  - key: ts2
+    title: "Ex. 2 · Traduire en expression"
+    generator: litteral.ts_translate
+    params: { lesson: theorie, exam_only: true }
+  - key: ts3
+    title: "Ex. 3 · Remplacer et calculer"
+    generator: litteral.ts_substitute
+    params: { lesson: theorie, exam_only: true }
+  - key: ts4
+    title: "Ex. 4 · Périmètre et aire de figures"
+    generator: litteral.ts_figures
+    params: { lesson: theorie, exam_only: true }
+  - key: ts5
+    title: "Ex. 5 · Longueur d'un segment"
+    generator: litteral.ts_segments
+    params: { lesson: theorie, exam_only: true }
+  - key: ts6
+    title: "Ex. 6 · Expressions équivalentes ?"
+    generator: litteral.ts_equivalent
+    params: { lesson: theorie, exam_only: true }
+  - key: ts7
+    title: "Ex. 7 · Figure en fonction de a et b"
+    generator: litteral.ts_grid
+    params: { lesson: theorie, exam_only: true }
+  - key: ts8
+    title: "Ex. 8 · Deux carrés accolés"
+    generator: litteral.ts_squares
+    params: { lesson: theorie, exam_only: true }
 
 mission:
   mode: sequence
@@ -64,6 +97,12 @@ mission:
     - Apprenti·e du calcul littéral
     - As de la distributivité
     - Maître·sse des expressions
+
+# Test de préparation au TS: same 8 exercises as the class test, new numbers each time
+exam:
+  title: "📝 Test de préparation au TS"
+  description: "20 questions comme au TS (réduire, traduire, remplacer, figures, segments, expressions équivalentes, quadrillage, carrés accolés), dans les conditions du test : un seul essai, pas d'indice. À la fin : une note estimée et ce qu'il faut encore réviser."
+  sequence: [ts1, ts1, ts1, ts1, ts1, ts2, ts2, ts3, ts3, ts3, ts4, ts4, ts5, ts5, ts6, ts6, ts7, ts7, ts8, ts8]
 
 training: true
 
